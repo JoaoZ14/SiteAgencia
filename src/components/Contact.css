@@ -1,0 +1,126 @@
+.contact {
+  padding: 120px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+.contact-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 48px;
+  margin-bottom: 72px;
+  flex-wrap: wrap;
+}
+
+.contact-title {
+  font-size: clamp(2.8rem, 6vw, 6rem);
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  line-height: 1.0;
+  color: var(--text);
+  margin: 12px 0 20px;
+}
+
+.contact-title em {
+  font-style: normal;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-sub {
+  font-size: 0.9rem;
+  color: var(--text-2);
+  line-height: 1.7;
+  max-width: 360px;
+}
+
+.contact-main-btn {
+  flex-shrink: 0;
+  align-self: flex-end;
+  font-size: 0.9rem;
+  padding: 16px 32px;
+  gap: 10px;
+}
+
+.contact-main-btn svg {
+  font-size: 1.15rem;
+}
+
+/* Contact link list */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+}
+
+.contact-link {
+  display: grid;
+  grid-template-columns: 32px 160px 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-2);
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  color: var(--text);
+}
+
+.contact-link:hover .contact-link-value {
+  color: var(--accent);
+}
+
+.contact-link-icon {
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+}
+
+.contact-link-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+}
+
+.contact-link-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-2);
+  transition: color 0.2s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
+
+  .contact-main-btn {
+    align-self: flex-start;
+  }
+
+  .contact-link {
+    grid-template-columns: 28px 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  .contact-link-label {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .contact-link-value {
+    grid-column: 2;
+    grid-row: 2;
+  }
+}
