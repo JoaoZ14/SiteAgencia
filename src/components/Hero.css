@@ -84,11 +84,13 @@
 
 .hero-line {
   display: block;
+  font-family: var(--font-display);
   font-size: clamp(2.8rem, 6vw, 5.5rem);
-  font-weight: 900;
-  letter-spacing: -0.04em;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   line-height: 1.05;
   color: var(--text);
+  text-transform: uppercase;
 }
 
 .hero-line--accent {

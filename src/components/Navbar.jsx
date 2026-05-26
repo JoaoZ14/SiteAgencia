@@ -36,7 +36,9 @@ export default function Navbar() {
     >
       <div className="navbar-inner">
         <a href="#inicio" className="navbar-logo" onClick={closeMenu}>
-          GMK<span>Digital</span>
+          <span className="navbar-logo-crop">
+            <img src="/Design sem nome (7).png" alt="GMK Digital" />
+          </span>
         </a>
 
         <ul className="navbar-links">

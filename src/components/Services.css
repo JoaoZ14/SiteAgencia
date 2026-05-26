@@ -19,9 +19,10 @@
 }
 
 .services-title {
+  font-family: var(--font-display);
   font-size: clamp(2.4rem, 4vw, 3.5rem);
-  font-weight: 900;
-  letter-spacing: -0.04em;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   color: var(--text);
   line-height: 1;
 }

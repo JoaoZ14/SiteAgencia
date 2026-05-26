@@ -27,14 +27,24 @@
 }
 
 .navbar-logo {
-  font-size: 1.15rem;
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  color: var(--text);
+  display: flex;
+  align-items: center;
 }
 
-.navbar-logo span {
-  color: var(--accent);
+.navbar-logo-crop {
+  display: block;
+  width: 130px;
+  height: 48px;
+  overflow: hidden;
+  position: relative;
+}
+
+.navbar-logo-crop img {
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  top: 50%;
+  transform: translateY(-52%);
 }
 
 .navbar-links {
