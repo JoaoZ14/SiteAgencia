@@ -64,7 +64,7 @@ export default function About() {
         <div className="container gmk-meaning-container">
           <motion.img
             className="gmk-image"
-            src="/ChatGPT Image 25 de mai. de 2026, 21_26_36.png"
+            src="/Design sem nome (8).png"
             alt="Go Make Known"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}

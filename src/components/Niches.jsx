@@ -23,8 +23,9 @@ export default function Niches() {
 
   return (
     <section className="niches" aria-label="Nichos atendidos">
+      <h2 className="sr-only">Nichos atendidos pela GMK Digital</h2>
       <div className="niches-label">
-        <span>Nichos atendidos</span>
+        <span aria-hidden="true">Nichos atendidos</span>
       </div>
       <div className="niches-track-wrapper">
         <div className="niches-track">
