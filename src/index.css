@@ -71,20 +71,40 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  line-height: 1;
 }
 
 .label svg {
-  font-size: 1rem;
+  font-size: 1.2em;
   flex-shrink: 0;
   opacity: 0.9;
+  display: block;
+  transform: translateY(-0.06em);
 }
 
 .section-pillar-icon {
-  display: block;
-  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2em;
   color: var(--accent);
-  margin-bottom: 12px;
   line-height: 1;
+  flex-shrink: 0;
+}
+
+.pillar-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.pillar-heading .section-pillar-icon {
+  transform: translateY(-0.04em);
+}
+
+.pillar-heading .mission-pillar-title {
+  margin-bottom: 0;
 }
 
 /* =============================================

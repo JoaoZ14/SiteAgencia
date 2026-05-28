@@ -62,8 +62,10 @@
 }
 
 .hero-eyebrow svg {
-  font-size: 0.95rem;
+  font-size: 1.3em;
   flex-shrink: 0;
+  display: block;
+  transform: translateY(-0.06em);
 }
 
 .hero-tags {

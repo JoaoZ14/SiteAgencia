@@ -54,8 +54,10 @@ export default function Mission() {
         >
           {PILLARS.map((item) => (
             <li key={item.title} className="mission-pillar">
-              <span className="section-pillar-icon" aria-hidden="true">{item.icon}</span>
-              <h3 className="mission-pillar-title">{item.title}</h3>
+              <div className="pillar-heading">
+                <span className="section-pillar-icon" aria-hidden="true">{item.icon}</span>
+                <h3 className="mission-pillar-title">{item.title}</h3>
+              </div>
               <p className="mission-pillar-text">{item.text}</p>
             </li>
           ))}
