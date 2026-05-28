@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import './SplashScreen.css'
 
 const LOGO_SRC = '/Design sem nome (7).png'
-const HOLD_MS = 500
-const LOGO_FADE_MS = 700
-const OVERLAY_FADE_MS = 300
+const HOLD_MS = 1200
+const LOGO_FADE_MS = 1600
+const OVERLAY_FADE_MS = 600
 
 export default function SplashScreen({ onComplete }) {
   const [phase, setPhase] = useState('hold')
