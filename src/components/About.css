@@ -91,48 +91,43 @@
   line-height: 1.45;
 }
 
-.gmk-manifesto-line.l1 {
-  font-size: 0.95rem;
+.gmk-manifesto-line.l1,
+.gmk-manifesto-line.l2,
+.gmk-manifesto-line.l3 {
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.35vw, 1.12rem);
+  font-weight: 500;
   color: var(--text);
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  padding-left: 2px;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
 }
 
-.gmk-manifesto-line.l2 {
-  font-size: 1.05rem;
-  color: var(--text);
-  font-weight: 400;
-  padding-left: 20px;
-  line-height: 1.6;
-}
+.gmk-manifesto-line.l1 { padding-left: 2px; }
+
+.gmk-manifesto-line.l2 { padding-left: 20px; }
 
 .gmk-manifesto-line.l3 {
-  font-size: 1.15rem;
-  color: var(--text-2);
-  font-weight: 600;
   padding-left: 44px;
   margin-bottom: 10px;
 }
 
+.gmk-manifesto-line.l4,
+.gmk-manifesto-line.l5 {
+  font-family: var(--font-manifesto);
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: -0.03em;
+  line-height: 1.25;
+}
+
 .gmk-manifesto-line.l4 {
-  font-family: 'Lilita One', var(--font);
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
-  font-weight: 400;
-  color: var(--text);
-  letter-spacing: 0.01em;
+  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
   padding-left: 8px;
-  line-height: 1.2;
 }
 
 .gmk-manifesto-line.l5 {
-  font-family: 'Lilita One', var(--font);
-  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
-  font-weight: 400;
-  color: var(--accent);
-  letter-spacing: 0.01em;
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
   padding-left: 32px;
-  line-height: 1.2;
   white-space: nowrap;
 }
 
@@ -161,4 +156,5 @@
     font-size: 1.4rem;
     white-space: normal;
   }
+
 }

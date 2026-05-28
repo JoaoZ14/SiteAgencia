@@ -1,3 +1,4 @@
+import { useCallback, useState } from 'react'
 import './App.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -7,10 +8,15 @@ import Niches from './components/Niches'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Chatbot from './components/Chatbot'
+import SplashScreen from './components/SplashScreen'
 
 export default function App() {
+  const [splashDone, setSplashDone] = useState(false)
+  const handleSplashComplete = useCallback(() => setSplashDone(true), [])
+
   return (
     <>
+      {!splashDone && <SplashScreen onComplete={handleSplashComplete} />}
       <Navbar />
       <main>
         <Hero />

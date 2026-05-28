@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { RiArrowRightLine, RiArrowDownLine } from 'react-icons/ri'
+import { RiArrowRightLine, RiArrowDownLine, RiGlobalLine } from 'react-icons/ri'
 import './Hero.css'
 
 const line = {
@@ -38,7 +38,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.05 }}
         >
-          <span className="hero-eyebrow">GMK Digital — Agência de Marketing</span>
+          <span className="hero-eyebrow">
+            <RiGlobalLine aria-hidden="true" />
+            Go Make Known · GMK Digital
+          </span>
         </motion.div>
 
         {/* Main headline — each line animates independently */}
@@ -59,8 +62,8 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          Conteúdo visual e estratégia digital para marcas
-          que querem crescer de verdade.
+          Cuidamos do visual e da estratégia digital para marcas
+          que querem crescer de forma efetiva.
         </motion.p>
 
         {/* Divider + CTAs */}
@@ -73,7 +76,7 @@ export default function Hero() {
           <div className="hero-divider" />
           <div className="hero-cta">
             <a href="#contato" className="btn-primary">
-              Fale com a gente <RiArrowRightLine />
+              Entre em contato <RiArrowRightLine />
             </a>
             <a href="#servicos" className="btn-ghost">
               Ver serviços

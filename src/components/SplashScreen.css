@@ -1,0 +1,38 @@
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  pointer-events: all;
+}
+
+.splash--exit {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.splash-logo {
+  width: min(200px, 55vw);
+  height: auto;
+  object-fit: contain;
+  opacity: 1;
+  transition: opacity 0.7s ease;
+}
+
+.splash-logo--fade {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash-logo {
+    transition-duration: 0.2s;
+  }
+
+  .splash--exit {
+    transition-duration: 0.15s;
+  }
+}

@@ -1,0 +1,92 @@
+/* Pilares G · M · K — iniciais surgindo da linha vertical lateral */
+
+.mission-pillars--letters {
+  position: relative;
+  padding-top: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  align-items: stretch;
+}
+
+.mission-pillars--letters .gmk-pillar {
+  position: relative;
+  overflow: hidden;
+  min-height: 180px;
+  padding: 24px 20px 20px 32px;
+  border-right: 1px solid var(--border);
+}
+
+.mission-pillars--letters .gmk-pillar:last-child {
+  border-right: none;
+}
+
+.gmk-pillar-bg {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 0;
+  font-family: var(--font-hero, var(--font-display));
+  font-size: 14rem;
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.06em;
+  color: transparent;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(240, 240, 240, 0.04) 28%,
+    rgba(240, 240, 240, 0.14) 58%,
+    rgba(240, 240, 240, 0.1) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+  user-select: none;
+  transform: translate(-28%, -50%);
+  white-space: nowrap;
+}
+
+/* Fallback se background-clip não aplicar */
+@supports not (background-clip: text) {
+  .gmk-pillar-bg {
+    color: rgba(240, 240, 240, 0.08);
+    background: none;
+    -webkit-text-fill-color: currentColor;
+  }
+}
+
+.gmk-pillar-content {
+  position: relative;
+  z-index: 1;
+}
+
+.gmk-pillar-content .section-pillar-icon {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .gmk-pillar-bg {
+    font-size: 11rem;
+    transform: translate(-26%, -50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .mission-pillars--letters .gmk-pillar {
+    min-height: 160px;
+    padding: 24px 0 20px 28px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .mission-pillars--letters .gmk-pillar:last-child {
+    border-bottom: none;
+  }
+
+  .gmk-pillar-bg {
+    font-size: 9.5rem;
+    transform: translate(-24%, -50%);
+  }
+}

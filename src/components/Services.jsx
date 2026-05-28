@@ -8,6 +8,8 @@ import {
   RiCodeSSlashLine,
   RiPencilRuler2Line,
   RiRocketLine,
+  RiLayoutGridLine,
+  RiArrowRightLine,
 } from 'react-icons/ri'
 import './Services.css'
 
@@ -15,76 +17,106 @@ const SERVICES = [
   {
     icon: <RiVideoLine />,
     title: 'Produção de Vídeo',
-    desc: 'Reels, institucionais e campanhas para todas as plataformas.',
+    desc: 'Reels, institucionais e campanhas, feitos para rodar onde sua marca precisa aparecer.',
+    scope: 'Reels · Institucional · Campanhas',
   },
   {
     icon: <RiCameraLensLine />,
     title: 'Fotografia',
-    desc: 'Ensaios de produto, marca e lifestyle que vendem antes de qualquer texto.',
+    desc: 'Fotos de produto, marca e lifestyle que comunicam antes mesmo da legenda.',
+    scope: 'Produto · Marca · Lifestyle',
   },
   {
     icon: <RiInstagramLine />,
     title: 'Social Media',
-    desc: 'Planejamento, criação e gestão completa das suas redes.',
+    desc: 'Planejamos, criamos e cuidamos das suas redes, do calendário ao post no ar.',
+    scope: 'Calendário · Criação · Gestão',
   },
   {
     icon: <RiFileTextLine />,
     title: 'Criação de Conteúdo',
-    desc: 'Copywriting, roteiros e textos que engajam e convertem.',
+    desc: 'Textos, roteiros e copy que engajam e ajudam a converter.',
+    scope: 'Copy · Roteiros · Conversão',
   },
   {
     icon: <RiLineChartLine />,
     title: 'Tráfego Pago',
-    desc: 'Anúncios no Meta, Google e TikTok com foco em ROI real.',
+    desc: 'Anúncios no Meta, Google e TikTok, com foco em retorno que dá para medir.',
+    scope: 'Meta Ads · Google · TikTok',
   },
   {
     icon: <RiCodeSSlashLine />,
     title: 'Desenvolvimento',
-    desc: 'Sites, landing pages, bots e aplicações sob medida para o seu negócio.',
+    desc: 'Sites, landing pages e bots feitos sob medida para o seu negócio.',
+    scope: 'Sites · Landing pages · Bots',
   },
   {
     icon: <RiPencilRuler2Line />,
     title: 'Design Gráfico',
-    desc: 'Peças visuais para digital e físico que comunicam de verdade.',
+    desc: 'Peças visuais, digitais ou impressas, que falam a língua da sua marca.',
+    scope: 'Digital · Impresso · Branding',
   },
   {
     icon: <RiRocketLine />,
     title: 'Estratégia Digital',
-    desc: 'Planejamento e consultoria para construir presença digital do zero.',
+    desc: 'Planejamento e consultoria para quem está montando presença digital do zero.',
+    scope: 'Planejamento · Consultoria · Posicionamento',
   },
 ]
 
 export default function Services() {
   return (
     <section className="services" id="servicos">
-      <div className="container">
+      <div className="container services-container">
         <motion.div
-          className="services-header"
+          className="services-left"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <span className="label">O que fazemos</span>
+          <span className="label">
+            <RiLayoutGridLine aria-hidden="true" />
+            O que fazemos
+          </span>
           <h2 className="services-title">Serviços</h2>
+          <p className="services-intro">
+            Do vídeo ao site, passando por redes e tráfego: tudo o que a GMK faz
+            para a sua marca ganhar presença e resultado, em um só lugar.
+          </p>
+          <a href="#contato" className="btn-primary services-cta">
+            Vamos montar sua proposta
+            <RiArrowRightLine aria-hidden="true" />
+          </a>
         </motion.div>
 
-        <div className="services-grid">
+        <motion.ul
+          className="services-list"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          viewport={{ once: true }}
+        >
           {SERVICES.map((s, i) => (
-            <motion.div
-              className="service-card"
+            <motion.li
+              className="service-row"
               key={s.title}
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.45, delay: i * 0.05, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.4, delay: i * 0.04, ease: [0.22, 1, 0.36, 1] }}
               viewport={{ once: true }}
             >
-              <div className="service-icon">{s.icon}</div>
-              <h3 className="service-name">{s.title}</h3>
-              <p className="service-desc">{s.desc}</p>
-            </motion.div>
+              <span className="service-row-icon" aria-hidden="true">
+                {s.icon}
+              </span>
+              <div className="service-row-body">
+                <h3 className="service-row-name">{s.title}</h3>
+                <p className="service-row-desc">{s.desc}</p>
+                <span className="service-row-scope">{s.scope}</span>
+              </div>
+            </motion.li>
           ))}
-        </div>
+        </motion.ul>
       </div>
     </section>
   )

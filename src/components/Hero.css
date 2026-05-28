@@ -50,12 +50,20 @@
 }
 
 .hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent);
   white-space: nowrap;
+}
+
+.hero-eyebrow svg {
+  font-size: 0.95rem;
+  flex-shrink: 0;
 }
 
 .hero-tags {

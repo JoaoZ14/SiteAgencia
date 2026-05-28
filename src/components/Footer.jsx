@@ -55,8 +55,8 @@ export default function Footer() {
               </span>
             </a>
             <p className="footer-desc">
-              Agência de marketing digital focada em conteúdo visual,
-              estratégia e performance. Resende, RJ.
+              Conteúdo visual, estratégia e performance para marcas
+              que querem ser vistas, de Resende, RJ, para onde precisar.
             </p>
             <div className="footer-socials">
               {SOCIALS.map((s) => (
@@ -113,7 +113,7 @@ export default function Footer() {
               ))}
             </ul>
             <a href="#contato" className="footer-cta">
-              Fale conosco <RiArrowRightUpLine />
+              Fale com a equipe <RiArrowRightUpLine />
             </a>
           </div>
 

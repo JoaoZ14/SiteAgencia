@@ -49,7 +49,7 @@ export default function Navbar() {
           ))}
           <li>
             <a href="#contato" className="navbar-cta">
-              Fale Conosco <RiArrowRightLine />
+              Fale com a GMK <RiArrowRightLine />
             </a>
           </li>
         </ul>
@@ -90,7 +90,7 @@ export default function Navbar() {
                 ))}
                 <li>
                   <a href="#contato" className="navbar-cta-mobile" onClick={closeMenu}>
-                    Fale Conosco <RiArrowRightLine />
+                    Fale com a GMK <RiArrowRightLine />
                   </a>
                 </li>
               </ul>

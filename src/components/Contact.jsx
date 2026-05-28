@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { RiWhatsappLine, RiMailLine, RiInstagramLine } from 'react-icons/ri'
+import { RiWhatsappLine, RiMailLine, RiInstagramLine, RiChat3Line } from 'react-icons/ri'
 import './Contact.css'
 
 const CONTACTS = [
@@ -34,15 +34,18 @@ export default function Contact() {
             transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
             viewport={{ once: true }}
           >
-            <span className="label">Contato</span>
+            <span className="label">
+              <RiChat3Line aria-hidden="true" />
+              Contato
+            </span>
             <h2 className="contact-title">
               Vamos trabalhar
               <br />
               <em>juntos?</em>
             </h2>
             <p className="contact-sub">
-              Sem formulários complicados. Escolha o canal que preferir
-              e a gente responde rápido.
+              Sem formulário chato. Escolha o canal que preferir.
+              Respondemos rápido.
             </p>
           </motion.div>
 
