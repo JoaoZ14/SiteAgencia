@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import {
   RiInstagramLine,
   RiLinkedinBoxLine,
@@ -8,6 +9,7 @@ import {
   RiMapPinLine,
   RiArrowRightUpLine,
 } from 'react-icons/ri'
+import { FOOTER_NAV_LINKS } from '../constants/navLinks'
 import './Footer.css'
 
 const SOCIALS = [
@@ -17,14 +19,8 @@ const SOCIALS = [
   { icon: <RiLinkedinBoxLine />, href: '#', label: 'LinkedIn' },
 ]
 
-const NAV_LINKS = [
-  { label: 'Início',    href: '#inicio' },
-  { label: 'Serviços', href: '#servicos' },
-  { label: 'Sobre',    href: '#sobre' },
-  { label: 'Contato',  href: '#contato' },
-]
-
 const SERVICES = [
+  'Marketing 360',
   'Produção de Vídeo',
   'Fotografia',
   'Social Media',
@@ -47,13 +43,12 @@ export default function Footer() {
 
         <div className="footer-top">
 
-          {/* Brand */}
           <div className="footer-brand">
-            <a href="#inicio" className="footer-logo-wrap">
+            <Link to="/" className="footer-logo-wrap">
               <span className="footer-logo-crop">
                 <img src="/Design sem nome (7).png" alt="GMK Digital" />
               </span>
-            </a>
+            </Link>
             <p className="footer-desc">
               Conteúdo visual, estratégia e performance para marcas
               que querem ser vistas, de Resende, RJ, para onde precisar.
@@ -74,29 +69,32 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navigation */}
           <div className="footer-col">
             <span className="footer-col-title">Navegação</span>
             <ul>
-              {NAV_LINKS.map((l) => (
+              {FOOTER_NAV_LINKS.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href}>{l.label}</a>
+                  {l.to ? (
+                    <Link to={l.to}>{l.label}</Link>
+                  ) : (
+                    <a href={l.href}>{l.label}</a>
+                  )}
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Services */}
           <div className="footer-col">
             <span className="footer-col-title">Serviços</span>
             <ul>
               {SERVICES.map((s) => (
-                <li key={s}><a href="#servicos">{s}</a></li>
+                <li key={s}>
+                  <Link to="/catalogo">{s}</Link>
+                </li>
               ))}
             </ul>
           </div>
 
-          {/* Contact */}
           <div className="footer-col">
             <span className="footer-col-title">Contato</span>
             <ul className="footer-contact-list">
@@ -112,7 +110,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <a href="#contato" className="footer-cta">
+            <a href="/#contato" className="footer-cta">
               Fale com a equipe <RiArrowRightUpLine />
             </a>
           </div>

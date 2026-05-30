@@ -12,14 +12,14 @@ const CONTACTS = [
   {
     icon: <RiMailLine />,
     label: 'E-mail',
-    value: 'contato@gmkdigital.com.br',
-    href: 'mailto:contato@gmkdigital.com.br',
+    value: 'contato@gmkagency.com',
+    href: 'mailto:contato@gmkagency.com',
   },
   {
     icon: <RiInstagramLine />,
     label: 'Instagram',
-    value: '@gmkdigital',
-    href: 'https://instagram.com/gmkdigital',
+    value: '@gmk.agencia',
+    href: 'https://instagram.com/gmk.agencia',
   },
 ]
 

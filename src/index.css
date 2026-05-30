@@ -71,13 +71,20 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  line-height: 1;
+  line-height: 1.2;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  opacity: 0.85;
 }
 
 .label svg {
-  font-size: 1.2em;
+  font-size: 1.15em;
   flex-shrink: 0;
-  opacity: 0.9;
+  opacity: 0.55;
+  color: var(--text-3);
   display: block;
   transform: translateY(-0.06em);
 }

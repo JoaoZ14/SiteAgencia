@@ -54,15 +54,18 @@
   list-style: none;
 }
 
-.navbar-links a {
+.navbar-links a,
+.navbar-links a:visited {
   font-size: 0.8rem;
   font-weight: 500;
   color: var(--text-2);
   letter-spacing: 0.02em;
   transition: color 0.2s ease;
+  text-decoration: none;
 }
 
-.navbar-links a:hover {
+.navbar-links a:hover,
+.navbar-links a.nav-link-active {
   color: var(--text);
 }
 

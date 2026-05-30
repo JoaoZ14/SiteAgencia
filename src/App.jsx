@@ -1,32 +1,15 @@
-import { useCallback, useState } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Services from './components/Services'
-import About from './components/About'
-import Niches from './components/Niches'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import Chatbot from './components/Chatbot'
-import SplashScreen from './components/SplashScreen'
+import HomePage from './pages/HomePage'
+import CatalogPage from './pages/CatalogPage'
 
 export default function App() {
-  const [splashDone, setSplashDone] = useState(false)
-  const handleSplashComplete = useCallback(() => setSplashDone(true), [])
-
   return (
-    <>
-      {!splashDone && <SplashScreen onComplete={handleSplashComplete} />}
-      <Navbar />
-      <main>
-        <Hero />
-        <Services />
-        <About />
-        <Niches />
-        <Contact />
-      </main>
-      <Footer />
-      <Chatbot />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/catalogo" element={<CatalogPage />} />
+      </Routes>
+    </BrowserRouter>
   )
 }

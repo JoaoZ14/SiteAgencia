@@ -8,8 +8,8 @@ const MANIFESTO_LINES = [
   { text: 'GMK não é só uma sigla. É identidade com propósito.', cls: 'l1', delay: 0.1  },
   { text: 'São as iniciais de quem transformou visão em movimento e ideia em presença de verdade.', cls: 'l2', delay: 0.18 },
   { text: 'E um manifesto simples, que guia o que fazemos:', cls: 'l3', delay: 0.26 },
-  { text: 'fazer o mundo conhecer',                             cls: 'l4', delay: 0.34 },
-  { text: 'o que a sua marca é capaz de construir.',            cls: 'l5', delay: 0.42 },
+  { text: 'fazer o mundo conhecer', cls: 'l4', delay: 0.34 },
+  { text: 'o que a sua marca é capaz de construir.', cls: 'l5', delay: 0.42 },
 ]
 
 export default function About() {

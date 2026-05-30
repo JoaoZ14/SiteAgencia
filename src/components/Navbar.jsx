@@ -1,22 +1,20 @@
 import { useState, useEffect } from 'react'
 import { createPortal } from 'react-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { RiMenu3Line, RiCloseLine, RiArrowRightLine } from 'react-icons/ri'
+import { NAV_LINKS } from '../constants/navLinks'
 import './Navbar.css'
-
-const NAV_LINKS = [
-  { label: 'Serviços', href: '#servicos' },
-  { label: 'Sobre', href: '#sobre' },
-  { label: 'Contato', href: '#contato' },
-]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const { pathname } = useLocation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
     window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
@@ -27,6 +25,25 @@ export default function Navbar() {
 
   const closeMenu = () => setMenuOpen(false)
 
+  const renderNavLink = (link) => {
+    const isActive = link.to ? pathname === link.to : false
+    const className = isActive ? 'nav-link-active' : undefined
+
+    if (link.to) {
+      return (
+        <Link to={link.to} className={className} onClick={closeMenu}>
+          {link.label}
+        </Link>
+      )
+    }
+
+    return (
+      <a href={link.href} className={className} onClick={closeMenu}>
+        {link.label}
+      </a>
+    )
+  }
+
   return (
     <motion.nav
       className={`navbar${scrolled ? ' scrolled' : ''}`}
@@ -35,20 +52,18 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       <div className="navbar-inner">
-        <a href="#inicio" className="navbar-logo" onClick={closeMenu}>
+        <Link to="/" className="navbar-logo" onClick={closeMenu}>
           <span className="navbar-logo-crop">
             <img src="/Design sem nome (7).png" alt="GMK Digital" />
           </span>
-        </a>
+        </Link>
 
         <ul className="navbar-links">
           {NAV_LINKS.map((link) => (
-            <li key={link.label}>
-              <a href={link.href}>{link.label}</a>
-            </li>
+            <li key={link.label}>{renderNavLink(link)}</li>
           ))}
           <li>
-            <a href="#contato" className="navbar-cta">
+            <a href="/#contato" className="navbar-cta">
               Fale com a GMK <RiArrowRightLine />
             </a>
           </li>
@@ -82,14 +97,10 @@ export default function Navbar() {
               </button>
               <ul>
                 {NAV_LINKS.map((link) => (
-                  <li key={link.label}>
-                    <a href={link.href} onClick={closeMenu}>
-                      {link.label}
-                    </a>
-                  </li>
+                  <li key={link.label}>{renderNavLink(link)}</li>
                 ))}
                 <li>
-                  <a href="#contato" className="navbar-cta-mobile" onClick={closeMenu}>
+                  <a href="/#contato" className="navbar-cta-mobile" onClick={closeMenu}>
                     Fale com a GMK <RiArrowRightLine />
                   </a>
                 </li>

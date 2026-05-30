@@ -37,11 +37,11 @@ export default function Mission() {
             Nossa Missão
           </span>
           <h2 className="mission-title" id="mission-title">
-            Fazer o mundo conhecer o que a sua marca é capaz de construir.
+            Transformar presença digital em reconhecimento real.
           </h2>
           <p className="mission-lead">
-            A GMK existe para transformar presença digital em reconhecimento real:
-            com conteúdo forte, estratégia clara e execução próxima de quem confia no nosso trabalho.
+            Conteúdo forte, estratégia clara e execução no mesmo time, perto de
+            quem confia no nosso trabalho, sem processo engessado.
           </p>
         </motion.div>
 
