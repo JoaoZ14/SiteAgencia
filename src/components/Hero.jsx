@@ -40,7 +40,7 @@ export default function Hero() {
         >
           <span className="hero-eyebrow">
             <RiGlobalLine aria-hidden="true" />
-            Resende, RJ · Agência de Marketing e Audiovisual
+            Go Make Known · GMK Digital
           </span>
         </motion.div>
 
