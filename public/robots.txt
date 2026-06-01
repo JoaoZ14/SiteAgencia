@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gmkagency.netlify.app/sitemap.xml
+Sitemap: https://gmkagency.com/sitemap.xml
