@@ -176,12 +176,26 @@
   50% { transform: translateX(-50%) translateY(10px); }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero {
-    align-items: center;
+/* ── Tablet e laptop pequeno ──────────────────── */
+@media (max-width: 1024px) {
+  .hero-container {
+    padding-top: 120px;
+    padding-bottom: 64px;
   }
 
+  .hero-top {
+    margin-bottom: 40px;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    max-width: 420px;
+    margin-bottom: 44px;
+  }
+}
+
+/* ── Mobile grande ────────────────────────────── */
+@media (max-width: 768px) {
   .hero-bg img {
     object-position: center top;
   }
@@ -192,8 +206,7 @@
 
   .hero-container {
     padding-top: 100px;
-    padding-bottom: 60px;
-    text-align: left;
+    padding-bottom: 56px;
   }
 
   .hero-line {
@@ -206,6 +219,7 @@
 
   .hero-sub {
     font-size: 0.95rem;
+    max-width: 100%;
     margin-bottom: 36px;
   }
 
@@ -218,7 +232,21 @@
   }
 }
 
+/* ── Mobile pequeno ───────────────────────────── */
 @media (max-width: 480px) {
+  .hero-container {
+    padding-top: 88px;
+    padding-bottom: 48px;
+  }
+
+  .hero-line {
+    font-size: clamp(2rem, 10vw, 2.6rem);
+  }
+
+  .hero-sub {
+    font-size: 0.9rem;
+  }
+
   .hero-cta {
     flex-direction: column;
     align-items: stretch;

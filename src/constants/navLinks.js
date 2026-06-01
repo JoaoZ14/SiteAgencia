@@ -1,14 +1,14 @@
 export const NAV_LINKS = [
-  { label: 'Serviços', href: '/#servicos' },
+  { label: 'Serviços', to: '/#servicos' },
   { label: 'Catálogo', to: '/catalogo' },
-  { label: 'Sobre', href: '/#sobre' },
-  { label: 'Contato', href: '/#contato' },
+  { label: 'Sobre', to: '/#sobre' },
+  { label: 'Contato', to: '/#contato' },
 ]
 
 export const FOOTER_NAV_LINKS = [
-  { label: 'Início', href: '/' },
-  { label: 'Serviços', href: '/#servicos' },
+  { label: 'Início', to: '/' },
+  { label: 'Serviços', to: '/#servicos' },
   { label: 'Catálogo', to: '/catalogo' },
-  { label: 'Sobre', href: '/#sobre' },
-  { label: 'Contato', href: '/#contato' },
+  { label: 'Sobre', to: '/#sobre' },
+  { label: 'Contato', to: '/#contato' },
 ]

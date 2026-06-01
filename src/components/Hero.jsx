@@ -40,7 +40,7 @@ export default function Hero() {
         >
           <span className="hero-eyebrow">
             <RiGlobalLine aria-hidden="true" />
-            Go Make Known · GMK Digital
+            Resende, RJ · Agência de Marketing e Audiovisual
           </span>
         </motion.div>
 
@@ -62,8 +62,8 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          Cuidamos do visual e da estratégia digital para marcas
-          que querem crescer de forma efetiva.
+          Conteúdo, estratégia e tráfego em um só time.
+          Para marcas que querem ser vistas e gerar resultado de verdade.
         </motion.p>
 
         {/* Divider + CTAs */}
@@ -76,7 +76,7 @@ export default function Hero() {
           <div className="hero-divider" />
           <div className="hero-cta">
             <a href="#contato" className="btn-primary">
-              Entre em contato <RiArrowRightLine />
+              Falar com a equipe <RiArrowRightLine />
             </a>
             <a href="#servicos" className="btn-ghost">
               Ver serviços

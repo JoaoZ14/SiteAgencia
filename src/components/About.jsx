@@ -6,10 +6,10 @@ import './About.css'
 
 const MANIFESTO_LINES = [
   { text: 'GMK não é só uma sigla. É identidade com propósito.', cls: 'l1', delay: 0.1  },
-  { text: 'São as iniciais de quem transformou visão em movimento e ideia em presença de verdade.', cls: 'l2', delay: 0.18 },
-  { text: 'E um manifesto simples, que guia o que fazemos:', cls: 'l3', delay: 0.26 },
+  { text: 'Nasceu de quem decidiu transformar intenção em presença e potencial em visibilidade de verdade.', cls: 'l2', delay: 0.18 },
+  { text: 'E carrega um manifesto direto, que guia tudo o que fazemos:', cls: 'l3', delay: 0.26 },
   { text: 'fazer o mundo conhecer', cls: 'l4', delay: 0.34 },
-  { text: 'o que a sua marca é capaz de construir.', cls: 'l5', delay: 0.42 },
+  { text: 'o que a sua marca tem a oferecer.', cls: 'l5', delay: 0.42 },
 ]
 
 export default function About() {
@@ -31,9 +31,9 @@ export default function About() {
               Sobre a GMK
             </span>
             <h2 className="about-title">
-              Diretos ao ponto,
+              Uma agência pequena,
               <br />
-              desde o início.
+              com entrega grande.
             </h2>
           </motion.div>
 
@@ -45,21 +45,23 @@ export default function About() {
             viewport={{ once: true }}
           >
             <p className="about-text large">
-              A GMK nasceu com uma ideia simples: se a sua marca é bem construída,
-              ela merece ser vista.
+              A GMK nasceu da convicção de que marcas bem construídas merecem
+              visibilidade proporcional à sua qualidade, e que isso não deveria
+              depender de uma grande estrutura para acontecer.
             </p>
             <p className="about-text">
-              Aqui, cada projeto recebe atenção de verdade: estratégia e execução
-              perto de você. Nada de processo engessado, nada de distância entre
-              quem pede e quem cria.
+              Cada cliente tem acesso direto a quem cria. Sem camadas de aprovação,
+              sem terceirização, sem perda de contexto entre o briefing e a entrega.
             </p>
             <p className="about-text">
-              Fazemos audiovisual, foto, redes sociais e tráfego pago para transformar
-              presença digital em posicionamento de marca, com resultado que dá para sentir.
+              Reunimos audiovisual, gestão de redes, criação de conteúdo e tráfego
+              pago em um só time. O resultado não é só estético: é mensurável,
+              rastreável e pensado para gerar negócio.
             </p>
             <p className="about-text">
-              Atendemos nichos diferentes, mas com a mesma intenção: entregar algo
-              profissional, autêntico e difícil de ignorar.
+              Atendemos saúde, gastronomia, moda, e-commerce, serviços locais e
+              muito mais, sempre com a mesma intenção: uma presença digital que
+              representa de verdade o que sua marca entrega.
             </p>
 
             <a href="#contato" className="btn-primary about-cta">

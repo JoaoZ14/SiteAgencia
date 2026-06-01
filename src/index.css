@@ -66,6 +66,14 @@ button {
   padding: 0 32px;
 }
 
+@media (max-width: 1024px) {
+  .container { padding: 0 24px; }
+}
+
+@media (max-width: 640px) {
+  .container { padding: 0 16px; }
+}
+
 /* Labels e ícones de seção */
 .label {
   display: inline-flex;

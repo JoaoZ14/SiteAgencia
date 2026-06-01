@@ -11,12 +11,12 @@ const PILLARS = [
   {
     icon: <RiCompass3Line />,
     title: 'Estratégia',
-    text: 'Cada entrega com propósito, do planejamento à publicação e ao resultado.',
+    text: 'Planejamento que começa com diagnóstico e termina com entrega rastreável, do briefing ao relatório.',
   },
   {
     icon: <RiTeamLine />,
     title: 'Proximidade',
-    text: 'Trabalho direto com quem cria, sem distância entre ideia e execução.',
+    text: 'Você fala diretamente com quem cria. Sem terceiros, sem ruído, sem retrabalho.',
   },
 ]
 
@@ -40,8 +40,8 @@ export default function Mission() {
             Transformar presença digital em reconhecimento real.
           </h2>
           <p className="mission-lead">
-            Conteúdo forte, estratégia clara e execução no mesmo time, perto de
-            quem confia no nosso trabalho, sem processo engessado.
+            Conteúdo, estratégia e execução no mesmo time. Sem intermediários,
+            sem processos lentos. Só entrega com intenção.
           </p>
         </motion.div>
 

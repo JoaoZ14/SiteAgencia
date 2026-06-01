@@ -34,7 +34,7 @@ const SERVICES = [
   {
     icon: <RiInstagramLine />,
     title: 'Social Media',
-    desc: 'Gestão estratégica e criativa das redes, do calendário ao post no ar, para engajamento consistente e presença que não some do feed.',
+    desc: 'Gestão estratégica e criativa das redes, do calendário ao post no ar, para presença consistente e engajamento que constrói relacionamento com o público.',
   },
   {
     icon: <RiFileTextLine />,
@@ -54,12 +54,12 @@ const SERVICES = [
   {
     icon: <RiPencilRuler2Line />,
     title: 'Design Gráfico',
-    desc: 'Peças digitais que fortalecem a identidade visual e mantêm sua marca coerente em cada ponto de contato online.',
+    desc: 'Criativos digitais alinhados à identidade da sua marca para que cada publicação, anúncio e campanha reforce o posicionamento que você quer ocupar.',
   },
   {
     icon: <RiRocketLine />,
     title: 'Estratégia Digital',
-    desc: 'Planejamento e consultoria para montar presença do zero ou organizar o que já existe, com método, foco e proximidade na execução.',
+    desc: 'Diagnóstico e planejamento para montar ou evoluir sua presença digital com método, com um plano que faz sentido para o tamanho e o momento do seu negócio.',
   },
 ]
 
@@ -122,11 +122,11 @@ export default function Services() {
           viewport={{ once: true }}
         >
           <h3 className="services-footer-title">
-            Sua marca merece ser conhecida.
+            Encontre o serviço certo para o seu momento.
           </h3>
           <p className="services-footer-text">
-            Conte seu momento e objetivos. Montamos juntos o que faz sentido para
-            o seu negócio, sem fórmula pronta.
+            Cada negócio tem um ponto de partida diferente. Conte onde você está
+            e onde quer chegar. A proposta é nossa.
           </p>
           <div className="services-footer-actions">
             <Link to="/catalogo" className="btn-ghost">

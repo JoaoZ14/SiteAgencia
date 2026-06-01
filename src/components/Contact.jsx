@@ -44,8 +44,8 @@ export default function Contact() {
               <em>juntos?</em>
             </h2>
             <p className="contact-sub">
-              Sem formulário chato. Escolha o canal que preferir.
-              Respondemos rápido.
+              Escolha o canal que preferir. Respondemos em até 24h
+              úteis para agendar uma conversa sem compromisso.
             </p>
           </motion.div>
 

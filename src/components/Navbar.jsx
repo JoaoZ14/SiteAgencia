@@ -26,21 +26,13 @@ export default function Navbar() {
   const closeMenu = () => setMenuOpen(false)
 
   const renderNavLink = (link) => {
-    const isActive = link.to ? pathname === link.to : false
+    const isActive = pathname === link.to
     const className = isActive ? 'nav-link-active' : undefined
 
-    if (link.to) {
-      return (
-        <Link to={link.to} className={className} onClick={closeMenu}>
-          {link.label}
-        </Link>
-      )
-    }
-
     return (
-      <a href={link.href} className={className} onClick={closeMenu}>
+      <Link to={link.to} className={className} onClick={closeMenu}>
         {link.label}
-      </a>
+      </Link>
     )
   }
 
@@ -63,9 +55,9 @@ export default function Navbar() {
             <li key={link.label}>{renderNavLink(link)}</li>
           ))}
           <li>
-            <a href="/#contato" className="navbar-cta">
+            <Link to="/#contato" className="navbar-cta">
               Fale com a GMK <RiArrowRightLine />
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -100,9 +92,9 @@ export default function Navbar() {
                   <li key={link.label}>{renderNavLink(link)}</li>
                 ))}
                 <li>
-                  <a href="/#contato" className="navbar-cta-mobile" onClick={closeMenu}>
+                  <Link to="/#contato" className="navbar-cta-mobile" onClick={closeMenu}>
                     Fale com a GMK <RiArrowRightLine />
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </motion.div>

@@ -11,18 +11,19 @@ import {
   SERVICE_CATEGORIES,
   PACKAGES,
   ADDONS,
-  PROCESS_STEPS,
 } from '../data/catalog'
 import { pdfStyles as s } from './catalogPdfStyles'
 
 const LOGO_PATH = '/Design sem nome (7).png'
 
-function PageFooter({ page, total }) {
+const TOTAL_PAGES = 5
+
+function PageFooter({ page }) {
   return (
     <View style={s.pageFooter} fixed>
       <Text style={s.pageFooterText}>GMK Digital · Go Make Known</Text>
       <Text style={s.pageFooterText}>contato@gmkagency.com · Resende, RJ</Text>
-      <Text style={s.pageFooterText}>{page} / {total}</Text>
+      <Text style={s.pageFooterText}>{page} / {TOTAL_PAGES}</Text>
     </View>
   )
 }
@@ -36,6 +37,23 @@ function PageHeader({ section }) {
   )
 }
 
+function ServiceItem({ item }) {
+  return (
+    <View style={s.serviceBlock} wrap={false}>
+      <View style={s.serviceNameRow}>
+        <View style={s.serviceAccentBar} />
+        <Text style={s.serviceName}>{item.name}</Text>
+      </View>
+      <Text style={s.serviceDesc}>{item.desc}</Text>
+      <View style={s.includesRow}>
+        {item.includes.map((inc) => (
+          <Text key={inc} style={s.includeTag}>{inc}</Text>
+        ))}
+      </View>
+    </View>
+  )
+}
+
 export default function CatalogPdfDocument({ logoSrc }) {
   return (
     <Document
@@ -43,18 +61,26 @@ export default function CatalogPdfDocument({ logoSrc }) {
       author="GMK Digital"
       subject="Marketing digital e produção audiovisual"
     >
-      {/* Capa */}
+
+      {/* Pagina 1 — Capa */}
       <Page size="A4" style={s.coverPage}>
         {logoSrc && <Image src={logoSrc} style={s.coverLogo} />}
-        <Text style={s.coverLabel}>{CATALOG_INTRO.label}</Text>
-        <Text style={s.coverTitle}>{CATALOG_INTRO.title}</Text>
-        <Text style={s.coverLead}>{CATALOG_INTRO.lead}</Text>
+
+        <Text style={s.coverLabel}>Catálogo de Serviços · GMK Digital</Text>
+        <Text style={s.coverTitle}>Da criação{'\n'}ao resultado.</Text>
+        <Text style={s.coverTagline}>Transformar presença digital em reconhecimento real.</Text>
+        <Text style={s.coverLead}>
+          Conteúdo, estratégia e execução no mesmo time. Sem intermediários,
+          sem processos lentos. Só entrega com intenção.
+        </Text>
+
+        <View style={s.coverDivider} />
 
         <View style={s.coverPillars}>
-          {CATALOG_PILLARS.map((p) => (
+          {CATALOG_PILLARS.map((p, i) => (
             <View key={p.id} style={s.coverPillar}>
+              <Text style={s.coverPillarIndex}>0{i + 1}</Text>
               <Text style={s.coverPillarTitle}>{p.title}</Text>
-              <Text style={s.coverPillarDesc}>{p.desc}</Text>
             </View>
           ))}
         </View>
@@ -65,55 +91,50 @@ export default function CatalogPdfDocument({ logoSrc }) {
         </View>
       </Page>
 
-      {/* Serviços — Marketing Digital */}
+      {/* Pagina 2 — Servicos: Marketing Digital */}
       <Page size="A4" style={s.page}>
-        <PageHeader section="Serviços" />
-        <Text style={s.sectionTitle}>Nossos Serviços</Text>
+        <PageHeader section="Serviços: Marketing Digital" />
+
+        <Text style={s.sectionTitle}>Marketing Digital</Text>
         <Text style={s.sectionSubtitle}>
-          Soluções em marketing digital e produção audiovisual para marcas que querem
-          presença profissional e resultado mensurável.
+          Estratégia, gestão e performance para sua marca crescer com consistência no ambiente online.
         </Text>
 
-        <Text style={s.categoryTitle}>{SERVICE_CATEGORIES[0].title}</Text>
-        {SERVICE_CATEGORIES[0].items.map((item) => (
-          <View key={item.name} style={s.serviceBlock} wrap={false}>
-            <Text style={s.serviceName}>{item.name}</Text>
-            <Text style={s.serviceDesc}>{item.desc}</Text>
-            <View style={s.includesRow}>
-              {item.includes.map((inc) => (
-                <Text key={inc} style={s.includeTag}>{inc}</Text>
-              ))}
-            </View>
-          </View>
-        ))}
-        <PageFooter page={2} total={4} />
+        <View style={s.servicesGrid}>
+          {SERVICE_CATEGORIES[0].items.map((item) => (
+            <ServiceItem key={item.name} item={item} />
+          ))}
+        </View>
+
+        <PageFooter page={2} />
       </Page>
 
-      {/* Serviços — Audiovisual */}
+      {/* Pagina 3 — Servicos: Producao Audiovisual */}
       <Page size="A4" style={s.page}>
-        <PageHeader section="Serviços" />
-        <Text style={s.categoryTitle}>{SERVICE_CATEGORIES[1].title}</Text>
-        {SERVICE_CATEGORIES[1].items.map((item) => (
-          <View key={item.name} style={s.serviceBlock} wrap={false}>
-            <Text style={s.serviceName}>{item.name}</Text>
-            <Text style={s.serviceDesc}>{item.desc}</Text>
-            <View style={s.includesRow}>
-              {item.includes.map((inc) => (
-                <Text key={inc} style={s.includeTag}>{inc}</Text>
-              ))}
-            </View>
-          </View>
-        ))}
-        <PageFooter page={3} total={4} />
+        <PageHeader section="Serviços: Produção Audiovisual" />
+
+        <Text style={s.sectionTitle}>Produção Audiovisual</Text>
+        <Text style={s.sectionSubtitle}>
+          Foto e vídeo com direção, roteiro e edição profissional, entregues prontos para publicar e anunciar.
+        </Text>
+
+        <View style={s.servicesGrid}>
+          {SERVICE_CATEGORIES[1].items.map((item) => (
+            <ServiceItem key={item.name} item={item} />
+          ))}
+        </View>
+
+        <PageFooter page={3} />
       </Page>
 
-      {/* Pacotes + Complementos + Processo + CTA */}
+      {/* Pagina 4 — Planos Mensais */}
       <Page size="A4" style={s.page}>
-        <PageHeader section="Pacotes e Proposta" />
+        <PageHeader section="Planos Mensais" />
+
         <Text style={s.sectionTitle}>Planos Mensais</Text>
         <Text style={s.sectionSubtitle}>
-          Pacotes pensados para diferentes momentos da marca. Valores sob consulta,
-          montados de acordo com escopo e nicho.
+          Escolha o plano mais adequado ao seu momento. Todos os valores são sob consulta
+          e a proposta é montada de acordo com o escopo e nicho do negócio.
         </Text>
 
         <View style={s.packagesGrid}>
@@ -123,21 +144,39 @@ export default function CatalogPdfDocument({ logoSrc }) {
               style={[s.packageCard, pkg.highlight && s.packageCardHighlight]}
               wrap={false}
             >
+              {pkg.highlight && (
+                <Text style={s.packageBadge}>Mais contratado</Text>
+              )}
               <Text style={s.packageFocus}>{pkg.focus}</Text>
               <Text style={s.packageName}>{pkg.name}</Text>
               <Text style={s.packageTagline}>{pkg.tagline}</Text>
+              <View style={s.packageDivider} />
               {pkg.features.map((f) => (
-                <Text key={f} style={s.packageFeature}>• {f}</Text>
+                <View key={f} style={s.packageFeatureRow}>
+                  <Text style={s.packageFeatureDot}>·</Text>
+                  <Text style={s.packageFeature}>{f}</Text>
+                </View>
               ))}
-              <Text style={s.packageNote}>{pkg.note}</Text>
-              <Text style={s.packagePrice}>Sob consulta</Text>
+              <View style={s.packageFooter}>
+                <Text style={s.packageNote}>{pkg.note}</Text>
+                <Text style={s.packagePrice}>Sob consulta</Text>
+              </View>
             </View>
           ))}
         </View>
 
-        <Text style={[s.sectionTitle, { marginTop: 20, fontSize: 13 }]}>
-          Serviços Avulsos
+        <PageFooter page={4} />
+      </Page>
+
+      {/* Pagina 5 — Complementos + Processo + CTA */}
+      <Page size="A4" style={s.page}>
+        <PageHeader section="Complementos e Como Funciona" />
+
+        <Text style={s.sectionTitle}>Serviços Avulsos</Text>
+        <Text style={s.sectionSubtitle}>
+          Contrate pontualmente, sem precisar de um plano mensal.
         </Text>
+
         <View style={s.addonsGrid}>
           {ADDONS.map((addon) => (
             <View key={addon.name} style={s.addonItem}>
@@ -147,34 +186,28 @@ export default function CatalogPdfDocument({ logoSrc }) {
           ))}
         </View>
 
-        <Text style={[s.sectionTitle, { marginTop: 16, fontSize: 13 }]}>
-          Como Funciona
-        </Text>
-        <View style={s.processRow}>
-          {PROCESS_STEPS.map((step) => (
-            <View key={step.step} style={s.processStep}>
-              <Text style={s.processNum}>{step.step}</Text>
-              <Text style={s.processTitle}>{step.title}</Text>
-              <Text style={s.processDesc}>{step.desc}</Text>
-            </View>
-          ))}
-        </View>
+        <View style={s.sectionDivider} />
 
         <View style={s.ctaBox} wrap={false}>
-          <Text style={s.ctaTitle}>Quer uma proposta personalizada?</Text>
-          <Text style={s.ctaText}>
-            Conte o que sua marca precisa. Montamos um plano sob medida para
-            marketing digital, audiovisual ou os dois juntos.
-          </Text>
-          <Text style={s.ctaContact}>
-            WhatsApp: (00) 90000-0000{'\n'}
-            E-mail: contato@gmkagency.com{'\n'}
-            Instagram: @gmkdigital · Resende, RJ
-          </Text>
+          <View style={s.ctaLeft}>
+            <Text style={s.ctaTitle}>Quer uma proposta personalizada?</Text>
+            <Text style={s.ctaText}>
+              Conte o que sua marca precisa. Montamos um plano sob medida,
+              marketing digital, audiovisual ou os dois integrados.
+            </Text>
+          </View>
+          <View style={s.ctaRight}>
+            <Text style={s.ctaContactLabel}>Fale com a equipe</Text>
+            <Text style={s.ctaContact}>(00) 90000-0000</Text>
+            <Text style={s.ctaContact}>contato@gmkagency.com</Text>
+            <Text style={s.ctaContact}>@gmkdigital</Text>
+            <Text style={s.ctaContact}>Resende, RJ</Text>
+          </View>
         </View>
 
-        <PageFooter page={4} total={4} />
+        <PageFooter page={5} />
       </Page>
+
     </Document>
   )
 }

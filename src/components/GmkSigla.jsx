@@ -12,20 +12,20 @@ const LETTERS = [
   {
     glyph: 'G',
     icon: <RiMegaphoneLine />,
-    title: 'Gestão · growth',
+    title: 'Gestão e crescimento',
     text: 'Atrair as pessoas certas com tráfego pago e posicionamento no Google.',
   },
   {
     glyph: 'M',
     icon: <RiBarChartGroupedLine />,
-    title: 'Métrica',
+    title: 'Métricas',
     text: 'Analisar dados, otimizar campanhas e entender o comportamento do consumidor.',
   },
   {
     glyph: 'K',
     icon: <RiFundsLine />,
-    title: 'KPI e conversão',
-    text: 'Foco em resultado, lucro e retorno sobre o investimento (ROI).',
+    title: 'Resultado e conversão',
+    text: 'Cada ação orientada a retorno real para o seu negócio: não só cliques, mas clientes.',
   },
 ]
 
@@ -46,11 +46,11 @@ export default function GmkSigla() {
             A sigla
           </span>
           <h2 className="mission-title" id="gmk-sigla-title">
-            Gestão, métrica e conversão em cada entrega.
+            Crescimento com método. Resultado com propósito.
           </h2>
           <p className="mission-lead">
-            GMK também traduz o método: crescer com estratégia, medir o que importa
-            e converter presença em resultado para o seu negócio.
+            GMK não é só nome: é o método que guia cada projeto. Crescimento
+            planejado, métricas que importam e conversão que fecha negócio.
           </p>
         </motion.div>
 

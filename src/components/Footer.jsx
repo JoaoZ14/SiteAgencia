@@ -13,7 +13,7 @@ import { FOOTER_NAV_LINKS } from '../constants/navLinks'
 import './Footer.css'
 
 const SOCIALS = [
-  { icon: <RiInstagramLine />, href: 'https://instagram.com/gmkdigital', label: 'Instagram' },
+  { icon: <RiInstagramLine />, href: 'https://instagram.com/gmk.agencia', label: 'Instagram' },
   { icon: <RiTiktokLine />,    href: '#', label: 'TikTok' },
   { icon: <RiYoutubeLine />,   href: '#', label: 'YouTube' },
   { icon: <RiLinkedinBoxLine />, href: '#', label: 'LinkedIn' },
@@ -31,8 +31,8 @@ const SERVICES = [
 
 const CONTACT = [
   { icon: <RiWhatsappLine />, label: '(24) 99999-9999', href: 'https://wa.me/5524999999999' },
-  { icon: <RiMailLine />,     label: 'contato@gmkdigital.com.br', href: 'mailto:contato@gmkdigital.com.br' },
-  { icon: <RiInstagramLine />, label: '@gmkdigital', href: 'https://instagram.com/gmkdigital' },
+  { icon: <RiMailLine />,     label: 'contato@gmkagency.com', href: 'mailto:contato@gmkagency.com' },
+  { icon: <RiInstagramLine />, label: '@gmk.agencia', href: 'https://instagram.com/gmk.agencia' },
   { icon: <RiMapPinLine />,   label: 'Resende, RJ', href: null },
 ]
 
@@ -50,8 +50,9 @@ export default function Footer() {
               </span>
             </Link>
             <p className="footer-desc">
-              Conteúdo visual, estratégia e performance para marcas
-              que querem ser vistas, de Resende, RJ, para onde precisar.
+              Marketing digital e produção audiovisual para marcas que
+              querem crescer. Baseados em Resende, RJ. Atendimento em
+              todo o Brasil.
             </p>
             <div className="footer-socials">
               {SOCIALS.map((s) => (
@@ -74,11 +75,7 @@ export default function Footer() {
             <ul>
               {FOOTER_NAV_LINKS.map((l) => (
                 <li key={l.label}>
-                  {l.to ? (
-                    <Link to={l.to}>{l.label}</Link>
-                  ) : (
-                    <a href={l.href}>{l.label}</a>
-                  )}
+                  <Link to={l.to}>{l.label}</Link>
                 </li>
               ))}
             </ul>
@@ -110,9 +107,9 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-            <a href="/#contato" className="footer-cta">
+            <Link to="/#contato" className="footer-cta">
               Fale com a equipe <RiArrowRightUpLine />
-            </a>
+            </Link>
           </div>
 
         </div>
