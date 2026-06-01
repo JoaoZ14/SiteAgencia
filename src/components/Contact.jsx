@@ -6,8 +6,8 @@ const CONTACTS = [
   {
     icon: <RiWhatsappLine />,
     label: 'WhatsApp',
-    value: '(00) 90000-0000',
-    href: 'https://wa.me/5500900000000?text=Olá,%20vim%20pelo%20site%20da%20GMK%20Digital!',
+    value: '(24) 98163-4937',
+    href: 'https://wa.me/5524981634937?text=Olá,%20vim%20pelo%20site%20da%20GMK%20Digital!',
   },
   {
     icon: <RiMailLine />,
@@ -50,7 +50,7 @@ export default function Contact() {
           </motion.div>
 
           <motion.a
-            href="https://wa.me/5500900000000?text=Olá,%20vim%20pelo%20site%20da%20GMK%20Digital!"
+            href="https://wa.me/5524981634937?text=Olá,%20vim%20pelo%20site%20da%20GMK%20Digital!"
             className="btn-primary contact-main-btn"
             target="_blank"
             rel="noopener noreferrer"

@@ -12,112 +12,104 @@ export const pdfColors = {
 }
 
 export const pdfStyles = StyleSheet.create({
-
-  /* ── Paginas internas ─────────────────────────────────── */
   page: {
-    paddingTop: 44,
-    paddingBottom: 56,
-    paddingHorizontal: 44,
+    paddingTop: 48,
+    paddingBottom: 58,
+    paddingHorizontal: 48,
     fontFamily: 'Helvetica',
-    fontSize: 11,
+    fontSize: 10,
     color: pdfColors.text,
     backgroundColor: pdfColors.white,
   },
 
-  /* ── Capa ─────────────────────────────────────────────── */
+  /* Capa */
   coverPage: {
-    paddingTop: 60,
-    paddingBottom: 44,
+    paddingTop: 52,
+    paddingBottom: 40,
     paddingHorizontal: 48,
     backgroundColor: pdfColors.dark,
     color: pdfColors.white,
     fontFamily: 'Helvetica',
   },
-  coverLogo: {
-    width: 120,
-    marginBottom: 48,
-  },
+  coverLogo: { width: 110, marginBottom: 40 },
   coverLabel: {
     fontSize: 8,
     letterSpacing: 2.5,
     textTransform: 'uppercase',
     color: '#777777',
-    marginBottom: 12,
+    marginBottom: 10,
   },
   coverTitle: {
-    fontSize: 36,
+    fontSize: 34,
     fontFamily: 'Helvetica-Bold',
     letterSpacing: -1,
-    lineHeight: 1.1,
-    marginBottom: 14,
-    maxWidth: 420,
+    lineHeight: 1.08,
+    marginBottom: 12,
+    maxWidth: 400,
   },
   coverTagline: {
     fontSize: 11,
     fontFamily: 'Helvetica-Bold',
     color: pdfColors.accent,
-    letterSpacing: 0.2,
-    marginBottom: 12,
-    maxWidth: 400,
+    marginBottom: 10,
+    maxWidth: 380,
   },
   coverLead: {
-    fontSize: 11,
-    lineHeight: 1.7,
+    fontSize: 10,
+    lineHeight: 1.65,
     color: '#BBBBBB',
-    maxWidth: 400,
-    marginBottom: 32,
+    maxWidth: 380,
+    marginBottom: 28,
   },
   coverDivider: {
     borderTopWidth: 1,
     borderTopColor: '#2A2A2A',
-    marginBottom: 24,
+    marginBottom: 20,
   },
-  coverPillars: {
-    flexDirection: 'row',
-    gap: 16,
-    marginBottom: 36,
-  },
+  coverPillars: { flexDirection: 'row', gap: 14, marginBottom: 24 },
   coverPillar: {
     flex: 1,
     borderTopWidth: 1,
     borderTopColor: '#333333',
-    paddingTop: 14,
+    paddingTop: 12,
+  },
+  coverPillarHead: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    marginBottom: 6,
   },
   coverPillarIndex: {
     fontSize: 8,
     fontFamily: 'Helvetica-Bold',
     color: pdfColors.accent,
     letterSpacing: 1,
-    marginBottom: 8,
   },
   coverPillarTitle: {
-    fontSize: 14,
+    fontSize: 13,
     fontFamily: 'Helvetica-Bold',
     color: pdfColors.white,
     lineHeight: 1.2,
   },
-  coverSummary: {
+  coverNav: {
     flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 6,
+    marginBottom: 8,
   },
-  coverSummaryItem: {
-    marginRight: 36,
-  },
-  coverSummaryNumber: {
-    fontSize: 24,
-    fontFamily: 'Helvetica-Bold',
-    color: pdfColors.white,
-    lineHeight: 1,
-    marginBottom: 3,
-  },
-  coverSummaryLabel: {
+  coverNavItem: {
     fontSize: 8,
-    color: '#666666',
-    textTransform: 'uppercase',
-    letterSpacing: 0.5,
+    color: '#999999',
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    borderWidth: 1,
+    borderColor: '#333333',
+    borderRadius: 2,
   },
+  coverNavItemText: { color: '#CCCCCC', fontSize: 8 },
   coverFooter: {
     position: 'absolute',
-    bottom: 36,
+    bottom: 32,
     left: 48,
     right: 48,
     flexDirection: 'row',
@@ -126,17 +118,15 @@ export const pdfStyles = StyleSheet.create({
     borderTopColor: '#222222',
     paddingTop: 10,
   },
-  coverFooterText: {
-    fontSize: 8,
-    color: '#555555',
-  },
+  coverFooterText: { fontSize: 8, color: '#555555' },
+  coverFooterLink: { fontSize: 8, color: pdfColors.accent },
 
-  /* ── Cabecalho das paginas internas ──────────────────── */
+  /* Cabeçalho / seção */
   pageHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 22,
     paddingBottom: 10,
     borderBottomWidth: 1,
     borderBottomColor: pdfColors.border,
@@ -148,99 +138,225 @@ export const pdfStyles = StyleSheet.create({
     textTransform: 'uppercase',
     color: pdfColors.accent,
   },
-  pageHeaderSection: {
+  pageHeaderSection: { fontSize: 8, color: pdfColors.textLight },
+  sectionLabel: {
     fontSize: 8,
-    color: pdfColors.textLight,
-  },
-
-  /* ── Titulos de secao ─────────────────────────────────── */
-  sectionTitle: {
-    fontSize: 17,
     fontFamily: 'Helvetica-Bold',
-    letterSpacing: -0.3,
-    color: pdfColors.text,
+    letterSpacing: 1.2,
+    textTransform: 'uppercase',
+    color: pdfColors.accent,
     marginBottom: 6,
   },
-  sectionTitleSmall: {
-    fontSize: 13,
-    marginTop: 0,
+  sectionTitle: {
+    fontSize: 20,
+    fontFamily: 'Helvetica-Bold',
+    letterSpacing: -0.4,
+    color: pdfColors.text,
+    marginBottom: 8,
   },
   sectionSubtitle: {
-    fontSize: 9.5,
+    fontSize: 10,
     color: pdfColors.textMuted,
     lineHeight: 1.6,
-    marginBottom: 18,
-    maxWidth: 460,
+    marginBottom: 20,
+    maxWidth: 480,
   },
   sectionDivider: {
     borderTopWidth: 1,
     borderTopColor: pdfColors.border,
-    marginTop: 22,
-    marginBottom: 20,
+    marginVertical: 18,
   },
 
-  /* ── Grid de servicos (2 colunas) ────────────────────── */
-  servicesGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 12,
+  /* Apresentação */
+  presentationBody: { marginBottom: 22 },
+  presentationParagraph: {
+    fontSize: 10,
+    color: pdfColors.textMuted,
+    lineHeight: 1.65,
+    marginBottom: 10,
   },
-  serviceBlock: {
-    width: '48%',
-    marginBottom: 4,
-    paddingBottom: 14,
-    paddingRight: 8,
-    borderBottomWidth: 1,
-    borderBottomColor: pdfColors.border,
+  highlightsRow: { flexDirection: 'row', gap: 10 },
+  highlightCard: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: pdfColors.border,
+    padding: 14,
+    borderRadius: 2,
   },
-  serviceNameRow: {
+  highlightCardTop: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginBottom: 5,
-    gap: 7,
+    gap: 8,
+    marginBottom: 10,
   },
-  serviceAccentBar: {
-    width: 2,
-    height: 12,
-    backgroundColor: pdfColors.accent,
-    borderRadius: 1,
+  highlightLabel: {
+    fontSize: 7.5,
+    textTransform: 'uppercase',
+    letterSpacing: 0.8,
+    color: pdfColors.textLight,
+    marginBottom: 3,
   },
-  serviceName: {
+  highlightValue: {
     fontSize: 11,
     fontFamily: 'Helvetica-Bold',
     color: pdfColors.text,
   },
+
+  /* Diferenciais */
+  diffGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
+  diffCard: {
+    width: '48%',
+    borderWidth: 1,
+    borderColor: pdfColors.border,
+    padding: 14,
+    marginBottom: 2,
+  },
+  diffCardHead: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    marginBottom: 8,
+  },
+  diffTitle: {
+    fontSize: 11,
+    fontFamily: 'Helvetica-Bold',
+    color: pdfColors.text,
+    marginBottom: 5,
+  },
+  diffDesc: {
+    fontSize: 9,
+    color: pdfColors.textMuted,
+    lineHeight: 1.5,
+    marginBottom: 8,
+  },
+  diffResult: {
+    fontSize: 8.5,
+    fontFamily: 'Helvetica-Bold',
+    color: pdfColors.accent,
+    lineHeight: 1.4,
+  },
+
+  /* Serviços — coluna única premium */
+  servicesList: { gap: 0 },
+  serviceCard: {
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    borderBottomColor: pdfColors.border,
+    paddingVertical: 12,
+    gap: 12,
+  },
+  serviceCardBody: { flex: 1 },
+  serviceBenefit: {
+    fontSize: 8.5,
+    fontFamily: 'Helvetica-Bold',
+    color: pdfColors.accent,
+    marginBottom: 4,
+  },
+  serviceName: {
+    fontSize: 11.5,
+    fontFamily: 'Helvetica-Bold',
+    color: pdfColors.text,
+    marginBottom: 4,
+  },
   serviceDesc: {
-    fontSize: 9.5,
+    fontSize: 9,
     color: pdfColors.textMuted,
     lineHeight: 1.55,
     marginBottom: 8,
   },
-  includesRow: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 4,
-  },
+  includesRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 5 },
   includeTag: {
-    fontSize: 8,
-    color: pdfColors.accent,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 3,
+    fontSize: 7.5,
+    color: pdfColors.textMuted,
     backgroundColor: pdfColors.accentLight,
     paddingVertical: 3,
     paddingHorizontal: 6,
     borderRadius: 2,
   },
+  includeTagText: { fontSize: 7.5, color: pdfColors.accent },
 
-  /* ── Grid de pacotes (2 colunas) ─────────────────────── */
-  packagesGrid: {
+  /* Cases */
+  casesGrid: { gap: 10 },
+  caseCard: {
+    flexDirection: 'row',
+    gap: 12,
+    borderWidth: 1,
+    borderColor: pdfColors.border,
+    padding: 14,
+    marginBottom: 8,
+  },
+  caseBody: { flex: 1 },
+  caseSegment: {
+    fontSize: 11,
+    fontFamily: 'Helvetica-Bold',
+    color: pdfColors.text,
+    marginBottom: 5,
+  },
+  caseDelivery: {
+    fontSize: 9,
+    color: pdfColors.textMuted,
+    lineHeight: 1.5,
+    marginBottom: 5,
+  },
+  caseOutcome: {
+    fontSize: 8.5,
+    color: pdfColors.accent,
+    fontFamily: 'Helvetica-Bold',
+    lineHeight: 1.4,
+  },
+
+  /* Processo */
+  processRow: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 12,
+    marginTop: 4,
+  },
+  processStep: {
+    width: '47%',
+    borderTopWidth: 2,
+    borderTopColor: pdfColors.accent,
+    paddingTop: 12,
+    marginBottom: 6,
+  },
+  processHead: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    marginBottom: 6,
+  },
+  processNum: {
+    fontSize: 8,
+    fontFamily: 'Helvetica-Bold',
+    color: pdfColors.accent,
+    letterSpacing: 0.5,
+  },
+  processTitle: {
+    fontSize: 11,
+    fontFamily: 'Helvetica-Bold',
+    color: pdfColors.text,
+    marginBottom: 5,
+  },
+  processDesc: {
+    fontSize: 9,
+    color: pdfColors.textMuted,
+    lineHeight: 1.5,
+  },
+
+  /* Planos */
+  packagesGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 10,
   },
   packageCard: {
-    width: '47%',
+    width: '48%',
     borderWidth: 1,
     borderColor: pdfColors.border,
-    padding: 16,
+    padding: 14,
     marginBottom: 4,
   },
   packageCardHighlight: {
@@ -256,7 +372,7 @@ export const pdfStyles = StyleSheet.create({
     backgroundColor: pdfColors.accent,
     paddingVertical: 2,
     paddingHorizontal: 6,
-    marginBottom: 10,
+    marginBottom: 8,
     alignSelf: 'flex-start',
     borderRadius: 2,
   },
@@ -266,48 +382,42 @@ export const pdfStyles = StyleSheet.create({
     letterSpacing: 1,
     textTransform: 'uppercase',
     color: pdfColors.accent,
-    marginBottom: 5,
+    marginBottom: 4,
   },
   packageName: {
-    fontSize: 13,
+    fontSize: 12,
     fontFamily: 'Helvetica-Bold',
     color: pdfColors.text,
-    marginBottom: 6,
+    marginBottom: 5,
   },
   packageTagline: {
-    fontSize: 9.5,
+    fontSize: 9,
     color: pdfColors.textMuted,
-    lineHeight: 1.55,
-    marginBottom: 10,
+    lineHeight: 1.5,
+    marginBottom: 8,
   },
   packageDivider: {
     borderTopWidth: 1,
     borderTopColor: pdfColors.border,
-    marginBottom: 9,
+    marginBottom: 8,
   },
   packageFeatureRow: {
     flexDirection: 'row',
     alignItems: 'flex-start',
-    marginBottom: 5,
-  },
-  packageFeatureDot: {
-    fontSize: 10,
-    color: pdfColors.accent,
-    fontFamily: 'Helvetica-Bold',
-    marginRight: 6,
-    lineHeight: 1.35,
+    gap: 5,
+    marginBottom: 4,
   },
   packageFeature: {
-    fontSize: 9,
+    fontSize: 8.5,
     color: pdfColors.text,
-    lineHeight: 1.45,
+    lineHeight: 1.4,
     flex: 1,
   },
   packageFooter: {
     borderTopWidth: 1,
     borderTopColor: pdfColors.border,
-    marginTop: 10,
-    paddingTop: 8,
+    marginTop: 8,
+    paddingTop: 7,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-end',
@@ -315,10 +425,9 @@ export const pdfStyles = StyleSheet.create({
   packageNote: {
     fontSize: 7.5,
     color: pdfColors.textLight,
-    fontStyle: 'italic',
     flex: 1,
-    paddingRight: 8,
-    lineHeight: 1.4,
+    paddingRight: 6,
+    lineHeight: 1.35,
   },
   packagePrice: {
     fontSize: 9,
@@ -326,124 +435,85 @@ export const pdfStyles = StyleSheet.create({
     color: pdfColors.accent,
   },
 
-  /* ── Grid de complementos (2 colunas no mobile) ──────── */
-  addonsGrid: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 10,
-  },
+  /* Avulsos compactos */
+  addonsGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   addonItem: {
-    width: '47%',
-    paddingBottom: 10,
-    borderLeftWidth: 2,
-    borderLeftColor: pdfColors.border,
-    paddingLeft: 10,
-    marginBottom: 8,
+    width: '48%',
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    gap: 6,
+    paddingBottom: 6,
   },
   addonName: {
-    fontSize: 10,
+    fontSize: 9,
     fontFamily: 'Helvetica-Bold',
     color: pdfColors.text,
-    marginBottom: 4,
+    marginBottom: 2,
   },
-  addonDesc: {
-    fontSize: 8.5,
-    color: pdfColors.textMuted,
-    lineHeight: 1.5,
-  },
+  addonDesc: { fontSize: 8, color: pdfColors.textMuted, lineHeight: 1.4 },
 
-  /* ── Processo (2x2 no mobile) ────────────────────────── */
-  processRow: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-    gap: 12,
-    marginTop: 6,
-    marginBottom: 20,
-  },
-  processStep: {
-    width: '47%',
-    borderTopWidth: 2,
-    borderTopColor: pdfColors.accent,
-    paddingTop: 10,
-    marginBottom: 4,
-  },
-  processNum: {
-    fontSize: 8.5,
-    fontFamily: 'Helvetica-Bold',
-    color: pdfColors.accent,
-    marginBottom: 5,
-    letterSpacing: 0.5,
-  },
-  processTitle: {
-    fontSize: 11,
-    fontFamily: 'Helvetica-Bold',
-    color: pdfColors.text,
-    marginBottom: 5,
-  },
-  processDesc: {
-    fontSize: 8.5,
-    color: pdfColors.textMuted,
-    lineHeight: 1.5,
-  },
-
-  /* ── CTA final ───────────────────────────────────────── */
+  /* Contato / CTA */
   ctaBox: {
     backgroundColor: pdfColors.dark,
     borderRadius: 2,
-    flexDirection: 'row',
-    overflow: 'hidden',
-  },
-  ctaLeft: {
-    flex: 1,
-    padding: 20,
-    paddingRight: 16,
-  },
-  ctaRight: {
-    width: 170,
-    backgroundColor: '#111111',
-    padding: 20,
-    justifyContent: 'center',
+    padding: 22,
+    marginBottom: 16,
   },
   ctaTitle: {
-    fontSize: 14,
+    fontSize: 16,
     fontFamily: 'Helvetica-Bold',
     color: pdfColors.white,
     marginBottom: 8,
-    lineHeight: 1.3,
+    lineHeight: 1.25,
   },
   ctaText: {
     fontSize: 9.5,
     color: '#AAAAAA',
-    lineHeight: 1.65,
+    lineHeight: 1.6,
+    marginBottom: 14,
+    maxWidth: 400,
   },
-  ctaContactLabel: {
-    fontSize: 7.5,
+  ctaButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    backgroundColor: pdfColors.accent,
+    paddingVertical: 8,
+    paddingHorizontal: 14,
+    alignSelf: 'flex-start',
+    borderRadius: 2,
+  },
+  ctaButtonText: {
+    fontSize: 9,
     fontFamily: 'Helvetica-Bold',
-    letterSpacing: 1,
-    textTransform: 'uppercase',
-    color: pdfColors.accent,
-    marginBottom: 10,
+    color: pdfColors.white,
   },
-  ctaContact: {
-    fontSize: 9.5,
-    color: '#DDDDDD',
-    lineHeight: 1.9,
+  contactGrid: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
+  contactItem: {
+    width: '48%',
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    paddingVertical: 6,
   },
+  contactLink: { fontSize: 9.5, color: pdfColors.accent },
+  contactText: { fontSize: 9.5, color: pdfColors.text },
 
-  /* ── Rodape das paginas ──────────────────────────────── */
+  /* Links */
+  link: { color: pdfColors.accent, textDecoration: 'none' },
+  linkMuted: { color: '#CCCCCC', textDecoration: 'none' },
+
+  /* Rodapé */
   pageFooter: {
     position: 'absolute',
-    bottom: 24,
-    left: 44,
-    right: 44,
+    bottom: 22,
+    left: 48,
+    right: 48,
     flexDirection: 'row',
     justifyContent: 'space-between',
     borderTopWidth: 1,
     borderTopColor: pdfColors.border,
     paddingTop: 7,
   },
-  pageFooterText: {
-    fontSize: 8,
-    color: pdfColors.textLight,
-  },
+  pageFooterText: { fontSize: 7.5, color: pdfColors.textLight },
 })

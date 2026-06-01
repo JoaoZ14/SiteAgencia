@@ -5,16 +5,104 @@ export const CATALOG_INTRO = {
     'A GMK reúne estratégia, conteúdo, tráfego e produção audiovisual em um único time integrado. Sem fragmentação, sem retrabalho. Só entregas que movem o ponteiro do seu negócio.',
 }
 
+export const CATALOG_CONTACT = {
+  phone: '(24) 98163-4937',
+  phoneHref: 'tel:+5524981634937',
+  whatsappHref: 'https://wa.me/5524981634937',
+  email: 'contato@gmkagency.com',
+  emailHref: 'mailto:contato@gmkagency.com',
+  instagram: '@gmkdigital',
+  instagramHref: 'https://instagram.com/gmkdigital',
+  website: 'gmkagency.com',
+  websiteHref: 'https://gmkagency.com',
+  city: 'Resende, RJ',
+  proposalUrl: 'https://gmkagency.com/#contato',
+}
+
+export const CATALOG_PRESENTATION = {
+  label: 'Apresentação',
+  title: 'Uma agência integrada para marcas que querem crescer com método.',
+  paragraphs: [
+    'Sediada em Resende, RJ, a GMK Digital reúne marketing e produção audiovisual em um único time. Você fala diretamente com quem cria e executa — sem camadas, sem perda de contexto.',
+    'Cada entrega é pensada para gerar reconhecimento e resultado mensurável: do diagnóstico ao relatório, com conteúdo que representa de verdade o que sua marca oferece.',
+  ],
+  highlights: [
+    { icon: 'layers', label: 'Integrado', value: 'Marketing + AV' },
+    { icon: 'team', label: 'Próximo', value: 'Sem intermediários' },
+    { icon: 'chart', label: 'Mensurável', value: 'Foco em conversão' },
+  ],
+}
+
+export const CATALOG_DIFFERENTIALS = [
+  {
+    icon: 'layers',
+    title: 'Integração total',
+    desc: 'Conteúdo, redes, tráfego e audiovisual no mesmo plano estratégico.',
+    result: 'Menos retrabalho, mais consistência de marca.',
+  },
+  {
+    icon: 'team',
+    title: 'Proximidade real',
+    desc: 'Briefing e aprovações direto com quem executa o projeto.',
+    result: 'Decisões rápidas e alinhamento contínuo.',
+  },
+  {
+    icon: 'focus',
+    title: 'Conteúdo com intenção',
+    desc: 'Cada peça ligada a um objetivo de negócio, não só estética.',
+    result: 'Presença digital que gera reconhecimento.',
+  },
+  {
+    icon: 'chart',
+    title: 'Performance rastreável',
+    desc: 'Relatórios claros e otimização contínua das campanhas.',
+    result: 'Ciclos cada vez melhores, com dados na mesa.',
+  },
+]
+
+export const CATALOG_CASES = [
+  {
+    icon: 'building',
+    segment: 'Saúde & bem-estar',
+    delivery: 'Conteúdo recorrente e presença profissional nas redes.',
+    outcome: 'Marca percebida com autoridade e proximidade com o público.',
+  },
+  {
+    icon: 'camera',
+    segment: 'Gastronomia & serviços locais',
+    delivery: 'Reels e fotos orientados a conversão em reservas e contatos.',
+    outcome: 'Material pronto para publicar e impulsionar na região.',
+  },
+  {
+    icon: 'chart',
+    segment: 'E-commerce & moda',
+    delivery: 'Criativos para tráfego pago e calendário editorial alinhado.',
+    outcome: 'Campanhas com criativos testados e funil de conteúdo coeso.',
+  },
+]
+
+export const CATALOG_NAV = [
+  { label: 'Apresentação', anchor: 'apresentacao' },
+  { label: 'Diferenciais', anchor: 'diferenciais' },
+  { label: 'Serviços', anchor: 'servicos-marketing' },
+  { label: 'Processo', anchor: 'processo' },
+  { label: 'Cases', anchor: 'cases' },
+  { label: 'Planos', anchor: 'planos' },
+  { label: 'Contato', anchor: 'contato' },
+]
+
 export const CATALOG_PILLARS = [
   {
     id: 'marketing',
     title: 'Marketing Digital',
     desc: 'Estratégia, gestão de redes, tráfego pago e conteúdo para transformar sua presença digital em canal de aquisição.',
+    icon: 'global',
   },
   {
     id: 'audiovisual',
     title: 'Produção Audiovisual',
     desc: 'Produção de vídeo e fotografia que elevam a percepção da sua marca e entregam material pronto para publicar e anunciar.',
+    icon: 'video',
   },
 ]
 
@@ -22,82 +110,100 @@ export const SERVICE_CATEGORIES = [
   {
     pillar: 'marketing',
     title: 'Marketing Digital',
+    subtitle:
+      'Estratégia, gestão e performance para sua marca crescer com consistência no ambiente online.',
     items: [
       {
         name: 'Marketing 360',
-        desc: 'Gestão completa da presença digital: estratégia, conteúdo, redes e tráfego em um único plano coeso, com acompanhamento próximo e relatório mensal.',
-        includes: ['Diagnóstico inicial', 'Plano mensal de ações', 'Reunião de acompanhamento', 'Relatório de performance'],
+        benefit: 'Presença digital coesa, do visual ao resultado.',
+        desc: 'Gestão completa: estratégia, conteúdo, redes e tráfego em um plano único, com relatório mensal.',
+        includes: ['Diagnóstico inicial', 'Plano mensal', 'Relatório de performance'],
       },
       {
         name: 'Social Media',
-        desc: 'Gestão estratégica das redes sociais para que sua marca publique com consistência, mantenha identidade e construa uma audiência real ao longo do tempo.',
-        includes: ['Calendário editorial', 'Posts e stories', 'Legendas e hashtags', 'Monitoramento básico'],
+        benefit: 'Consistência nas redes sem equipe interna.',
+        desc: 'Gestão estratégica para publicar com identidade e construir audiência ao longo do tempo.',
+        includes: ['Calendário editorial', 'Posts e stories', 'Legendas e hashtags'],
       },
       {
         name: 'Criação de Conteúdo',
-        desc: 'Textos, roteiros e copy que explicam o que você vende, geram interesse e ajudam a transformar visitantes em clientes.',
-        includes: ['Copy para posts', 'Roteiros de vídeo', 'Textos para anúncios', 'Legendas e CTAs'],
+        benefit: 'Copy que explica, engaja e converte.',
+        desc: 'Textos, roteiros e CTAs que transformam visitantes em conversas e clientes.',
+        includes: ['Copy para posts', 'Roteiros de vídeo', 'Textos para anúncios'],
       },
       {
         name: 'Tráfego Pago',
-        desc: 'Campanhas em Meta Ads, Google Ads e TikTok Ads orientadas por dados e otimizadas para cliques qualificados, leads e vendas mensuráveis.',
-        includes: ['Estrutura de campanhas', 'Segmentação', 'Testes A/B', 'Relatório de resultados'],
+        benefit: 'Leads e vendas mensuráveis com dados.',
+        desc: 'Campanhas em Meta, Google e TikTok otimizadas para cliques qualificados e conversão.',
+        includes: ['Estrutura de campanhas', 'Testes A/B', 'Relatório de resultados'],
       },
       {
         name: 'Estratégia Digital',
-        desc: 'Diagnóstico e planejamento para marcas que querem construir ou evoluir sua presença digital com método: do posicionamento ao plano de ação.',
-        includes: ['Análise de momento', 'Posicionamento', 'Funil de conteúdo', 'Plano de ação'],
+        benefit: 'Crescimento com método e plano claro.',
+        desc: 'Diagnóstico e planejamento do posicionamento ao plano de ação executável.',
+        includes: ['Análise de momento', 'Posicionamento', 'Plano de ação'],
       },
       {
         name: 'Desenvolvimento',
-        desc: 'Sites e landing pages rápidos, responsivos e otimizados para transformar visitantes em clientes, com SEO e integração com WhatsApp desde a entrega.',
-        includes: ['Layout responsivo', 'Integração com WhatsApp', 'Formulários', 'SEO básico'],
+        benefit: 'Sites que convertem quem chega.',
+        desc: 'Landing pages e sites rápidos, responsivos, com SEO e WhatsApp integrados.',
+        includes: ['Layout responsivo', 'WhatsApp integrado', 'SEO básico'],
       },
       {
         name: 'Design Gráfico',
-        desc: 'Criativos digitais alinhados à identidade da sua marca para que cada publicação, anúncio e campanha reforce o posicionamento que você quer ocupar.',
-        includes: ['Posts e carrosséis', 'Stories e capas', 'Criativos para ads', 'Adaptações de formato'],
+        benefit: 'Cada peça reforça seu posicionamento.',
+        desc: 'Criativos alinhados à identidade para posts, anúncios e campanhas.',
+        includes: ['Posts e carrosséis', 'Criativos para ads', 'Adaptações de formato'],
       },
     ],
   },
   {
     pillar: 'audiovisual',
     title: 'Produção Audiovisual',
+    subtitle:
+      'Foto e vídeo com direção profissional, prontos para publicar e anunciar.',
     items: [
       {
         name: 'Reels e Shorts',
-        desc: 'Vídeos verticais dinâmicos para Instagram, TikTok e YouTube Shorts com roteiro, gravação e edição profissional.',
-        includes: ['Roteiro', 'Gravação', 'Edição com legendas', 'Entrega em formatos das plataformas'],
+        benefit: 'Conteúdo vertical que prende atenção.',
+        desc: 'Vídeos dinâmicos para Instagram, TikTok e Shorts com roteiro, gravação e edição.',
+        includes: ['Roteiro', 'Gravação', 'Edição com legendas'],
       },
       {
         name: 'Vídeo Institucional',
-        desc: 'Apresentação da marca, serviços ou bastidores com narrativa profissional que gera credibilidade e fortalece a percepção de autoridade.',
-        includes: ['Briefing e roteiro', 'Captação', 'Edição final', 'Versão para site e redes'],
+        benefit: 'Credibilidade e autoridade de marca.',
+        desc: 'Apresentação profissional da marca, serviços ou bastidores.',
+        includes: ['Briefing e roteiro', 'Captação', 'Versão site e redes'],
       },
       {
         name: 'Vídeo para Anúncios',
-        desc: 'Criativos em vídeo otimizados para campanhas de tráfego pago, com roteiro de conversão e formatos adaptados para Meta, TikTok e Google.',
-        includes: ['Roteiro de conversão', 'Gravação', 'Edição para Meta/TikTok/Google', 'Variações de formato'],
+        benefit: 'Criativos feitos para converter em ads.',
+        desc: 'Vídeos otimizados para Meta, TikTok e Google com roteiro de conversão.',
+        includes: ['Roteiro de conversão', 'Gravação', 'Variações de formato'],
       },
       {
         name: 'Cobertura de Eventos',
-        desc: 'Registro audiovisual de eventos, lançamentos e ações presenciais com entrega ágil para publicação imediata nas redes.',
-        includes: ['Captação photo + video', 'Edição resumida', 'Entrega para redes', 'Entrega em até 72h'],
+        benefit: 'Presença imediata nas redes após o evento.',
+        desc: 'Registro ágil de eventos e lançamentos com entrega para publicação.',
+        includes: ['Photo + vídeo', 'Edição resumida', 'Entrega em até 72h'],
       },
       {
         name: 'Fotografia de Produto',
-        desc: 'Imagens com iluminação e composição profissionais que elevam a percepção de qualidade do produto e aumentam a confiança na hora da compra.',
-        includes: ['Setup de luz', 'Edição básica', 'Fundo neutro ou lifestyle', 'Entrega em alta resolução'],
+        benefit: 'Mais confiança na hora da compra.',
+        desc: 'Imagens profissionais que elevam a percepção de qualidade do produto.',
+        includes: ['Setup de luz', 'Edição básica', 'Alta resolução'],
       },
       {
         name: 'Fotografia de Marca',
-        desc: 'Sessões para perfil da empresa, equipe, ambientes e lifestyle que constroem um banco de imagens autêntico e alinhado à identidade visual.',
-        includes: ['Direção de cena', 'Seleção de fotos', 'Tratamento de cor', 'Banco de imagens da marca'],
+        benefit: 'Banco de imagens autêntico e alinhado.',
+        desc: 'Sessões de equipe, ambientes e lifestyle para comunicação consistente.',
+        includes: ['Direção de cena', 'Tratamento de cor', 'Seleção de fotos'],
       },
       {
         name: 'Pacote Conteúdo Mensal AV',
-        desc: 'Produção mensal recorrente de foto e vídeo para que sua marca publique com frequência, qualidade e identidade visual consistente, sem depender de improvisos.',
-        includes: ['Planejamento mensal', 'Mix de reels e fotos', 'Edição e entrega', 'Alinhamento com calendário social'],
+        benefit: 'Publicação frequente sem improviso.',
+        desc: 'Produção mensal recorrente de foto e vídeo alinhada ao calendário social.',
+        includes: ['Planejamento mensal', 'Mix reels e fotos', 'Edição e entrega'],
       },
     ],
   },
@@ -107,66 +213,82 @@ export const PACKAGES = [
   {
     name: 'Essencial Visual',
     focus: 'Audiovisual',
-    tagline: 'Para marcas que querem conteúdo profissional sem abrir mão da qualidade visual.',
+    tagline: 'Conteúdo profissional com qualidade visual de agência.',
     features: [
       '4 reels editados por mês',
       '1 sessão fotográfica (até 20 fotos)',
       'Roteiro e direção de conteúdo',
-      'Entrega otimizada para Instagram e TikTok',
     ],
-    note: 'Indicado para negócios locais, profissionais autônomos e marcas em início de posicionamento.',
+    note: 'Negócios locais e marcas em início de posicionamento.',
   },
   {
     name: 'Social Pro',
     focus: 'Marketing Digital',
-    tagline: 'Para marcas que querem consistência nas redes sem precisar contratar um time interno.',
+    tagline: 'Consistência nas redes sem montar equipe interna.',
     features: [
-      '10 posts por mês',
-      '4 reels por mês',
+      '10 posts + 4 reels por mês',
       'Calendário editorial',
-      'Legendas, hashtags e relatório mensal',
+      'Legendas, hashtags e relatório',
     ],
-    note: 'Para quem quer consistência sem montar equipe interna.',
+    note: 'O plano mais contratado para crescimento orgânico.',
     highlight: true,
   },
   {
     name: 'Performance',
     focus: 'Marketing Digital',
-    tagline: 'Campanhas pagas com criativos, página de destino e otimização contínua para gerar leads e vendas mensuráveis.',
+    tagline: 'Tráfego pago com criativos e otimização contínua.',
     features: [
-      'Gestão de Meta Ads e/ou Google Ads',
+      'Gestão Meta Ads e/ou Google Ads',
       '4 criativos novos por mês',
-      'Landing page ou página de captura',
-      'Otimização semanal e relatório de ROI',
+      'Landing page e relatório de ROI',
     ],
-    note: 'Para quem quer leads e vendas mensuráveis.',
+    note: 'Para quem prioriza leads e vendas mensuráveis.',
   },
   {
     name: 'Marketing 360',
     focus: 'Integrado',
-    tagline: 'Para marcas que querem crescer de forma integrada: conteúdo, redes, tráfego e audiovisual em um único plano.',
+    tagline: 'Marketing e audiovisual em um único plano escalável.',
     features: [
-      'Gestão completa de redes sociais',
-      'Posts, reels, stories e sessão foto mensal',
-      'Tráfego pago com criativos em foto, vídeo e copy',
-      'Reunião estratégica e relatório unificado',
+      'Gestão completa de redes',
+      'Posts, reels e sessão foto mensal',
+      'Tráfego pago + relatório unificado',
     ],
-    note: 'Indicado para empresas que buscam presença digital robusta e escalável, sem gerir múltiplos fornecedores.',
+    note: 'Presença digital robusta sem múltiplos fornecedores.',
   },
 ]
 
 export const ADDONS = [
-  { name: 'Landing page adicional', desc: 'Página de destino adicional para uma campanha, lançamento ou produto específico.' },
-  { name: 'Sessão foto avulsa', desc: 'Produção pontual de imagens para campanha, catálogo ou lançamento.' },
-  { name: 'Reels avulsos', desc: 'Pacote de reels sob demanda, fora do plano mensal.' },
-  { name: 'Consultoria estratégica', desc: 'Sessão dedicada de diagnóstico e plano de ação para o seu momento atual.' },
-  { name: 'Gestão do Google Meu Negócio', desc: 'Otimização e publicação regular no perfil local para aumentar visibilidade em buscas na sua região.' },
-  { name: 'Identidade visual de entrada', desc: 'Logo, paleta de cores e templates para redes: o ponto de partida para sua marca comunicar com consistência.' },
+  { name: 'Landing page adicional', desc: 'Página de destino para campanha ou lançamento.' },
+  { name: 'Sessão foto avulsa', desc: 'Produção pontual para campanha ou catálogo.' },
+  { name: 'Reels avulsos', desc: 'Pacote de reels sob demanda.' },
+  { name: 'Consultoria estratégica', desc: 'Diagnóstico e plano de ação dedicados.' },
+  { name: 'Google Meu Negócio', desc: 'Otimização do perfil local para buscas na região.' },
+  { name: 'Identidade visual de entrada', desc: 'Logo, paleta e templates para redes.' },
 ]
 
 export const PROCESS_STEPS = [
-  { step: '01', title: 'Briefing', desc: 'Entendemos seu negócio, seu público e onde você quer chegar antes de propor qualquer coisa.' },
-  { step: '02', title: 'Proposta', desc: 'Montamos uma proposta personalizada: serviços, escopo e investimento alinhados ao seu momento real.' },
-  { step: '03', title: 'Produção', desc: 'Executamos com você no loop: comunicação direta, prazos cumpridos e entregas que você aprova antes de ir ao ar.' },
-  { step: '04', title: 'Resultado', desc: 'Monitoramos os resultados, apresentamos relatórios claros e otimizamos continuamente para que cada ciclo seja melhor que o anterior.' },
+  {
+    step: '01',
+    icon: 'fileText',
+    title: 'Briefing',
+    desc: 'Entendemos seu negócio, público e objetivos antes de qualquer proposta.',
+  },
+  {
+    step: '02',
+    icon: 'layers',
+    title: 'Proposta',
+    desc: 'Escopo, serviços e investimento alinhados ao seu momento real.',
+  },
+  {
+    step: '03',
+    icon: 'rocket',
+    title: 'Produção',
+    desc: 'Execução com comunicação direta, prazos cumpridos e aprovação antes de publicar.',
+  },
+  {
+    step: '04',
+    icon: 'chart',
+    title: 'Resultado',
+    desc: 'Monitoramento, relatórios claros e otimização contínua a cada ciclo.',
+  },
 ]

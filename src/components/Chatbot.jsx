@@ -13,7 +13,7 @@ import './Chatbot.css'
 const SYSTEM_PROMPT = `Você é o assistente da GMK Digital, agência de marketing digital em Resende, RJ.
 
 Serviços: vídeo, foto profissional, social media, tráfego pago (Meta/Google/TikTok), criação de conteúdo, sites e landing pages, design gráfico, estratégia digital. Atende qualquer nicho.
-Contato: WhatsApp (00) 90000-0000 | contato@gmkagency.com | @gmk.agencia
+Contato: WhatsApp (24) 98163-4937 | contato@gmkagency.com | @gmk.agencia
 
 Objetivo: conduzir o visitante até uma conversa no WhatsApp. O chat é para qualificar e aquecer, não para resolver tudo.
 
@@ -39,7 +39,7 @@ const QUICK_REPLIES = [
   'Quanto custa?',
 ]
 
-const WA_NUMBER = '5500900000000'
+const WA_NUMBER = '5524981634937'
 
 function getClient() {
   const key = import.meta.env.VITE_GEMINI_API_KEY
@@ -167,7 +167,7 @@ export default function Chatbot() {
             ...prev,
             {
               role: 'bot',
-              text: 'Para falar com nossa equipe diretamente, entre em contato pelo WhatsApp (00) 90000-0000. Respondemos rápido!',
+              text: 'Para falar com nossa equipe diretamente, entre em contato pelo WhatsApp (24) 98163-4937. Respondemos rápido!',
               time: new Date(),
             },
           ])
@@ -200,7 +200,7 @@ export default function Chatbot() {
           ...prev,
           {
             role: 'bot',
-            text: 'Ocorreu um erro. Entre em contato pelo WhatsApp (00) 90000-0000.',
+            text: 'Ocorreu um erro. Entre em contato pelo WhatsApp (24) 98163-4937.',
             time: new Date(),
           },
         ])
@@ -306,7 +306,7 @@ export default function Chatbot() {
 
             {/* WhatsApp shortcut */}
             <a
-              href="https://wa.me/5500900000000?text=Olá,%20vim%20pelo%20site%20da%20GMK%20Digital!"
+              href="https://wa.me/5524981634937?text=Olá,%20vim%20pelo%20site%20da%20GMK%20Digital!"
               className="cb-whatsapp"
               target="_blank"
               rel="noopener noreferrer"

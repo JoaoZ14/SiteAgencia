@@ -30,7 +30,7 @@ const SERVICES = [
 ]
 
 const CONTACT = [
-  { icon: <RiWhatsappLine />, label: '(24) 99999-9999', href: 'https://wa.me/5524999999999' },
+  { icon: <RiWhatsappLine />, label: '(24) 98163-4937', href: 'https://wa.me/5524981634937' },
   { icon: <RiMailLine />,     label: 'contato@gmkagency.com', href: 'mailto:contato@gmkagency.com' },
   { icon: <RiInstagramLine />, label: '@gmk.agencia', href: 'https://instagram.com/gmk.agencia' },
   { icon: <RiMapPinLine />,   label: 'Resende, RJ', href: null },
