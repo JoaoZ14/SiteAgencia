@@ -45,7 +45,8 @@ export default function Hero() {
         </motion.div>
 
         {/* Main headline — each line animates independently */}
-        <h1 className="hero-title" aria-label="Da criação ao resultado.">
+        <h1 className="hero-title" aria-label="Agência de marketing digital em Resende, RJ. Da criação ao resultado.">
+          <span className="sr-only">Agência de marketing digital em Resende, RJ</span>
           <motion.span className="hero-line" custom={1} variants={line} initial="hidden" animate="visible">
             Da criação
           </motion.span>

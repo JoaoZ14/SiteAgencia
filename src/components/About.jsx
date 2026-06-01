@@ -45,9 +45,9 @@ export default function About() {
             viewport={{ once: true }}
           >
             <p className="about-text large">
-              A GMK nasceu da convicção de que marcas bem construídas merecem
-              visibilidade proporcional à sua qualidade, e que isso não deveria
-              depender de uma grande estrutura para acontecer.
+              Sediada em Resende, RJ, a GMK nasceu da convicção de que marcas
+              bem construídas merecem visibilidade proporcional à sua qualidade,
+              e que isso não deveria depender de uma grande estrutura para acontecer.
             </p>
             <p className="about-text">
               Cada cliente tem acesso direto a quem cria. Sem camadas de aprovação,

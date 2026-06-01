@@ -13,9 +13,13 @@
     <!-- SEO Básico -->
     <title>GMK Digital · Agência de Marketing Digital em Resende, RJ</title>
     <meta name="description" content="GMK Digital é uma agência de marketing digital em Resende, RJ. Especializada em produção audiovisual, fotografia, social media, tráfego pago e branding. Entre em contato." />
-    <meta name="keywords" content="GMK Digital, GMK agência, agência de marketing digital, marketing digital Resende, tráfego pago Resende, social media Resende, produção audiovisual, fotografia, branding" />
+    <meta name="keywords" content="GMK Digital, GMK agência, agência de marketing digital, agência de marketing digital Resende, agência de marketing digital Rio de Janeiro, marketing digital Resende RJ, marketing digital Vale do Paraíba, tráfego pago Resende, social media Resende, produção audiovisual Resende, fotografia profissional, branding, agência digital Sul Fluminense" />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="GMK Digital" />
+    <meta name="geo.region" content="BR-RJ" />
+    <meta name="geo.placename" content="Resende" />
+    <meta name="geo.position" content="-22.4692;-44.4465" />
+    <meta name="ICBM" content="-22.4692, -44.4465" />
     <link rel="canonical" href="https://gmkagency.com/" />
 
     <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
@@ -33,51 +37,109 @@
     <meta name="twitter:description" content="Agência de marketing digital em Resende, RJ. Produção audiovisual, fotografia, social media e tráfego pago." />
     <meta name="twitter:image" content="https://gmkagency.com/ChatGPT%20Image%2025%20de%20mai.%20de%202026%2C%2021_19_47.png" />
 
-    <!-- JSON-LD: MarketingAgency (rich results no Google) -->
+    <!-- JSON-LD: dados estruturados para rich results no Google -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "MarketingAgency",
-      "name": "GMK Digital",
-      "alternateName": ["GMK Agência Digital", "GMK Agência", "Go Make Known"],
-      "description": "Agência de marketing digital especializada em produção audiovisual, fotografia, social media, tráfego pago e branding. Localizada em Resende, RJ.",
-      "url": "https://gmkagency.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://gmkagency.com/ChatGPT%20Image%2025%20de%20mai.%20de%202026%2C%2021_19_47.png",
-        "width": 1024,
-        "height": 1024
-      },
-      "image": "https://gmkagency.com/ChatGPT%20Image%2025%20de%20mai.%20de%202026%2C%2021_19_47.png",
-      "telephone": "+55-24-99999-9999",
-      "email": "contato@gmkagency.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Resende",
-        "addressRegion": "RJ",
-        "addressCountry": "BR"
-      },
-      "areaServed": [
-        { "@type": "City", "name": "Resende" },
-        { "@type": "State", "name": "Rio de Janeiro" }
-      ],
-      "sameAs": [
-        "https://instagram.com/gmkdigital"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Serviços de Marketing Digital",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Produção de Vídeo" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fotografia" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Criação de Conteúdo" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tráfego Pago" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desenvolvimento Web" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Design Gráfico" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estratégia Digital" } }
-        ]
-      }
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://gmkagency.com/#website",
+          "url": "https://gmkagency.com",
+          "name": "GMK Digital",
+          "description": "Agência de marketing digital em Resende, RJ",
+          "inLanguage": "pt-BR",
+          "publisher": { "@id": "https://gmkagency.com/#organization" }
+        },
+        {
+          "@type": "MarketingAgency",
+          "@id": "https://gmkagency.com/#organization",
+          "name": "GMK Digital",
+          "alternateName": ["GMK Agência Digital", "GMK Agência", "Go Make Known", "Agência de Marketing Digital Resende"],
+          "description": "Agência de marketing digital especializada em produção audiovisual, fotografia, social media, tráfego pago e branding. Localizada em Resende, RJ.",
+          "url": "https://gmkagency.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://gmkagency.com/ChatGPT%20Image%2025%20de%20mai.%20de%202026%2C%2021_19_47.png",
+            "width": 1024,
+            "height": 1024
+          },
+          "image": "https://gmkagency.com/ChatGPT%20Image%2025%20de%20mai.%20de%202026%2C%2021_19_47.png",
+          "telephone": "+55-24-99999-9999",
+          "email": "contato@gmkagency.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Resende",
+            "addressRegion": "RJ",
+            "addressCountry": "BR"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": -22.4692,
+            "longitude": -44.4465
+          },
+          "areaServed": [
+            { "@type": "City", "name": "Resende", "containedInPlace": { "@type": "State", "name": "Rio de Janeiro" } },
+            { "@type": "City", "name": "Volta Redonda" },
+            { "@type": "City", "name": "Barra Mansa" },
+            { "@type": "City", "name": "Itatiaia" },
+            { "@type": "City", "name": "Quatis" },
+            { "@type": "City", "name": "Porto Real" },
+            { "@type": "City", "name": "Rio de Janeiro" },
+            { "@type": "AdministrativeArea", "name": "Vale do Paraíba" },
+            { "@type": "AdministrativeArea", "name": "Sul Fluminense" },
+            { "@type": "State", "name": "Rio de Janeiro" },
+            { "@type": "Country", "name": "Brasil" }
+          ],
+          "sameAs": [
+            "https://instagram.com/gmk.agencia"
+          ],
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Serviços de Marketing Digital",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Produção de Vídeo", "areaServed": "Resende, RJ" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fotografia", "areaServed": "Resende, RJ" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media", "areaServed": "Resende, RJ" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Criação de Conteúdo", "areaServed": "Resende, RJ" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tráfego Pago", "areaServed": "Resende, RJ" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Desenvolvimento Web", "areaServed": "Resende, RJ" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Design Gráfico", "areaServed": "Resende, RJ" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estratégia Digital", "areaServed": "Resende, RJ" } }
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://gmkagency.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "A GMK Digital é uma agência de marketing digital em Resende?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim. A GMK Digital é uma agência de marketing digital sediada em Resende, RJ, especializada em produção audiovisual, social media, tráfego pago, criação de conteúdo e branding."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "A GMK atende empresas fora de Resende?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sim. Além de Resende, atendemos Volta Redonda, Barra Mansa, Itatiaia, a região Sul Fluminense, o Vale do Paraíba e todo o Brasil de forma remota."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Quais serviços de marketing digital a GMK oferece?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Oferecemos produção de vídeo, fotografia profissional, gestão de redes sociais, tráfego pago (Meta, Google e TikTok), criação de conteúdo, desenvolvimento de sites, design gráfico e estratégia digital."
+              }
+            }
+          ]
+        }
+      ]
     }
     </script>
 
