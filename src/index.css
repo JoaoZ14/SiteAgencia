@@ -16,7 +16,7 @@
   --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'PP Neue Montreal', 'Inter', sans-serif;
   --font-manifesto: 'Space Grotesk', var(--font);
-  --font-hero: 'Outfit', var(--font-display);
+  --font-hero: 'Syncopate', var(--font-display);
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
