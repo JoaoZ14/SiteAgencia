@@ -1,5 +1,6 @@
 import { useState, useCallback, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { MotionConfig } from 'framer-motion'
 import './App.css'
 import HomePage from './pages/HomePage'
 import CatalogPage from './pages/CatalogPage'
@@ -9,15 +10,18 @@ function HashScroll() {
   const { pathname, hash } = useLocation()
 
   useEffect(() => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const behavior = reduced ? 'auto' : 'smooth'
+
     if (!hash) {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
+      window.scrollTo({ top: 0, behavior })
       return
     }
 
     const id = hash.slice(1)
     const scroll = () => {
       const el = document.getElementById(id)
-      if (el) el.scrollIntoView({ behavior: 'smooth' })
+      if (el) el.scrollIntoView({ behavior })
     }
 
     const timer = setTimeout(scroll, 80)
@@ -32,13 +36,15 @@ export default function App() {
   const handleSplashComplete = useCallback(() => setSplashDone(true), [])
 
   return (
-    <BrowserRouter>
-      <HashScroll />
-      {!splashDone && <SplashScreen onComplete={handleSplashComplete} />}
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/catalogo" element={<CatalogPage />} />
-      </Routes>
-    </BrowserRouter>
+    <MotionConfig reducedMotion="user">
+      <BrowserRouter>
+        <HashScroll />
+        {!splashDone && <SplashScreen onComplete={handleSplashComplete} />}
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/catalogo" element={<CatalogPage />} />
+        </Routes>
+      </BrowserRouter>
+    </MotionConfig>
   )
 }

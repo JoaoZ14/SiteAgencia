@@ -44,8 +44,8 @@ export default function Contact() {
               <em>juntos?</em>
             </h2>
             <p className="contact-sub">
-              Escolha o canal que preferir. Respondemos em até 24h
-              úteis para agendar uma conversa sem compromisso.
+              WhatsApp, e-mail ou Instagram. Respondemos em até 24h úteis para
+              marcar uma conversa. Sem compromisso.
             </p>
           </motion.div>
 

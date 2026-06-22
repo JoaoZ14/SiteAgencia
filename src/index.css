@@ -7,8 +7,8 @@
   --accent: #5B8EF0;
   --accent-dim: rgba(91, 142, 240, 0.12);
   --text: #F0F0F0;
-  --text-2: #999999;
-  --text-3: #606060;
+  --text-2: #B5B5B5;
+  --text-3: #7A7A7A;
   --border: #1E1E1E;
   --border-mid: #2A2A2A;
   --gradient: linear-gradient(135deg, #6FA3F7 0%, #2D5FD4 100%);
@@ -136,7 +136,7 @@ button {
   font-weight: 700;
   border: none;
   cursor: pointer;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
   letter-spacing: 0.04em;
   text-decoration: none;
 }
@@ -157,7 +157,7 @@ button {
   font-weight: 500;
   border: 1px solid var(--border-mid);
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  transition: border-color 0.25s var(--ease), color 0.25s var(--ease);
   letter-spacing: 0.02em;
   text-decoration: none;
 }
@@ -189,3 +189,24 @@ button {
 ::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: var(--border-mid); }
 ::-webkit-scrollbar-thumb:hover { background: var(--text-3); }
+
+/* Espaço para CTA sticky no mobile */
+@media (max-width: 768px) {
+  .home-main {
+    padding-bottom: 72px;
+  }
+}
+
+/* =============================================
+   prefers-reduced-motion — global
+   ============================================= */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .btn-primary:hover,
+  .btn-ghost:hover {
+    transform: none;
+  }
+}

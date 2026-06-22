@@ -1,22 +1,18 @@
 import { motion } from 'framer-motion'
 import { RiBuilding2Line, RiArrowRightLine } from 'react-icons/ri'
-import Mission from './Mission'
-import GmkSigla from './GmkSigla'
 import './About.css'
 
 const MANIFESTO_LINES = [
-  { text: 'GMK não é só uma sigla. É identidade com propósito.', cls: 'l1', delay: 0.1  },
-  { text: 'Nasceu de quem decidiu transformar intenção em presença e potencial em visibilidade de verdade.', cls: 'l2', delay: 0.18 },
-  { text: 'E carrega um manifesto direto, que guia tudo o que fazemos:', cls: 'l3', delay: 0.26 },
+  { text: 'GMK é sigla e nome. Significa Go Make Known.', cls: 'l1', delay: 0.1 },
+  { text: 'Nasceu da ideia de que marca boa merece ser vista.', cls: 'l2', delay: 0.18 },
+  { text: 'O que guia o trabalho:', cls: 'l3', delay: 0.26 },
   { text: 'fazer o mundo conhecer', cls: 'l4', delay: 0.34 },
-  { text: 'o que a sua marca tem a oferecer.', cls: 'l5', delay: 0.42 },
+  { text: 'o que você vende.', cls: 'l5', delay: 0.42 },
 ]
 
 export default function About() {
   return (
     <>
-      <Mission />
-
       <section className="about" id="sobre">
         <div className="container about-container">
           <motion.div
@@ -45,23 +41,13 @@ export default function About() {
             viewport={{ once: true }}
           >
             <p className="about-text large">
-              Sediada em Resende, RJ, a GMK nasceu da convicção de que marcas
-              bem construídas merecem visibilidade proporcional à sua qualidade,
-              e que isso não deveria depender de uma grande estrutura para acontecer.
+              Estamos em Resende e montamos um time que faz vídeo, rede social,
+              conteúdo e tráfego pago junto. Quem briefa fala com quem executa.
             </p>
             <p className="about-text">
-              Cada cliente tem acesso direto a quem cria. Sem camadas de aprovação,
-              sem terceirização, sem perda de contexto entre o briefing e a entrega.
-            </p>
-            <p className="about-text">
-              Reunimos audiovisual, gestão de redes, criação de conteúdo e tráfego
-              pago em um só time. O resultado não é só estético: é mensurável,
-              rastreável e pensado para gerar negócio.
-            </p>
-            <p className="about-text">
-              Atendemos saúde, gastronomia, moda, e-commerce, serviços locais e
-              muito mais, sempre com a mesma intenção: uma presença digital que
-              representa de verdade o que sua marca entrega.
+              Atendemos hotel, restaurante, loja online e negócio local em todo
+              o Brasil. A entrega tem que servir o negócio, não só ficar bonita
+              no feed.
             </p>
 
             <a href="#contato" className="btn-primary about-cta">
@@ -71,8 +57,6 @@ export default function About() {
           </motion.div>
         </div>
       </section>
-
-      <GmkSigla />
 
       <section className="gmk-meaning" id="go-make-known">
         <div className="container gmk-meaning-container">

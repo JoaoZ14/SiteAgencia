@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { RiArrowRightLine, RiArrowDownLine, RiGlobalLine } from 'react-icons/ri'
+import { RiArrowRightLine, RiArrowDownLine, RiGlobalLine, RiCheckLine } from 'react-icons/ri'
 import './Hero.css'
 
 const line = {
@@ -11,6 +11,12 @@ const line = {
   }),
 }
 
+const TRUST_POINTS = [
+  'Resposta em até 24h úteis',
+  'Você fala com quem executa',
+  'Marketing e audiovisual no mesmo time',
+]
+
 export default function Hero() {
   return (
     <section className="hero" id="inicio">
@@ -18,10 +24,10 @@ export default function Hero() {
         <picture>
           <source
             media="(max-width: 768px)"
-            srcSet="https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=800&q=80"
+            srcSet="https://images.unsplash.com/photo-1492691527719-9d1e07f534bf?auto=format&fit=crop&w=800&q=80"
           />
           <img
-            src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1920&q=80"
+            src="https://images.unsplash.com/photo-1598488035139-bdbb2231bb04?auto=format&fit=crop&w=1920&q=80"
             alt=""
             aria-hidden="true"
           />
@@ -31,7 +37,6 @@ export default function Hero() {
 
       <div className="container hero-container">
 
-        {/* Label + tags */}
         <motion.div
           className="hero-top"
           initial={{ opacity: 0, y: 16 }}
@@ -42,9 +47,9 @@ export default function Hero() {
             <RiGlobalLine aria-hidden="true" />
             Go Make Known · GMK Digital
           </span>
+          <span className="hero-region">Resende, RJ · todo o Brasil</span>
         </motion.div>
 
-        {/* Main headline — each line animates independently */}
         <h1 className="hero-title" aria-label="Agência de marketing digital em Resende, RJ. Da criação ao resultado.">
           <span className="sr-only">Agência de marketing digital em Resende, RJ</span>
           <motion.span className="hero-line" custom={1} variants={line} initial="hidden" animate="visible">
@@ -55,7 +60,6 @@ export default function Hero() {
           </motion.span>
         </h1>
 
-        {/* Subtitle */}
         <motion.p
           className="hero-sub"
           custom={3}
@@ -63,11 +67,26 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          Conteúdo, estratégia e tráfego em um só time.
-          Para marcas que querem ser vistas e gerar resultado de verdade.
+          Sites, campanhas e conteúdo para quem quer vender mais.
+          Presencial no Sul Fluminense ou remoto em todo o Brasil.
         </motion.p>
 
-        {/* Divider + CTAs */}
+        <motion.ul
+          className="hero-trust"
+          custom={4}
+          variants={line}
+          initial="hidden"
+          animate="visible"
+          aria-label="Diferenciais da GMK Digital"
+        >
+          {TRUST_POINTS.map((point) => (
+            <li key={point}>
+              <RiCheckLine aria-hidden="true" />
+              {point}
+            </li>
+          ))}
+        </motion.ul>
+
         <motion.div
           className="hero-bottom"
           initial={{ opacity: 0 }}
@@ -77,25 +96,15 @@ export default function Hero() {
           <div className="hero-divider" />
           <div className="hero-cta">
             <a href="#contato" className="btn-primary">
-              Falar com a equipe <RiArrowRightLine />
+              Solicitar proposta <RiArrowRightLine />
             </a>
-            <a href="#servicos" className="btn-ghost">
-              Ver serviços
+            <a href="#trabalhos" className="btn-ghost">
+              Ver trabalhos
             </a>
           </div>
         </motion.div>
 
       </div>
-
-      {/* Location tag — bottom right */}
-      <motion.span
-        className="hero-location"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.8 }}
-      >
-        Resende, RJ
-      </motion.span>
 
       <a href="#servicos" className="hero-scroll" aria-label="Rolar para baixo">
         <RiArrowDownLine />

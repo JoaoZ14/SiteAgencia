@@ -50,9 +50,8 @@ export default function Footer() {
               </span>
             </Link>
             <p className="footer-desc">
-              Marketing digital e produção audiovisual para marcas que
-              querem crescer. Baseados em Resende, RJ. Atendimento em
-              todo o Brasil.
+              Marketing e audiovisual em Resende, RJ. Atendemos o Brasil
+              inteiro de forma remota.
             </p>
             <div className="footer-socials">
               {SOCIALS.map((s) => (

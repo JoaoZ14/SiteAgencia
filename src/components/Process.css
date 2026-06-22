@@ -1,0 +1,123 @@
+.process {
+  padding: 100px 0;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+}
+
+.process-header {
+  max-width: 600px;
+  margin-bottom: 56px;
+}
+
+.process-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.4vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--text);
+  text-wrap: balance;
+  margin: 0 0 16px;
+}
+
+.process-lead {
+  font-size: 0.95rem;
+  color: var(--text-2);
+  line-height: 1.7;
+  max-width: 52ch;
+}
+
+.process-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  position: relative;
+  border-top: 1px solid var(--border);
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 36px;
+  left: 12%;
+  right: 12%;
+  height: 1px;
+  background: var(--border-mid);
+  z-index: 0;
+}
+
+.process-step {
+  position: relative;
+  z-index: 1;
+  padding: 32px 20px 0;
+  text-align: left;
+}
+
+.process-step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 20px;
+  background: var(--bg);
+  border: 1px solid var(--border-mid);
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+.process-step-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.process-step-desc {
+  font-size: 0.85rem;
+  color: var(--text-2);
+  line-height: 1.65;
+  max-width: 28ch;
+}
+
+@media (max-width: 1024px) {
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 24px;
+    border-top: none;
+  }
+
+  .process-steps::before {
+    display: none;
+  }
+
+  .process-step {
+    padding: 0;
+    border-top: 1px solid var(--border);
+    padding-top: 28px;
+  }
+}
+
+@media (max-width: 640px) {
+  .process {
+    padding: 72px 0;
+  }
+
+  .process-header {
+    margin-bottom: 40px;
+  }
+
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .process-step-desc {
+    max-width: none;
+  }
+}

@@ -1,7 +1,7 @@
 import './Niches.css'
 
 const NICHES = [
-  'Saúde & Bem-estar',
+  'Hotelaria',
   'Moda & Estilo',
   'Gastronomia',
   'E-commerce',

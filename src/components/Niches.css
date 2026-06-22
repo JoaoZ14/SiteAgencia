@@ -42,6 +42,22 @@
   to { transform: translateX(-50%); }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .niches-track {
+    animation: none;
+    flex-wrap: wrap;
+    white-space: normal;
+    width: auto;
+    justify-content: center;
+    gap: 8px 0;
+    padding: 0 16px;
+  }
+
+  .niche-sep {
+    display: none;
+  }
+}
+
 .niche-item {
   display: inline-flex;
   align-items: center;

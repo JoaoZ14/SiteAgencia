@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-22T00:00:00.000Z",
+  "title": "Design System: GMK Digital",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "Electric Signal Blue",
+        "canonical": "oklch(62% 0.14 258)",
+        "tonalRamp": ["#0d1a33", "#152a52", "#1e3d7a", "#2d5fd4", "#5b8ef0", "#6fa3f7", "#8fb8f9", "#c5d9fc"]
+      },
+      "bg-deep": {
+        "role": "neutral",
+        "displayName": "Deep Black",
+        "canonical": "oklch(14% 0 0)",
+        "tonalRamp": ["#000000", "#050505", "#0a0a0a", "#111111", "#1a1a1a", "#242424", "#2e2e2e", "#3a3a3a"]
+      },
+      "ink-primary": {
+        "role": "neutral",
+        "displayName": "Soft White Ink",
+        "canonical": "oklch(95% 0 0)",
+        "tonalRamp": ["#606060", "#808080", "#999999", "#b3b3b3", "#cccccc", "#e0e0e0", "#f0f0f0", "#ffffff"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Títulos de seção — Serviços, Sobre, Contato." },
+      "hero": { "displayName": "Hero", "purpose": "Headline principal da landing, Syncopate." },
+      "body": { "displayName": "Body", "purpose": "Parágrafos e texto corrido." },
+      "label": { "displayName": "Label", "purpose": "Marcadores de seção uppercase com ícone." },
+      "manifesto": { "displayName": "Manifesto", "purpose": "Blocos de manifesto da marca, Space Grotesk." }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Easing padrão do projeto (--ease), usado em Framer Motion e transições CSS."
+      }
+    ],
+    "breakpoints": [
+      { "name": "tablet", "value": "1024px" },
+      { "name": "mobile", "value": "640px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "CTA principal — contato, ação de conversão.",
+      "html": "<button class=\"ds-btn-primary\">FALE CONOSCO <svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14M12 5l7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; background: linear-gradient(135deg, #6FA3F7 0%, #2D5FD4 100%); color: #fff; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; border: none; border-radius: 3px; cursor: pointer; transition: opacity 0.2s ease, transform 0.2s ease; } .ds-btn-primary:hover { opacity: 0.88; transform: translateY(-1px); } .ds-btn-primary:focus-visible { outline: 2px solid #5B8EF0; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Ação secundária — explorar serviços, navegação suave.",
+      "html": "<a href=\"#servicos\" class=\"ds-btn-ghost\">Ver serviços</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: 13px 28px; background: transparent; color: #999999; font-family: 'Inter', sans-serif; font-size: 0.85rem; font-weight: 500; letter-spacing: 0.02em; border: 1px solid #2A2A2A; border-radius: 3px; text-decoration: none; cursor: pointer; transition: border-color 0.2s ease, color 0.2s ease; } .ds-btn-ghost:hover { border-color: #999999; color: #F0F0F0; } .ds-btn-ghost:focus-visible { outline: 2px solid #5B8EF0; outline-offset: 2px; }"
+    },
+    {
+      "name": "Section Label",
+      "kind": "custom",
+      "description": "Marcador de seção com ícone — usar com moderação, um por bloco.",
+      "html": "<span class=\"ds-label\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z\"/></svg> Sobre a GMK</span>",
+      "css": ".ds-label { display: inline-flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #606060; line-height: 1.2; } .ds-label svg { opacity: 0.55; flex-shrink: 0; }"
+    },
+    {
+      "name": "Hero Tag",
+      "kind": "chip",
+      "description": "Pill de serviço no hero — borda sutil, sem fill.",
+      "html": "<span class=\"ds-hero-tag\">Social Media</span>",
+      "css": ".ds-hero-tag { display: inline-block; padding: 4px 12px; border: 1px solid rgba(255,255,255,0.1); font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 500; color: #999999; border-radius: 3px; }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "description": "Link de navegação principal.",
+      "html": "<a href=\"#servicos\" class=\"ds-nav-link\">Serviços</a>",
+      "css": ".ds-nav-link { font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 500; color: #999999; text-decoration: none; transition: color 0.2s ease; } .ds-nav-link:hover { color: #F0F0F0; } .ds-nav-link:focus-visible { outline: 2px solid #5B8EF0; outline-offset: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "O Sinal Direto",
+    "overview": "GMK Digital opera em modo noturno de estúdio: fundo profundo, tipografia com presença e um único azul elétrico que guia o olhar para ação. O sistema rejeita o visual genérico de agência. Cada superfície deve comunicar craft real e confiança direta.",
+    "keyCharacteristics": [
+      "Tema escuro como padrão",
+      "Um accent azul com uso estratégico",
+      "Tipografia multi-role",
+      "Cantos quase retos (3px)",
+      "Motion com Framer Motion e reduced-motion",
+      "Foco em conversão"
+    ],
+    "rules": [
+      { "name": "The One Signal Rule", "body": "O azul primário aparece em CTAs, ícones ativos e no máximo um destaque tipográfico por seção.", "section": "colors" },
+      { "name": "The Dark Studio Rule", "body": "O fundo é preto profundo, não warm-neutral. Calor vem de fotografia e copy.", "section": "colors" },
+      { "name": "The Letter-Spacing Floor Rule", "body": "Display headings nunca abaixo de -0.04em.", "section": "typography" },
+      { "name": "The Hero Ceiling Rule", "body": "Títulos hero com clamp máximo ≤ 6rem.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Superfícies em repouso são planas. Elevação responde a estado ou overlay.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do manter contraste WCAG AA",
+      "Do usar prefers-reduced-motion em animações",
+      "Do limitar line-length do corpo a 65–75ch",
+      "Do manter CTAs de contato visíveis"
+    ],
+    "donts": [
+      "Don't usar templates genéricos de SaaS",
+      "Don't criar agência barulhenta com neon e animação poluída",
+      "Don't cair no corporativo frio",
+      "Don't parecer site de agência gerado por IA",
+      "Don't usar fundo cream/sand/beige"
+    ]
+  }
+}

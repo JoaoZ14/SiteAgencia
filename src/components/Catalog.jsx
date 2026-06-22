@@ -144,7 +144,7 @@ export default function Catalog({ page = false }) {
         >
           <div className="catalog-section-head">
             <span className="label">Diferenciais</span>
-            <h3 className="catalog-section-title">Por que escolher a GMK</h3>
+            <h3 className="catalog-section-title">Por que a GMK</h3>
           </div>
           <ul className="catalog-diffs-grid">
             {CATALOG_DIFFERENTIALS.map((d) => (
@@ -208,7 +208,7 @@ export default function Catalog({ page = false }) {
           variants={fade}
         >
           <h3 className="catalog-section-title catalog-section-title--center">
-            Como funciona
+            Como a gente trabalha
           </h3>
           <ol className="catalog-steps">
             {PROCESS_STEPS.map((step) => (
@@ -231,10 +231,10 @@ export default function Catalog({ page = false }) {
         >
           <div className="catalog-section-head">
             <span className="label">Cases</span>
-            <h3 className="catalog-section-title">Onde geramos valor</h3>
+            <h3 className="catalog-section-title">Trabalho por segmento</h3>
             <p className="catalog-section-desc">
-              Formatos de entrega e resultados por segmento, sem expor dados
-              confidenciais de clientes.
+              Exemplos de entrega e resultado. Não expomos dados de cliente, mas
+              você vê o tipo de material que fazemos.
             </p>
           </div>
           <ul className="catalog-cases-grid">
@@ -266,8 +266,8 @@ export default function Catalog({ page = false }) {
             </span>
             <h3 className="catalog-section-title">Planos mensais</h3>
             <p className="catalog-section-desc">
-              Pacotes pensados para diferentes momentos da marca. Valores sob consulta,
-              montados de acordo com o escopo e o nicho do seu negócio.
+              Pacotes para momentos diferentes. Valor sob consulta, montado no
+              escopo e no nicho do seu negócio.
             </p>
           </div>
 
@@ -311,8 +311,7 @@ export default function Catalog({ page = false }) {
             </span>
             <h3 className="catalog-section-title">Serviços avulsos</h3>
             <p className="catalog-section-desc">
-              Itens que podem ser contratados junto com qualquer pacote ou de forma
-              pontual, conforme a necessidade do projeto.
+              Contrata junto com pacote ou separado, quando faz sentido.
             </p>
           </div>
 
@@ -335,11 +334,11 @@ export default function Catalog({ page = false }) {
           variants={fade}
         >
           <h3 className="catalog-footer-title">
-            Quer uma proposta personalizada?
+            Quer proposta sob medida?
           </h3>
           <p className="catalog-footer-text">
-            Conte o que sua marca precisa. Montamos um catálogo de entregas sob medida
-            para marketing digital, audiovisual ou os dois juntos.
+            Conta o que precisa. Montamos escopo para marketing, audiovisual
+            ou os dois.
           </p>
           <div className="catalog-footer-actions">
             <CatalogPdfButton />

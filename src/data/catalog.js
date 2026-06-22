@@ -1,8 +1,8 @@
 export const CATALOG_INTRO = {
   label: 'Catálogo GMK',
-  title: 'Tudo o que sua marca precisa para crescer, em um só lugar.',
+  title: 'Tudo que sua marca precisa, num só lugar.',
   lead:
-    'A GMK reúne estratégia, conteúdo, tráfego e produção audiovisual em um único time integrado. Sem fragmentação, sem retrabalho. Só entregas que movem o ponteiro do seu negócio.',
+    'Estratégia, conteúdo, tráfego e audiovisual no mesmo time. Menos retrabalho, mais coisa saindo do papel.',
 }
 
 export const CATALOG_CONTACT = {
@@ -21,10 +21,10 @@ export const CATALOG_CONTACT = {
 
 export const CATALOG_PRESENTATION = {
   label: 'Apresentação',
-  title: 'Uma agência integrada para marcas que querem crescer com método.',
+  title: 'Marketing e audiovisual no mesmo time.',
   paragraphs: [
-    'Sediada em Resende, RJ, a GMK Digital reúne marketing e produção audiovisual em um único time. Você fala diretamente com quem cria e executa — sem camadas, sem perda de contexto.',
-    'Cada entrega é pensada para gerar reconhecimento e resultado mensurável: do diagnóstico ao relatório, com conteúdo que representa de verdade o que sua marca oferece.',
+    'Estamos em Resende. Você fala com quem cria e com quem publica, sem passar por camada de aprovação.',
+    'Cada entrega sai com objetivo claro: do diagnóstico ao relatório, com conteúdo que parece com a sua marca.',
   ],
   highlights: [
     { icon: 'layers', label: 'Integrado', value: 'Marketing + AV' },
@@ -36,48 +36,58 @@ export const CATALOG_PRESENTATION = {
 export const CATALOG_DIFFERENTIALS = [
   {
     icon: 'layers',
-    title: 'Integração total',
-    desc: 'Conteúdo, redes, tráfego e audiovisual no mesmo plano estratégico.',
-    result: 'Menos retrabalho, mais consistência de marca.',
+    title: 'Tudo no mesmo plano',
+    desc: 'Conteúdo, rede, tráfego e vídeo conversam entre si.',
+    result: 'Menos retrabalho, mais consistência.',
   },
   {
     icon: 'team',
-    title: 'Proximidade real',
-    desc: 'Briefing e aprovações direto com quem executa o projeto.',
-    result: 'Decisões rápidas e alinhamento contínuo.',
+    title: 'Contato direto',
+    desc: 'Briefing e aprovação com quem está fazendo o trabalho.',
+    result: 'Decisão rápida, menos ruído.',
   },
   {
     icon: 'focus',
-    title: 'Conteúdo com intenção',
-    desc: 'Cada peça ligada a um objetivo de negócio, não só estética.',
-    result: 'Presença digital que gera reconhecimento.',
+    title: 'Conteúdo com objetivo',
+    desc: 'Cada peça ligada a venda, reserva ou lead, não só estética.',
+    result: 'Presença online que traz retorno.',
   },
   {
     icon: 'chart',
-    title: 'Performance rastreável',
-    desc: 'Relatórios claros e otimização contínua das campanhas.',
-    result: 'Ciclos cada vez melhores, com dados na mesa.',
+    title: 'Número na mesa',
+    desc: 'Relatório claro e ajuste de campanha a cada ciclo.',
+    result: 'Próximo mês melhor que o anterior.',
   },
 ]
 
 export const CATALOG_CASES = [
   {
     icon: 'building',
-    segment: 'Saúde & bem-estar',
-    delivery: 'Conteúdo recorrente e presença profissional nas redes.',
-    outcome: 'Marca percebida com autoridade e proximidade com o público.',
+    segment: 'Hotelaria & hospedagem',
+    delivery: 'Foto, vídeo e redes para hotel e pousada que precisam lotar o calendário.',
+    outcome: 'Conteúdo que mostra a experiência e ajuda a vender mais diárias.',
+    image:
+      'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80',
+    imageAlt: 'Área de lazer de hotel com piscina e ambientação premium',
+    featured: true,
   },
   {
     icon: 'camera',
     segment: 'Gastronomia & serviços locais',
-    delivery: 'Reels e fotos orientados a conversão em reservas e contatos.',
-    outcome: 'Material pronto para publicar e impulsionar na região.',
+    delivery: 'Reels e fotos para restaurante que precisa de mesa cheia e pedido no WhatsApp.',
+    outcome: 'Material pronto para postar e impulsionar na cidade.',
+    image:
+      'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Prato em restaurante com iluminação profissional',
   },
   {
     icon: 'chart',
     segment: 'E-commerce & moda',
-    delivery: 'Criativos para tráfego pago e calendário editorial alinhado.',
-    outcome: 'Campanhas com criativos testados e funil de conteúdo coeso.',
+    delivery: 'Criativos para anúncio e calendário de post alinhados à coleção.',
+    outcome: 'Campanha com peça testada e funil que não fica pela metade.',
+    image:
+      'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=800&q=80',
+    imageAlt: 'Vitrine de loja de moda e e-commerce',
   },
 ]
 
@@ -271,24 +281,24 @@ export const PROCESS_STEPS = [
     step: '01',
     icon: 'fileText',
     title: 'Briefing',
-    desc: 'Entendemos seu negócio, público e objetivos antes de qualquer proposta.',
+    desc: 'Entendemos o negócio, o público e o que você quer resolver antes de mandar proposta.',
   },
   {
     step: '02',
     icon: 'layers',
     title: 'Proposta',
-    desc: 'Escopo, serviços e investimento alinhados ao seu momento real.',
+    desc: 'Escopo, serviço e valor alinhados ao que você pode investir agora.',
   },
   {
     step: '03',
     icon: 'rocket',
     title: 'Produção',
-    desc: 'Execução com comunicação direta, prazos cumpridos e aprovação antes de publicar.',
+    desc: 'Execução com contato direto, prazo cumprido e ok seu antes de publicar.',
   },
   {
     step: '04',
     icon: 'chart',
     title: 'Resultado',
-    desc: 'Monitoramento, relatórios claros e otimização contínua a cada ciclo.',
+    desc: 'Acompanhamento, relatório e ajuste a cada ciclo.',
   },
 ]

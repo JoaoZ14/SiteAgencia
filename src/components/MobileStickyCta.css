@@ -1,0 +1,54 @@
+.mobile-sticky-cta {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-sticky-cta {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 90;
+    padding: 12px 16px;
+    padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    background: linear-gradient(
+      to top,
+      rgba(10, 10, 10, 0.98) 70%,
+      rgba(10, 10, 10, 0) 100%
+    );
+    pointer-events: none;
+  }
+
+  .mobile-sticky-cta-btn {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 24px;
+    background: var(--gradient);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .mobile-sticky-cta-btn svg {
+    font-size: 1.2rem;
+  }
+
+  .mobile-sticky-cta-btn:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-sticky-cta-btn {
+    transition: none;
+  }
+}
