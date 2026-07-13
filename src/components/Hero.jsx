@@ -1,114 +1,132 @@
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { RiArrowRightLine, RiArrowDownLine, RiGlobalLine, RiCheckLine } from 'react-icons/ri'
+import {
+  RiArrowRightLine,
+  RiCodeSSlashLine,
+  RiSmartphoneLine,
+  RiRobot2Line,
+  RiCloudLine,
+} from 'react-icons/ri'
+import HeroVisual from './HeroVisual'
+import BrandStrip from './BrandStrip'
 import './Hero.css'
 
-const line = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i) => ({
+const CAPS = [
+  { icon: <RiCodeSSlashLine />, label: 'Web' },
+  { icon: <RiSmartphoneLine />, label: 'Mobile' },
+  { icon: <RiRobot2Line />, label: 'IA' },
+  { icon: <RiCloudLine />, label: 'Cloud' },
+]
+
+const EASE = [0.25, 1, 0.5, 1]
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: (delay = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.85, delay: i * 0.14, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.6, delay, ease: EASE },
   }),
 }
 
-const TRUST_POINTS = [
-  'Resposta em até 24h úteis',
-  'Você fala com quem executa',
-  'Marketing e audiovisual no mesmo time',
-]
-
 export default function Hero() {
   return (
-    <section className="hero" id="inicio">
-      <div className="hero-bg">
-        <picture>
-          <source
-            media="(max-width: 768px)"
-            srcSet="https://images.unsplash.com/photo-1492691527719-9d1e07f534bf?auto=format&fit=crop&w=800&q=80"
-          />
-          <img
-            src="https://images.unsplash.com/photo-1598488035139-bdbb2231bb04?auto=format&fit=crop&w=1920&q=80"
-            alt=""
-            aria-hidden="true"
-          />
-        </picture>
-        <div className="hero-overlay" />
-      </div>
+    <section className="hero" id="inicio" aria-labelledby="hero-heading">
+      <span className="hero-grid" aria-hidden="true" />
+      <span className="hero-watermark" aria-hidden="true">GMK</span>
 
       <div className="container hero-container">
+        <div className="hero-copy">
+          <motion.p
+            className="hero-kicker"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0}
+          >
+            SOFTWARE HOUSE — RESENDE, BR
+          </motion.p>
+
+          <motion.h1
+            className="hero-title"
+            id="hero-heading"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0.08}
+          >
+            Software que
+            <br />
+            impulsiona
+            <br />
+            <span className="hero-title-em">empresas.</span>
+          </motion.h1>
+
+          <motion.p
+            className="hero-sub"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0.16}
+          >
+            Desenvolvemos plataformas, sistemas e aplicações sob medida
+            para empresas que precisam crescer através da tecnologia.
+          </motion.p>
+
+          <motion.div
+            className="hero-actions"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0.24}
+          >
+            <Link to="/#servicos" className="btn-primary">
+              Conhecer soluções
+              <RiArrowRightLine aria-hidden="true" />
+            </Link>
+            <Link to="/#contato" className="btn-ghost">
+              Solicitar orçamento
+            </Link>
+          </motion.div>
+
+          <motion.ul
+            className="hero-caps"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0.32}
+          >
+            {CAPS.map((cap) => (
+              <li key={cap.label}>
+                <span className="hero-cap-icon" aria-hidden="true">{cap.icon}</span>
+                {cap.label}
+              </li>
+            ))}
+          </motion.ul>
+        </div>
 
         <motion.div
-          className="hero-top"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.05 }}
-        >
-          <span className="hero-eyebrow">
-            <RiGlobalLine aria-hidden="true" />
-            Go Make Known · GMK Digital
-          </span>
-          <span className="hero-region">Resende, RJ · todo o Brasil</span>
-        </motion.div>
-
-        <h1 className="hero-title" aria-label="Agência de marketing digital em Resende, RJ. Da criação ao resultado.">
-          <span className="sr-only">Agência de marketing digital em Resende, RJ</span>
-          <motion.span className="hero-line" custom={1} variants={line} initial="hidden" animate="visible">
-            Da criação
-          </motion.span>
-          <motion.span className="hero-line hero-line--accent" custom={2} variants={line} initial="hidden" animate="visible">
-            ao resultado.
-          </motion.span>
-        </h1>
-
-        <motion.p
-          className="hero-sub"
-          custom={3}
-          variants={line}
-          initial="hidden"
-          animate="visible"
-        >
-          Sites, campanhas e conteúdo para quem quer vender mais.
-          Presencial no Sul Fluminense ou remoto em todo o Brasil.
-        </motion.p>
-
-        <motion.ul
-          className="hero-trust"
-          custom={4}
-          variants={line}
-          initial="hidden"
-          animate="visible"
-          aria-label="Diferenciais da GMK Digital"
-        >
-          {TRUST_POINTS.map((point) => (
-            <li key={point}>
-              <RiCheckLine aria-hidden="true" />
-              {point}
-            </li>
-          ))}
-        </motion.ul>
-
-        <motion.div
-          className="hero-bottom"
+          className="hero-visual-wrap"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.7, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: EASE }}
         >
-          <div className="hero-divider" />
-          <div className="hero-cta">
-            <a href="#contato" className="btn-primary">
-              Solicitar proposta <RiArrowRightLine />
-            </a>
-            <a href="#trabalhos" className="btn-ghost">
-              Ver trabalhos
-            </a>
-          </div>
+          <HeroVisual />
         </motion.div>
-
       </div>
 
-      <a href="#servicos" className="hero-scroll" aria-label="Rolar para baixo">
-        <RiArrowDownLine />
-      </a>
+      <BrandStrip />
+
+      <div className="hero-ticker" aria-hidden="true">
+        <div className="hero-ticker-track">
+          {['a', 'b'].map((k) => (
+            <span key={k} className="hero-ticker-group">
+              <em>SaaS</em><em>Sistemas Web</em><em>Mobile</em><em>Inteligência Artificial</em>
+              <em>Automação</em><em>APIs</em><em>Dashboards</em><em>Hotelaria</em><em>B2B</em>
+            </span>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }

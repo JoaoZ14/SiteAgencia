@@ -1,10 +1,12 @@
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
-import Services from '../components/Services'
-import Work from '../components/Work'
-import Process from '../components/Process'
 import About from '../components/About'
-import Niches from '../components/Niches'
+import Services from '../components/Services'
+import Hospitality from '../components/Hospitality'
+import Process from '../components/Process'
+import Differentiators from '../components/Differentiators'
+import Technologies from '../components/Technologies'
+import Work from '../components/Work'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import Chatbot from '../components/Chatbot'
@@ -16,11 +18,13 @@ export default function HomePage() {
       <Navbar />
       <main className="home-main">
         <Hero />
-        <Services />
-        <Work />
-        <Process />
         <About />
-        <Niches />
+        <Services />
+        <Hospitality />
+        <Process />
+        <Differentiators />
+        <Technologies />
+        <Work />
         <Contact />
       </main>
       <Footer />

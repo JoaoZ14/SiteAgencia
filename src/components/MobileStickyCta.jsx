@@ -4,7 +4,7 @@ import { RiWhatsappLine } from 'react-icons/ri'
 import './MobileStickyCta.css'
 
 const WHATSAPP_URL =
-  'https://wa.me/5524981634937?text=Olá,%20vim%20pelo%20site%20da%20GMK%20Digital!'
+  'https://wa.me/5524981634937?text=Olá,%20vim%20pelo%20site%20da%20GMK%20e%20gostaria%20de%20falar%20sobre%20um%20projeto%20de%20software.'
 
 export default function MobileStickyCta() {
   const [visible, setVisible] = useState(false)
@@ -39,7 +39,7 @@ export default function MobileStickyCta() {
             rel="noopener noreferrer"
           >
             <RiWhatsappLine aria-hidden="true" />
-            Solicitar proposta
+            Falar com especialista
           </a>
         </motion.div>
       )}

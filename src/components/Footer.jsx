@@ -2,56 +2,36 @@ import { Link } from 'react-router-dom'
 import {
   RiInstagramLine,
   RiLinkedinBoxLine,
-  RiYoutubeLine,
-  RiTiktokLine,
   RiWhatsappLine,
   RiMailLine,
   RiMapPinLine,
   RiArrowRightUpLine,
 } from 'react-icons/ri'
 import { FOOTER_NAV_LINKS } from '../constants/navLinks'
+import { SERVICES } from '../data/site'
 import './Footer.css'
 
 const SOCIALS = [
   { icon: <RiInstagramLine />, href: 'https://instagram.com/gmk.agencia', label: 'Instagram' },
-  { icon: <RiTiktokLine />,    href: '#', label: 'TikTok' },
-  { icon: <RiYoutubeLine />,   href: '#', label: 'YouTube' },
   { icon: <RiLinkedinBoxLine />, href: '#', label: 'LinkedIn' },
-]
-
-const SERVICES = [
-  'Marketing 360',
-  'Produção de Vídeo',
-  'Fotografia',
-  'Social Media',
-  'Tráfego Pago',
-  'Design Gráfico',
-  'Estratégia Digital',
 ]
 
 const CONTACT = [
   { icon: <RiWhatsappLine />, label: '(24) 98163-4937', href: 'https://wa.me/5524981634937' },
-  { icon: <RiMailLine />,     label: 'contato@gmkagency.com', href: 'mailto:contato@gmkagency.com' },
-  { icon: <RiInstagramLine />, label: '@gmk.agencia', href: 'https://instagram.com/gmk.agencia' },
-  { icon: <RiMapPinLine />,   label: 'Resende, RJ', href: null },
+  { icon: <RiMailLine />, label: 'contato@gmkagency.com', href: 'mailto:contato@gmkagency.com' },
+  { icon: <RiMapPinLine />, label: 'Resende, RJ', href: null },
 ]
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="container">
-
         <div className="footer-top">
-
           <div className="footer-brand">
-            <Link to="/" className="footer-logo-wrap">
-              <span className="footer-logo-crop">
-                <img src="/Design sem nome (7).png" alt="GMK Digital" />
-              </span>
-            </Link>
+            <Link to="/" className="footer-logo">GMK<span>®</span></Link>
             <p className="footer-desc">
-              Marketing e audiovisual em Resende, RJ. Atendemos o Brasil
-              inteiro de forma remota.
+              Software house especializada em desenvolvimento sob medida.
+              Construímos negócios através de tecnologia.
             </p>
             <div className="footer-socials">
               {SOCIALS.map((s) => (
@@ -81,11 +61,11 @@ export default function Footer() {
           </div>
 
           <div className="footer-col">
-            <span className="footer-col-title">Serviços</span>
+            <span className="footer-col-title">Soluções</span>
             <ul>
-              {SERVICES.map((s) => (
-                <li key={s}>
-                  <Link to="/catalogo">{s}</Link>
+              {SERVICES.slice(0, 6).map((s) => (
+                <li key={s.title}>
+                  <Link to="/#servicos">{s.title}</Link>
                 </li>
               ))}
             </ul>
@@ -107,19 +87,21 @@ export default function Footer() {
               ))}
             </ul>
             <Link to="/#contato" className="footer-cta">
-              Fale com a equipe <RiArrowRightUpLine />
+              Falar com especialista <RiArrowRightUpLine aria-hidden="true" />
             </Link>
           </div>
-
         </div>
 
         <div className="footer-bottom">
           <p className="footer-copy">
-            &copy; {new Date().getFullYear()} GMK Digital. Todos os direitos reservados.
+            &copy; {new Date().getFullYear()} GMK. Todos os direitos reservados.
           </p>
-          <p className="footer-tagline">Go Make Known</p>
+          <span className="footer-sign" aria-hidden="true">
+            <span className="footer-sign-em">G</span>o{' '}
+            <span className="footer-sign-em">M</span>ake{' '}
+            <span className="footer-sign-em">K</span>nown
+          </span>
         </div>
-
       </div>
     </footer>
   )

@@ -1,90 +1,79 @@
 import { motion } from 'framer-motion'
-import { RiWhatsappLine, RiMailLine, RiInstagramLine, RiChat3Line } from 'react-icons/ri'
+import { RiWhatsappLine, RiMailLine, RiArrowRightUpLine } from 'react-icons/ri'
+import { fadeUp } from '../utils/motion'
 import './Contact.css'
 
-const CONTACTS = [
-  {
-    icon: <RiWhatsappLine />,
-    label: 'WhatsApp',
-    value: '(24) 98163-4937',
-    href: 'https://wa.me/5524981634937?text=Olá,%20vim%20pelo%20site%20da%20GMK%20Digital!',
-  },
-  {
-    icon: <RiMailLine />,
-    label: 'E-mail',
-    value: 'contato@gmkagency.com',
-    href: 'mailto:contato@gmkagency.com',
-  },
-  {
-    icon: <RiInstagramLine />,
-    label: 'Instagram',
-    value: '@gmk.agencia',
-    href: 'https://instagram.com/gmk.agencia',
-  },
-]
+const WA_URL =
+  'https://wa.me/5524981634937?text=Olá,%20vim%20pelo%20site%20da%20GMK%20e%20gostaria%20de%20falar%20sobre%20um%20projeto%20de%20software.'
 
 export default function Contact() {
   return (
     <section className="contact" id="contato">
-      <div className="container">
-        <div className="contact-top">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-            viewport={{ once: true }}
-          >
-            <span className="label">
-              <RiChat3Line aria-hidden="true" />
-              Contato
-            </span>
-            <h2 className="contact-title">
-              Vamos trabalhar
-              <br />
-              <em>juntos?</em>
-            </h2>
-            <p className="contact-sub">
-              WhatsApp, e-mail ou Instagram. Respondemos em até 24h úteis para
-              marcar uma conversa. Sem compromisso.
-            </p>
-          </motion.div>
+      <span className="contact-watermark" aria-hidden="true">GMK</span>
 
-          <motion.a
-            href="https://wa.me/5524981634937?text=Olá,%20vim%20pelo%20site%20da%20GMK%20Digital!"
-            className="btn-primary contact-main-btn"
-            target="_blank"
-            rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.15 }}
-            viewport={{ once: true }}
-          >
-            <RiWhatsappLine />
-            Falar pelo WhatsApp
-          </motion.a>
-        </div>
+      <div className="container contact-inner">
+        <motion.p
+          className="contact-kicker"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          variants={fadeUp}
+        >
+          08 / VAMOS CONSTRUIR
+        </motion.p>
+
+        <motion.h2
+          className="contact-title"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          variants={fadeUp}
+        >
+          Vamos construir seu
+          <br />
+          próximo software.
+        </motion.h2>
+
+        <motion.p
+          className="contact-sub"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          variants={fadeUp}
+        >
+          Toda empresa possui processos. Nós transformamos processos em software.
+        </motion.p>
 
         <motion.div
-          className="contact-links"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          viewport={{ once: true }}
+          className="contact-actions"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          variants={fadeUp}
         >
-          {CONTACTS.map((c) => (
-            <a
-              key={c.label}
-              href={c.href}
-              className="contact-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="contact-link-icon">{c.icon}</span>
-              <span className="contact-link-label">{c.label}</span>
-              <span className="contact-link-value">{c.value}</span>
-            </a>
-          ))}
+          <a href={WA_URL} className="btn-primary contact-btn" target="_blank" rel="noopener noreferrer">
+            <RiWhatsappLine aria-hidden="true" />
+            Falar com especialista
+          </a>
+          <a href="mailto:contato@gmkagency.com" className="btn-ghost contact-btn">
+            <RiMailLine aria-hidden="true" />
+            contato@gmkagency.com
+          </a>
         </motion.div>
+
+        <motion.a
+          href={WA_URL}
+          className="contact-phone"
+          target="_blank"
+          rel="noopener noreferrer"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-60px' }}
+          variants={fadeUp}
+        >
+          WHATSAPP — (24) 98163-4937
+          <RiArrowRightUpLine aria-hidden="true" />
+        </motion.a>
       </div>
     </section>
   )

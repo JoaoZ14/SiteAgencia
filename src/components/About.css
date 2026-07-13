@@ -1,160 +1,80 @@
 .about {
-  padding: 120px 0;
-  background: var(--bg-2);
-  border-top: 1px solid var(--border);
+  padding: var(--section-pad) 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
 }
 
-.about-container {
+.about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: clamp(32px, 5vw, 72px);
   align-items: start;
 }
 
-/* Left column */
-.about-left {
-  position: sticky;
-  top: 120px;
-}
-
-.about-title {
+.about-lead {
   font-family: var(--font-display);
-  font-size: clamp(2.1rem, 3.8vw, 3.25rem);
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  color: var(--text);
-  line-height: 1.1;
-  margin-top: 16px;
-}
-
-/* Right column */
-.about-right {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  max-width: 24ch;
 }
 
 .about-text {
-  font-size: 0.95rem;
+  margin-top: 24px;
+  font-size: 1rem;
+  line-height: 1.65;
   color: var(--text-2);
-  line-height: 1.82;
-  margin-bottom: 20px;
-}
-
-.about-text.large {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  color: var(--text);
-  font-weight: 500;
-  line-height: 1.7;
-  margin-bottom: 28px;
+  max-width: 52ch;
 }
 
 .about-cta {
-  margin-top: 20px;
-  align-self: flex-start;
+  margin-top: 36px;
 }
 
-/* GMK Meaning section */
-.gmk-meaning {
-  padding: 100px 0;
-  background: var(--bg);
-  border-top: 1px solid var(--border);
+.about-pillars {
+  list-style: none;
+  border-top: 1px solid var(--line);
 }
 
-.gmk-meaning-container {
+.about-pillar {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
+  grid-template-columns: 44px 1fr;
+  gap: 20px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line-soft);
+  transition: padding-left 0.25s var(--ease);
 }
 
-/* GMK image */
-.gmk-image {
-  width: 100%;
-  max-width: 480px;
-  height: auto;
-  display: block;
-  overflow: hidden;
+.about-pillar:hover {
+  padding-left: 12px;
 }
 
-/* GMK manifesto block */
-.gmk-manifesto {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
+.about-pillar:hover .about-pillar-icon {
+  background: var(--ink);
+  color: #fff;
 }
 
-.gmk-manifesto-line {
-  display: block;
-  font-weight: 600;
-  line-height: 1.45;
-}
-
-.gmk-manifesto-line.l1,
-.gmk-manifesto-line.l2,
-.gmk-manifesto-line.l3 {
+.about-pillar-title {
   font-family: var(--font-display);
-  font-size: clamp(1rem, 1.35vw, 1.12rem);
-  font-weight: 500;
-  color: var(--text);
-  line-height: 1.65;
-  letter-spacing: -0.01em;
+  font-size: 1.125rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 8px;
 }
 
-.gmk-manifesto-line.l1 { padding-left: 2px; }
-
-.gmk-manifesto-line.l2 { padding-left: 20px; }
-
-.gmk-manifesto-line.l3 {
-  padding-left: 44px;
-  margin-bottom: 10px;
+.about-pillar-desc {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--text-2);
 }
 
-.gmk-manifesto-line.l4,
-.gmk-manifesto-line.l5 {
-  font-family: var(--font-manifesto);
-  font-weight: 600;
-  color: var(--accent);
-  letter-spacing: -0.03em;
-  line-height: 1.25;
+@media (max-width: 800px) {
+  .about-grid { grid-template-columns: 1fr; }
 }
 
-.gmk-manifesto-line.l4 {
-  font-size: clamp(1.35rem, 2.2vw, 1.9rem);
-  padding-left: 8px;
-}
-
-.gmk-manifesto-line.l5 {
-  font-size: clamp(1.45rem, 2.4vw, 2rem);
-  padding-left: 32px;
-  white-space: nowrap;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .about-container {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .about-left {
-    position: static;
-  }
-
-  .gmk-meaning-container {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .gmk-manifesto-line.l1 { padding-left: 0; }
-  .gmk-manifesto-line.l2 { padding-left: 16px; }
-  .gmk-manifesto-line.l3 { padding-left: 32px; }
-  .gmk-manifesto-line.l4 { padding-left: 4px; font-size: 1.3rem; }
-  .gmk-manifesto-line.l5 {
-    padding-left: 20px;
-    font-size: 1.4rem;
-    white-space: normal;
-  }
-
+@media (prefers-reduced-motion: reduce) {
+  .about-pillar:hover { padding-left: 0; }
 }

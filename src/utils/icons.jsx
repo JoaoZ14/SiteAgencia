@@ -1,0 +1,103 @@
+import {
+  RiCodeSSlashLine,
+  RiSmartphoneLine,
+  RiBuilding3Line,
+  RiStackLine,
+  RiLoopLeftLine,
+  RiLinksLine,
+  RiRobot2Line,
+  RiTerminalBoxLine,
+  RiSearchEyeLine,
+  RiPencilRulerLine,
+  RiRocketLine,
+  RiLineChartLine,
+  RiCodeLine,
+  RiLayoutGridLine,
+  RiBarChartBoxLine,
+  RiFlashlightLine,
+  RiShieldCheckLine,
+  RiUserSmileLine,
+  RiCustomerService2Line,
+  RiHotelLine,
+  RiBookOpenLine,
+  RiFileList3Line,
+  RiHotelBedLine,
+  RiCalendarCheckLine,
+  RiDashboardLine,
+  RiCloudLine,
+} from 'react-icons/ri'
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiNodedotjs,
+  SiOpenjdk,
+  SiSpringboot,
+  SiPostgresql,
+  SiDocker,
+  SiSupabase,
+  SiFirebase,
+  SiOpenai,
+  SiStripe,
+  SiMercadopago,
+  SiTwilio,
+} from 'react-icons/si'
+
+export const SERVICE_ICONS = {
+  web: RiCodeSSlashLine,
+  mobile: RiSmartphoneLine,
+  enterprise: RiBuilding3Line,
+  saas: RiStackLine,
+  automation: RiLoopLeftLine,
+  integration: RiLinksLine,
+  ai: RiRobot2Line,
+  consulting: RiTerminalBoxLine,
+}
+
+export const PROCESS_ICONS = {
+  discover: RiSearchEyeLine,
+  design: RiPencilRulerLine,
+  build: RiCodeSSlashLine,
+  deploy: RiRocketLine,
+  evolve: RiLineChartLine,
+}
+
+export const DIFFERENTIAL_ICONS = {
+  clean: RiCodeLine,
+  arch: RiLayoutGridLine,
+  scale: RiBarChartBoxLine,
+  perf: RiFlashlightLine,
+  security: RiShieldCheckLine,
+  ux: RiUserSmileLine,
+  integration: RiLinksLine,
+  support: RiCustomerService2Line,
+}
+
+export const HOSPITALITY_ICONS = {
+  hotel: RiHotelLine,
+  menu: RiBookOpenLine,
+  orders: RiFileList3Line,
+  roomservice: RiHotelBedLine,
+  booking: RiCalendarCheckLine,
+  management: RiDashboardLine,
+  integration: RiLinksLine,
+  automation: RiLoopLeftLine,
+}
+
+export const TECH_ICONS = {
+  react: SiReact,
+  next: SiNextdotjs,
+  ts: SiTypescript,
+  node: SiNodedotjs,
+  java: SiOpenjdk,
+  spring: SiSpringboot,
+  postgres: SiPostgresql,
+  docker: SiDocker,
+  aws: RiCloudLine,
+  supabase: SiSupabase,
+  firebase: SiFirebase,
+  openai: SiOpenai,
+  stripe: SiStripe,
+  mercadopago: SiMercadopago,
+  twilio: SiTwilio,
+}

@@ -1,127 +1,127 @@
 .contact {
-  padding: 120px 0;
-  background: var(--bg);
-  border-top: 1px solid var(--border);
+  position: relative;
+  padding: clamp(88px, 12vw, 160px) 0;
+  background: var(--ink);
+  color: #fff;
+  overflow: hidden;
 }
 
-.contact-top {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 48px;
-  margin-bottom: 72px;
-  flex-wrap: wrap;
+.contact-watermark {
+  position: absolute;
+  bottom: -6vw;
+  left: -2vw;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(14rem, 38vw, 42rem);
+  line-height: 0.7;
+  letter-spacing: -0.06em;
+  color: rgba(255, 255, 255, 0.04);
+  pointer-events: none;
+  user-select: none;
+}
+
+.contact-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-kicker {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-kicker::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .contact-title {
   font-family: var(--font-display);
-  font-size: clamp(2.9rem, 6.2vw, 6.25rem);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
   font-weight: 700;
+  line-height: 1.02;
   letter-spacing: -0.04em;
-  line-height: 1.0;
-  color: var(--text);
-  margin: 16px 0 20px;
-}
-
-.contact-title em {
-  font-style: normal;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #fff;
+  text-wrap: balance;
 }
 
 .contact-sub {
-  font-size: 0.9rem;
-  color: var(--text-2);
-  line-height: 1.7;
-  max-width: 360px;
+  margin-top: 28px;
+  font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 46ch;
 }
 
-.contact-main-btn {
-  flex-shrink: 0;
-  align-self: flex-end;
-  font-size: 0.9rem;
-  padding: 16px 32px;
-  gap: 10px;
-}
-
-.contact-main-btn svg {
-  font-size: 1.15rem;
-}
-
-/* Contact link list */
-.contact-links {
+.contact-actions {
   display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 44px;
 }
 
-.contact-link {
-  display: grid;
-  grid-template-columns: 32px 160px 1fr;
+.contact-btn {
+  justify-content: center;
+}
+
+/* Invert button styles for dark section */
+.contact .btn-primary {
+  background: #fff;
+  color: var(--ink);
+  border-color: #fff;
+}
+.contact .btn-primary:hover {
+  background: transparent;
+  color: #fff;
+}
+
+.contact .btn-ghost {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+.contact .btn-ghost:hover {
+  background: #fff;
+  color: var(--ink);
+  border-color: #fff;
+}
+
+.contact-phone {
+  display: inline-flex;
   align-items: center;
-  gap: 20px;
-  padding: 24px 0;
-  border-bottom: 1px solid var(--border);
-  color: var(--text-2);
-  transition: color 0.2s ease;
-  text-decoration: none;
-}
-
-.contact-link:hover {
-  color: var(--text);
-}
-
-.contact-link:hover .contact-link-value {
-  color: var(--accent);
-}
-
-.contact-link-icon {
-  font-size: 1.15rem;
-  display: flex;
-  align-items: center;
-}
-
-.contact-link-label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-3);
-}
-
-.contact-link-value {
-  font-size: 0.9rem;
+  gap: 8px;
+  margin-top: 44px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  width: 100%;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
   font-weight: 500;
-  color: var(--text-2);
-  transition: color 0.2s ease;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.72);
+  transition: color 0.2s var(--ease);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .contact-top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 28px;
-  }
+.contact-phone:hover {
+  color: #fff;
+}
 
-  .contact-main-btn {
-    align-self: flex-start;
-  }
+.contact-phone svg {
+  margin-left: auto;
+  font-size: 1.125rem;
+}
 
-  .contact-link {
-    grid-template-columns: 28px 1fr;
-    grid-template-rows: auto auto;
-  }
-
-  .contact-link-label {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .contact-link-value {
-    grid-column: 2;
-    grid-row: 2;
+@media (max-width: 560px) {
+  .contact-actions .btn-primary,
+  .contact-actions .btn-ghost {
+    flex: 1;
   }
 }

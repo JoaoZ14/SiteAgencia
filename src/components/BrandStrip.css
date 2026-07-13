@@ -1,0 +1,26 @@
+.brand-strip {
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  padding: clamp(40px, 6vw, 72px) 0;
+  overflow: hidden;
+}
+
+.brand-strip-text {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 8vw, 6rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: var(--line-soft);
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.brand-strip-em {
+  color: var(--ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-strip-text { opacity: 1 !important; }
+}

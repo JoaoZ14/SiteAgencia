@@ -1,23 +1,35 @@
 /* =============================================
-   CSS Variables & Global Reset
+   GMK Software House — Minimal Brutal
+   Monochrome. Extreme contrast. Marked borders.
    ============================================= */
 :root {
-  --bg: #0A0A0A;
-  --bg-2: #111111;
-  --accent: #5B8EF0;
-  --accent-dim: rgba(91, 142, 240, 0.12);
-  --text: #F0F0F0;
-  --text-2: #B5B5B5;
-  --text-3: #7A7A7A;
-  --border: #1E1E1E;
-  --border-mid: #2A2A2A;
-  --gradient: linear-gradient(135deg, #6FA3F7 0%, #2D5FD4 100%);
-  --radius: 3px;
-  --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-display: 'PP Neue Montreal', 'Inter', sans-serif;
-  --font-manifesto: 'Space Grotesk', var(--font);
-  --font-hero: 'Syncopate', var(--font-display);
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --bg: #FFFFFF;
+  --bg-2: #F4F4F4;
+  --surface: #FAFAFA;
+  --ink: #000000;
+  --text: #0A0A0A;
+  --text-2: #4B4B4B;
+  --text-3: #8A8A8A;
+  --graphite: #1A1A1A;
+  --line: #000000;
+  --line-soft: #E2E2E2;
+  --hover: #EFEFEF;
+
+  --radius: 0px;
+
+  --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Archivo', 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+  --ease: cubic-bezier(0.25, 1, 0.5, 1);
+
+  --section-pad: clamp(72px, 9vw, 128px);
+  --container: 1240px;
+  --gutter: clamp(20px, 4vw, 48px);
+
+  --z-sticky: 50;
+  --z-overlay: 60;
+  --z-chat: 45;
 }
 
 *,
@@ -29,8 +41,13 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+html.lenis body {
+  height: auto;
 }
 
 body {
@@ -40,6 +57,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -57,118 +75,162 @@ button {
   font-family: var(--font);
 }
 
+::selection {
+  background: var(--ink);
+  color: #fff;
+}
+
 /* =============================================
    Layout
    ============================================= */
 .container {
-  max-width: 1160px;
+  max-width: var(--container);
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 var(--gutter);
 }
 
-@media (max-width: 1024px) {
-  .container { padding: 0 24px; }
+/* Section framing — the brutal grid signature */
+.section-head {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: start;
+  margin-bottom: clamp(40px, 6vw, 72px);
 }
 
-@media (max-width: 640px) {
-  .container { padding: 0 16px; }
+.section-index {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-3);
+  letter-spacing: 0.05em;
+  padding-top: 10px;
+  white-space: nowrap;
 }
 
-/* Labels e ícones de seção */
-.label {
+.section-head-main {
+  min-width: 0;
+}
+
+/* Kicker — mono technical label */
+.kicker {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  line-height: 1.2;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
   text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--text-3);
-  opacity: 0.85;
+  margin-bottom: 20px;
 }
 
-.label svg {
-  font-size: 1.15em;
-  flex-shrink: 0;
-  opacity: 0.55;
-  color: var(--text-3);
-  display: block;
-  transform: translateY(-0.06em);
+.kicker::before {
+  content: "";
+  width: 24px;
+  height: 1px;
+  background: var(--ink);
 }
 
-.section-pillar-icon {
-  display: flex;
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.section-lead {
+  margin-top: 20px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-2);
+  max-width: 56ch;
+  text-wrap: pretty;
+}
+
+/* Faint technical dot grid — adds engineering texture */
+.dot-grid {
+  background-image: radial-gradient(circle, var(--line-soft) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Technical icon chip — square, bordered, monochrome */
+.icon-chip {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2em;
-  color: var(--accent);
-  line-height: 1;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 1.25rem;
   flex-shrink: 0;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
 }
 
-.pillar-heading {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-
-.pillar-heading .section-pillar-icon {
-  transform: translateY(-0.04em);
-}
-
-.pillar-heading .mission-pillar-title {
-  margin-bottom: 0;
-}
+.icon-chip svg { display: block; }
 
 /* =============================================
-   Buttons
+   Buttons — invert on hover
    ============================================= */
 .btn-primary {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 13px 28px;
-  background: var(--gradient);
+  gap: 10px;
+  padding: 15px 28px;
+  background: var(--ink);
   color: #fff;
-  font-size: 0.85rem;
-  font-weight: 700;
-  border: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
   cursor: pointer;
-  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
-  letter-spacing: 0.04em;
   text-decoration: none;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
 }
 
 .btn-primary:hover {
-  opacity: 0.88;
-  transform: translateY(-1px);
+  background: #fff;
+  color: var(--ink);
+}
+
+.btn-primary svg {
+  transition: transform 0.2s var(--ease);
+}
+
+.btn-primary:hover svg {
+  transform: translateX(3px);
 }
 
 .btn-ghost {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 13px 28px;
+  gap: 10px;
+  padding: 15px 28px;
   background: transparent;
-  color: var(--text-2);
-  font-size: 0.85rem;
-  font-weight: 500;
-  border: 1px solid var(--border-mid);
+  color: var(--ink);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border: 1px solid var(--ink);
+  border-radius: var(--radius);
   cursor: pointer;
-  transition: border-color 0.25s var(--ease), color 0.25s var(--ease);
-  letter-spacing: 0.02em;
   text-decoration: none;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
 }
 
 .btn-ghost:hover {
-  border-color: var(--text-2);
-  color: var(--text);
+  background: var(--ink);
+  color: #fff;
 }
 
 /* =============================================
-   Acessibilidade — visível apenas para leitores de tela / buscadores
+   Accessibility
    ============================================= */
 .sr-only {
   position: absolute;
@@ -182,31 +244,31 @@ button {
   border: 0;
 }
 
-/* =============================================
-   Scrollbar
-   ============================================= */
-::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--border-mid); }
-::-webkit-scrollbar-thumb:hover { background: var(--text-3); }
-
-/* Espaço para CTA sticky no mobile */
-@media (max-width: 768px) {
-  .home-main {
-    padding-bottom: 72px;
-  }
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
 }
 
 /* =============================================
-   prefers-reduced-motion — global
+   Scrollbar
    ============================================= */
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--ink); }
 
-  .btn-primary:hover,
-  .btn-ghost:hover {
-    transform: none;
+@media (max-width: 768px) {
+  .home-main { padding-bottom: 72px; }
+}
+
+@media (max-width: 640px) {
+  .section-head {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
+  .section-index { padding-top: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn-primary:hover svg { transform: none; }
 }

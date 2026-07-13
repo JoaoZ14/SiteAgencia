@@ -10,33 +10,32 @@ import {
 } from 'react-icons/ri'
 import './Chatbot.css'
 
-const SYSTEM_PROMPT = `Você é o assistente da GMK Digital, agência de marketing digital em Resende, RJ.
+const SYSTEM_PROMPT = `Você é o assistente da GMK, software house em Resende, RJ.
 
-Serviços: vídeo, foto profissional, social media, tráfego pago (Meta/Google/TikTok), criação de conteúdo, sites e landing pages, design gráfico, estratégia digital. Atende qualquer nicho.
-Contato: WhatsApp (24) 98163-4937 | contato@gmkagency.com | @gmk.agencia
+Serviços: desenvolvimento web, aplicativos mobile, sistemas empresariais, plataformas SaaS, automação, integrações, inteligência artificial e consultoria técnica. Especialidade em hotelaria (reservas, cardápio digital, room service), mas atende qualquer segmento.
+Contato: WhatsApp (24) 98163-4937 | contato@gmkagency.com
 
-Objetivo: conduzir o visitante até uma conversa no WhatsApp. O chat é para qualificar e aquecer, não para resolver tudo.
+Objetivo: conduzir o visitante até uma conversa no WhatsApp. O chat qualifica o projeto, não resolve tudo.
 
 Como agir:
-1. Pergunte o negócio/nicho e o que quer melhorar antes de falar de serviços.
-2. Sugira 1-2 serviços adequados ao contexto.
-3. Convide para o WhatsApp: "Posso te passar mais detalhes lá, é rápido e sem compromisso."
+1. Pergunte o negócio e qual problema ou processo quer resolver com software.
+2. Sugira 1-2 soluções adequadas ao contexto.
+3. Convide para o WhatsApp para falar com um especialista.
 
-Tom: profissional e próximo, como uma pessoa real. Sem "a gente". Frases curtas. Máximo 2 frases por resposta. Uma pergunta por vez. Sempre em português do Brasil.
+Tom: profissional, direto, técnico sem jargão excessivo. Frases curtas. Máximo 2 frases por resposta. Uma pergunta por vez. Português do Brasil.
 
 Preço: nunca invente valores. Diga que depende do escopo e ofereça conversa no WhatsApp.
-Portfólio: agência nova, atenção dedicada, preços justos — reforce isso com naturalidade.
 Nunca invente cases, resultados ou garantias.
-Pessoa indecisa: não force. Deixe a porta aberta sem pressão.
+Pessoa indecisa: não force. Deixe a porta aberta.
 
-Ao direcionar para o WhatsApp, inclua ao final um resumo entre [BRIEF] e [/BRIEF] escrito na perspectiva do cliente, de forma limpa e profissional. Não mencione as tags ao usuário.`
+Ao direcionar para o WhatsApp, inclua ao final um resumo entre [BRIEF] e [/BRIEF] na perspectiva do cliente. Não mencione as tags ao usuário.`
 
 const QUICK_REPLIES = [
-  'Quero melhorar minhas redes sociais',
-  'Preciso de fotos e vídeos profissionais',
-  'Quero anunciar e atrair mais clientes',
-  'Estou começando do zero',
-  'Quanto custa?',
+  'Preciso de um sistema sob medida',
+  'Quero desenvolver um app',
+  'Tenho um hotel e preciso de software',
+  'Quero automatizar processos',
+  'Quanto custa um projeto?',
 ]
 
 const WA_NUMBER = '5524981634937'
@@ -66,8 +65,8 @@ function buildWaText(botText, messages) {
     .map((m) => m.text)
     .join('. ')
   return userLines
-    ? `Olá, GMK Digital! Vim pelo site. ${userLines}`
-    : 'Olá, GMK Digital! Vim pelo site e gostaria de saber mais.'
+    ? `Olá, GMK! Vim pelo site. ${userLines}`
+    : 'Olá, GMK! Vim pelo site e gostaria de falar sobre um projeto de software.'
 }
 
 function BotText({ text, messages }) {
@@ -127,7 +126,7 @@ export default function Chatbot() {
         setMessages([
           {
             role: 'bot',
-            text: 'Olá! O que você está buscando para sua marca?',
+            text: 'Olá! Qual software ou sistema você precisa desenvolver?',
             time: new Date(),
           },
         ])
@@ -229,14 +228,14 @@ export default function Chatbot() {
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
             transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
             role="dialog"
-            aria-label="Chat GMK Digital"
+            aria-label="Chat GMK"
           >
             {/* Header */}
             <div className="cb-header">
               <div className="cb-header-dot" />
               <div className="cb-avatar" aria-hidden="true">G</div>
               <div className="cb-header-info">
-                <strong>GMK Digital</strong>
+                <strong>GMK</strong>
                 <span>
                   <em className="cb-status-dot" />
                   {apiReady ? 'Assistente online' : 'Envie uma mensagem'}
@@ -306,7 +305,7 @@ export default function Chatbot() {
 
             {/* WhatsApp shortcut */}
             <a
-              href="https://wa.me/5524981634937?text=Olá,%20vim%20pelo%20site%20da%20GMK%20Digital!"
+              href="https://wa.me/5524981634937?text=Olá,%20vim%20pelo%20site%20da%20GMK!"
               className="cb-whatsapp"
               target="_blank"
               rel="noopener noreferrer"
