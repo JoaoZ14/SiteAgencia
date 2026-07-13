@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react'
 import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import About from '../components/About'
@@ -9,8 +10,9 @@ import Technologies from '../components/Technologies'
 import Work from '../components/Work'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
-import Chatbot from '../components/Chatbot'
 import MobileStickyCta from '../components/MobileStickyCta'
+
+const Chatbot = lazy(() => import('../components/Chatbot'))
 
 export default function HomePage() {
   return (
@@ -28,7 +30,9 @@ export default function HomePage() {
         <Contact />
       </main>
       <Footer />
-      <Chatbot />
+      <Suspense fallback={null}>
+        <Chatbot />
+      </Suspense>
       <MobileStickyCta />
     </>
   )

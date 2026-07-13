@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { GoogleGenerativeAI } from '@google/generative-ai'
 import {
   RiMessage3Line,
   RiCloseLine,
@@ -40,10 +39,19 @@ const QUICK_REPLIES = [
 
 const WA_NUMBER = '5524981634937'
 
-function getClient() {
+function hasApiKey() {
   const key = import.meta.env.VITE_GEMINI_API_KEY
-  if (!key || key === 'sua_chave_aqui') return null
-  return new GoogleGenerativeAI(key)
+  return !!key && key !== 'sua_chave_aqui'
+}
+
+async function createModel() {
+  const { GoogleGenerativeAI } = await import('@google/generative-ai')
+  const client = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY)
+  return client.getGenerativeModel({
+    model: 'gemini-3-flash-preview',
+    systemInstruction: SYSTEM_PROMPT,
+    generationConfig: { temperature: 0.7 },
+  })
 }
 
 function formatTime(date) {
@@ -117,7 +125,7 @@ export default function Chatbot() {
   useEffect(() => { messagesRef.current = messages }, [messages])
 
   useEffect(() => {
-    setApiReady(!!getClient())
+    setApiReady(hasApiKey())
   }, [])
 
   useEffect(() => {
@@ -184,12 +192,7 @@ export default function Chatbot() {
             parts: [{ text: m.text }],
           }))
 
-        const client = getClient()
-        const model = client.getGenerativeModel({
-          model: 'gemini-3-flash-preview',
-          systemInstruction: SYSTEM_PROMPT,
-          generationConfig: { temperature: 0.7 },
-        })
+        const model = await createModel()
         const session = model.startChat({ history })
         const result = await session.sendMessage(trimmed)
         const response = await result.response.text()

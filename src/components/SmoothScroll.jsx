@@ -1,10 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
 
 const LenisContext = createContext(null)
 
@@ -31,40 +27,15 @@ export default function SmoothScroll({ children }) {
 
     setLenis(instance)
 
-    instance.on('scroll', ScrollTrigger.update)
-
-    ScrollTrigger.scrollerProxy(document.documentElement, {
-      scrollTop(value) {
-        if (arguments.length) {
-          instance.scrollTo(value, { immediate: true })
-        }
-        return instance.scroll
-      },
-      getBoundingClientRect() {
-        return {
-          top: 0,
-          left: 0,
-          width: window.innerWidth,
-          height: window.innerHeight,
-        }
-      },
-    })
-
-    const onRefresh = () => instance.resize()
-    ScrollTrigger.addEventListener('refresh', onRefresh)
-
-    const tick = (time) => {
-      instance.raf(time * 1000)
+    let rafId
+    const raf = (time) => {
+      instance.raf(time)
+      rafId = requestAnimationFrame(raf)
     }
-
-    gsap.ticker.add(tick)
-    gsap.ticker.lagSmoothing(0)
-
-    ScrollTrigger.refresh()
+    rafId = requestAnimationFrame(raf)
 
     return () => {
-      ScrollTrigger.removeEventListener('refresh', onRefresh)
-      gsap.ticker.remove(tick)
+      cancelAnimationFrame(rafId)
       instance.destroy()
       setLenis(null)
     }
