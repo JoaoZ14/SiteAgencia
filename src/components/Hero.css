@@ -13,8 +13,8 @@
   inset: 0;
   background-image: radial-gradient(circle, var(--line-soft) 1px, transparent 1px);
   background-size: 26px 26px;
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 60% 35%, #000 0%, transparent 72%);
-  mask-image: radial-gradient(ellipse 80% 70% at 60% 35%, #000 0%, transparent 72%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 0%, transparent 72%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 0%, transparent 72%);
   pointer-events: none;
   z-index: 0;
 }
@@ -23,14 +23,15 @@
 .hero-watermark {
   position: absolute;
   top: 50%;
-  right: -4vw;
-  transform: translateY(-46%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-family: var(--font-display);
   font-weight: 900;
   font-size: clamp(16rem, 40vw, 44rem);
   line-height: 0.7;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
   color: var(--bg-2);
+  opacity: 0.85;
   pointer-events: none;
   user-select: none;
   z-index: 0;
@@ -39,11 +40,40 @@
 .hero-container {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: clamp(32px, 5vw, 64px);
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
   padding-bottom: clamp(72px, 9vw, 120px);
+}
+
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+}
+
+.hero-brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.hero-brand-mark {
+  font-family: var(--font-mono);
+  font-size: 0.45em;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--accent-dark);
+  transform: translateY(-0.35em);
 }
 
 .hero-kicker {
@@ -51,8 +81,9 @@
   font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.1em;
+  text-transform: uppercase;
   color: var(--text-3);
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -62,15 +93,15 @@
   content: "";
   width: 28px;
   height: 1px;
-  background: var(--ink);
+  background: var(--accent);
 }
 
 .hero-title {
   font-family: var(--font-display);
-  font-size: clamp(2.75rem, 8vw, 6rem);
+  font-size: clamp(2.5rem, 7vw, 5.25rem);
   font-weight: 800;
-  line-height: 0.92;
-  letter-spacing: -0.05em;
+  line-height: 0.94;
+  letter-spacing: -0.04em;
   color: var(--ink);
   text-wrap: balance;
 }
@@ -79,7 +110,7 @@
   position: relative;
   display: inline-block;
   color: var(--bg);
-  background: var(--ink);
+  background: var(--accent);
   padding: 0 0.12em;
   margin-left: -0.06em;
 }
@@ -96,6 +127,7 @@
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 12px;
   margin-top: 32px;
 }
@@ -104,6 +136,7 @@
   list-style: none;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
   margin-top: 32px;
   padding-top: 28px;
@@ -126,11 +159,7 @@
 .hero-cap-icon {
   display: inline-flex;
   font-size: 1rem;
-  color: var(--ink);
-}
-
-.hero-visual-wrap {
-  position: relative;
+  color: var(--accent-dark);
 }
 
 /* Marquee ticker */
@@ -172,11 +201,6 @@
 }
 
 @media (max-width: 900px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
   .hero-watermark {
     font-size: clamp(14rem, 60vw, 30rem);
     opacity: 0.7;

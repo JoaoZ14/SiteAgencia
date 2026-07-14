@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import {
   RiInstagramLine,
-  RiLinkedinBoxLine,
   RiWhatsappLine,
   RiMailLine,
   RiMapPinLine,
@@ -13,7 +12,6 @@ import './Footer.css'
 
 const SOCIALS = [
   { icon: <RiInstagramLine />, href: 'https://instagram.com/gmk.agencia', label: 'Instagram' },
-  { icon: <RiLinkedinBoxLine />, href: '#', label: 'LinkedIn' },
 ]
 
 const CONTACT = [

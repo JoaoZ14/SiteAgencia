@@ -5,17 +5,14 @@ import {
   RiCodeSSlashLine,
   RiSmartphoneLine,
   RiRobot2Line,
-  RiCloudLine,
 } from 'react-icons/ri'
-import HeroVisual from './HeroVisual'
 import BrandStrip from './BrandStrip'
 import './Hero.css'
 
 const CAPS = [
   { icon: <RiCodeSSlashLine />, label: 'Web' },
   { icon: <RiSmartphoneLine />, label: 'Mobile' },
-  { icon: <RiRobot2Line />, label: 'IA' },
-  { icon: <RiCloudLine />, label: 'Cloud' },
+  { icon: <RiRobot2Line />, label: 'Automação' },
 ]
 
 const EASE = [0.25, 1, 0.5, 1]
@@ -38,13 +35,24 @@ export default function Hero() {
       <div className="container hero-container">
         <div className="hero-copy">
           <motion.p
-            className="hero-kicker"
+            className="hero-brand"
             variants={fadeUp}
             initial="hidden"
             animate="visible"
             custom={0}
           >
-            SOFTWARE HOUSE — RESENDE, BR
+            GMK
+            <span className="hero-brand-mark">/SOFTWARE</span>
+          </motion.p>
+
+          <motion.p
+            className="hero-kicker"
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            custom={0.04}
+          >
+            Software house — Resende, BR
           </motion.p>
 
           <motion.h1
@@ -53,7 +61,7 @@ export default function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            custom={0.08}
+            custom={0.1}
           >
             Software que
             <br />
@@ -67,10 +75,10 @@ export default function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            custom={0.16}
+            custom={0.18}
           >
-            Desenvolvemos plataformas, sistemas e aplicações sob medida
-            para empresas que precisam crescer através da tecnologia.
+            Plataformas, sistemas e apps sob medida para empresas que precisam
+            crescer com tecnologia — do Sul Fluminense ao Brasil.
           </motion.p>
 
           <motion.div
@@ -78,14 +86,14 @@ export default function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            custom={0.24}
+            custom={0.26}
           >
-            <Link to="/#servicos" className="btn-primary">
-              Conhecer soluções
+            <Link to="/#contato" className="btn-primary">
+              Solicitar orçamento
               <RiArrowRightLine aria-hidden="true" />
             </Link>
-            <Link to="/#contato" className="btn-ghost">
-              Solicitar orçamento
+            <Link to="/#servicos" className="btn-ghost">
+              Ver soluções
             </Link>
           </motion.div>
 
@@ -94,7 +102,7 @@ export default function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="visible"
-            custom={0.32}
+            custom={0.34}
           >
             {CAPS.map((cap) => (
               <li key={cap.label}>
@@ -104,15 +112,6 @@ export default function Hero() {
             ))}
           </motion.ul>
         </div>
-
-        <motion.div
-          className="hero-visual-wrap"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: EASE }}
-        >
-          <HeroVisual />
-        </motion.div>
       </div>
 
       <BrandStrip />

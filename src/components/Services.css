@@ -4,7 +4,6 @@
   border-bottom: 1px solid var(--line);
 }
 
-/* Bordered brutal grid — cells share a single grid line */
 .services-grid {
   list-style: none;
   display: grid;
@@ -14,37 +13,14 @@
 }
 
 .service-card {
-  position: relative;
-  padding: 32px 28px 56px;
+  padding: 32px 28px;
   border-right: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   background: var(--bg);
-  transition: background 0.2s var(--ease), color 0.2s var(--ease);
-  overflow: hidden;
 }
 
-.service-card:hover {
-  background: var(--ink);
-}
-
-.service-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 28px;
-}
-
-.service-num {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--text-3);
-  transition: color 0.2s var(--ease);
-}
-
-.service-card:hover .service-icon {
-  background: #fff;
-  color: var(--ink);
+.service-icon {
+  margin-bottom: 24px;
 }
 
 .service-title {
@@ -54,34 +30,12 @@
   letter-spacing: -0.02em;
   color: var(--ink);
   margin-bottom: 10px;
-  transition: color 0.2s var(--ease);
 }
 
 .service-desc {
   font-size: 0.875rem;
   line-height: 1.55;
   color: var(--text-2);
-  transition: color 0.2s var(--ease);
-}
-
-.service-arrow {
-  position: absolute;
-  bottom: 24px;
-  left: 28px;
-  font-size: 1.125rem;
-  color: var(--text-3);
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease), color 0.2s var(--ease);
-}
-
-.service-card:hover .service-num,
-.service-card:hover .service-desc { color: rgba(255, 255, 255, 0.65); }
-.service-card:hover .service-title { color: #fff; }
-.service-card:hover .service-arrow {
-  opacity: 1;
-  transform: translateY(0);
-  color: #fff;
 }
 
 @media (max-width: 1024px) {
@@ -90,10 +44,4 @@
 
 @media (max-width: 520px) {
   .services-grid { grid-template-columns: 1fr; }
-  .service-card { padding-bottom: 52px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .service-arrow { transition: opacity 0.2s var(--ease); transform: none; }
-  .service-card:hover .service-arrow { transform: none; }
 }

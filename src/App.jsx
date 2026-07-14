@@ -52,7 +52,7 @@ export default function App() {
           {!splashDone && <SplashScreen onComplete={handleSplashComplete} />}
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/catalogo" element={<Navigate to="/#portfolio" replace />} />
+            <Route path="/catalogo" element={<Navigate to="/" replace />} />
           </Routes>
         </SmoothScroll>
       </BrowserRouter>

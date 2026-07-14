@@ -151,6 +151,15 @@ export default function Chatbot() {
   }, [open])
 
   useEffect(() => {
+    if (!open) return undefined
+    const onKey = (e) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [open])
+
+  useEffect(() => {
     const isMobile = window.innerWidth <= 480
     if (isMobile) {
       document.body.style.overflow = open ? 'hidden' : ''

@@ -9,7 +9,6 @@ export default function Technologies() {
     <section className="tech" id="tecnologias" aria-labelledby="tech-heading">
       <div className="container">
         <div className="section-head">
-          <span className="section-index">06 / STACK</span>
           <div className="section-head-main">
             <motion.h2
               className="section-title"
@@ -19,7 +18,7 @@ export default function Technologies() {
               viewport={{ once: true, margin: '-60px' }}
               variants={fadeUp}
             >
-              Stack moderna. Resultado sólido.
+              Ferramentas certas para cada projeto.
             </motion.h2>
             <motion.p
               className="section-lead"
@@ -28,8 +27,8 @@ export default function Technologies() {
               viewport={{ once: true, margin: '-60px' }}
               variants={fadeUp}
             >
-              Escolhemos a ferramenta certa para cada projeto, sempre com
-              foco em performance, manutenção e escalabilidade.
+              Stack moderna quando faz sentido — sempre com foco em manutenção
+              e performance no dia a dia da operação.
             </motion.p>
           </div>
         </div>
@@ -39,7 +38,7 @@ export default function Technologies() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-40px' }}
-          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.025 } } }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.02 } } }}
         >
           {TECHNOLOGIES.map((tech) => {
             const Icon = TECH_ICONS[tech.icon]

@@ -9,7 +9,6 @@ export default function Differentiators() {
     <section className="diffs" id="diferenciais" aria-labelledby="diffs-heading">
       <div className="container">
         <div className="section-head">
-          <span className="section-index">05 / DIFERENCIAIS</span>
           <div className="section-head-main">
             <motion.h2
               className="section-title"
@@ -25,20 +24,23 @@ export default function Differentiators() {
         </div>
 
         <motion.ul
-          className="diffs-grid"
+          className="diffs-list"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-40px' }}
-          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.04 } } }}
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.06 } } }}
         >
           {DIFFERENTIALS.map((item) => {
             const Icon = DIFFERENTIAL_ICONS[item.icon]
             return (
-              <motion.li key={item.label} className="diffs-item" variants={fadeUp}>
+              <motion.li key={item.title} className="diffs-item" variants={fadeUp}>
                 <span className="icon-chip diffs-item-icon" aria-hidden="true">
                   {Icon && <Icon />}
                 </span>
-                <span className="diffs-item-label">{item.label}</span>
+                <div>
+                  <h3 className="diffs-item-title">{item.title}</h3>
+                  <p className="diffs-item-desc">{item.desc}</p>
+                </div>
               </motion.li>
             )
           })}

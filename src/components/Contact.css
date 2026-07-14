@@ -14,7 +14,7 @@
   font-weight: 900;
   font-size: clamp(14rem, 38vw, 42rem);
   line-height: 0.7;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.04em;
   color: rgba(255, 255, 255, 0.04);
   pointer-events: none;
   user-select: none;
@@ -41,7 +41,7 @@
   content: "";
   width: 28px;
   height: 1px;
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--accent);
 }
 
 .contact-title {
@@ -111,7 +111,11 @@
 }
 
 .contact-phone:hover {
-  color: #fff;
+  color: var(--accent);
+}
+
+.contact-phone:hover svg {
+  color: var(--accent);
 }
 
 .contact-phone svg {

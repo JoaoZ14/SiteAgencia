@@ -22,6 +22,11 @@ export default function MobileStickyCta() {
     return () => observer.disconnect()
   }, [])
 
+  useEffect(() => {
+    document.body.classList.toggle('sticky-cta-visible', visible)
+    return () => document.body.classList.remove('sticky-cta-visible')
+  }, [visible])
+
   return (
     <AnimatePresence>
       {visible && (

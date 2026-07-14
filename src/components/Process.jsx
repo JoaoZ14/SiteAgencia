@@ -9,8 +9,8 @@ export default function Process() {
     <section className="process" id="processo" aria-labelledby="process-heading">
       <div className="container">
         <div className="section-head">
-          <span className="section-index">04 / PROCESSO</span>
           <div className="section-head-main">
+            <p className="kicker">Processo</p>
             <motion.h2
               className="section-title"
               id="process-heading"

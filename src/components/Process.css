@@ -32,12 +32,13 @@
 }
 
 .process-step:hover .process-num {
-  color: var(--ink);
+  color: var(--accent-dark);
 }
 
 .process-step:hover .process-icon {
-  background: var(--ink);
+  background: var(--accent);
   color: #fff;
+  border-color: var(--accent);
 }
 
 .process-step-title {

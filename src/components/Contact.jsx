@@ -8,7 +8,7 @@ const WA_URL =
 
 export default function Contact() {
   return (
-    <section className="contact" id="contato">
+    <section className="contact" id="contato" aria-labelledby="contact-heading">
       <span className="contact-watermark" aria-hidden="true">GMK</span>
 
       <div className="container contact-inner">
@@ -19,11 +19,12 @@ export default function Contact() {
           viewport={{ once: true, margin: '-60px' }}
           variants={fadeUp}
         >
-          08 / VAMOS CONSTRUIR
+          Vamos construir
         </motion.p>
 
         <motion.h2
           className="contact-title"
+          id="contact-heading"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
@@ -41,7 +42,8 @@ export default function Contact() {
           viewport={{ once: true, margin: '-60px' }}
           variants={fadeUp}
         >
-          Toda empresa possui processos. Nós transformamos processos em software.
+          Conte o problema. Respondemos com escopo, prazo e próximo passo —
+          sem roteiro genérico.
         </motion.p>
 
         <motion.div
@@ -71,7 +73,7 @@ export default function Contact() {
           viewport={{ once: true, margin: '-60px' }}
           variants={fadeUp}
         >
-          WHATSAPP — (24) 98163-4937
+          WhatsApp — (24) 98163-4937
           <RiArrowRightUpLine aria-hidden="true" />
         </motion.a>
       </div>

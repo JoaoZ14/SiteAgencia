@@ -75,14 +75,21 @@ export const PROCESS_STEPS = [
 ]
 
 export const DIFFERENTIALS = [
-  { icon: 'clean', label: 'Código limpo' },
-  { icon: 'arch', label: 'Arquitetura moderna' },
-  { icon: 'scale', label: 'Escalabilidade' },
-  { icon: 'perf', label: 'Performance' },
-  { icon: 'security', label: 'Segurança' },
-  { icon: 'ux', label: 'Experiência do usuário' },
-  { icon: 'integration', label: 'Integrações' },
-  { icon: 'support', label: 'Suporte' },
+  {
+    icon: 'clean',
+    title: 'Código que outro time mantém',
+    desc: 'Arquitetura clara, revisões e padrões. Você não fica refém de um único desenvolvedor.',
+  },
+  {
+    icon: 'scale',
+    title: 'Cresce com o negócio',
+    desc: 'Começamos enxuto e deixamos o caminho aberto para escala, integrações e novas frentes.',
+  },
+  {
+    icon: 'support',
+    title: 'Contato direto com quem entrega',
+    desc: 'Sem camada de call center. Em Resende ou remoto, você fala com quem está no código.',
+  },
 ]
 
 export const HOSPITALITY_FEATURES = [

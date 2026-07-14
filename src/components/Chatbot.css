@@ -16,7 +16,7 @@
   color: #fff;
   font-size: 1.3rem;
   font-family: var(--font);
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, bottom 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .cb-toggle:hover {
@@ -61,6 +61,7 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  transition: bottom 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .cb-header {
@@ -339,13 +340,13 @@
   }
 }
 
-/* Keep the launcher and window clear of the mobile sticky WhatsApp bar */
+/* Sobe o chat só quando o sticky "Falar com especialista" está visível */
 @media (max-width: 768px) {
-  .cb-toggle {
+  body.sticky-cta-visible .cb-toggle {
     bottom: calc(86px + env(safe-area-inset-bottom, 0px));
   }
 
-  .cb-window {
+  body.sticky-cta-visible .cb-window {
     bottom: calc(146px + env(safe-area-inset-bottom, 0px));
     height: min(520px, calc(100vh - 200px));
   }

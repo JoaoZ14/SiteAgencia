@@ -18,7 +18,7 @@
 }
 
 .brand-strip-em {
-  color: var(--ink);
+  color: var(--accent);
 }
 
 @media (prefers-reduced-motion: reduce) {

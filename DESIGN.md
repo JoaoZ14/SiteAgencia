@@ -1,185 +1,158 @@
 ---
-name: GMK Digital
-description: Agência de marketing digital em Resende, RJ — ousada, direta, confiante.
+name: GMK Software House
+description: Software house em Resende, RJ — Minimal Brutal, direta, tipográfica.
 colors:
-  primary: "#5B8EF0"
-  primary-dim: "rgba(91, 142, 240, 0.12)"
-  bg-deep: "#0A0A0A"
-  bg-layer: "#111111"
-  ink-primary: "#F0F0F0"
-  ink-muted: "#999999"
-  ink-dim: "#606060"
-  border-subtle: "#1E1E1E"
-  border-mid: "#2A2A2A"
+  ink: "#000000"
+  bg: "#FFFFFF"
+  bg-2: "#F4F4F4"
+  surface: "#FAFAFA"
+  text: "#0A0A0A"
+  text-2: "#4B4B4B"
+  text-3: "#8A8A8A"
+  graphite: "#1A1A1A"
+  line: "#000000"
+  line-soft: "#E2E2E2"
+  hover: "#EFEFEF"
+  accent: "#5B8EF0"
+  accent-dark: "#3D6FCC"
 typography:
   display:
-    fontFamily: "'PP Neue Montreal', 'Inter', sans-serif"
-    fontSize: "clamp(2.6rem, 4.5vw, 3.75rem)"
+    fontFamily: "'Archivo', 'Inter', sans-serif"
+    fontSize: "clamp(1.6rem, 3vw, 2.25rem)"
     fontWeight: 700
-    lineHeight: 1
-    letterSpacing: "-0.04em"
+    lineHeight: 1.08
+    letterSpacing: "-0.03em"
   hero:
-    fontFamily: "'Syncopate', 'PP Neue Montreal', sans-serif"
-    fontSize: "clamp(2.4rem, 8vw, 5.5rem)"
-    fontWeight: 700
-    lineHeight: 1.05
-    letterSpacing: "-0.02em"
+    fontFamily: "'Archivo', 'Inter', sans-serif"
+    fontSize: "clamp(2.75rem, 8vw, 6rem)"
+    fontWeight: 800
+    lineHeight: 0.92
+    letterSpacing: "-0.04em"
   body:
     fontFamily: "'Inter', -apple-system, BlinkMacSystemFont, sans-serif"
     fontSize: "1rem"
     fontWeight: 400
     lineHeight: 1.6
     letterSpacing: "normal"
-  label:
-    fontFamily: "'Inter', sans-serif"
-    fontSize: "0.72rem"
-    fontWeight: 600
-    lineHeight: 1.2
-    letterSpacing: "0.14em"
-  manifesto:
-    fontFamily: "'Space Grotesk', 'Inter', sans-serif"
-    fontSize: "clamp(1.1rem, 2vw, 1.35rem)"
+  mono:
+    fontFamily: "'JetBrains Mono', 'SFMono-Regular', Consolas, monospace"
+    fontSize: "0.75rem"
     fontWeight: 500
-    lineHeight: 1.5
-    letterSpacing: "normal"
+    lineHeight: 1.2
+    letterSpacing: "0.06em"
 rounded:
-  sm: "3px"
+  none: "0px"
 spacing:
-  section: "120px"
-  container: "32px"
+  section: "clamp(72px, 9vw, 128px)"
+  gutter: "clamp(20px, 4vw, 48px)"
+  container: "1240px"
 components:
   button-primary:
-    backgroundColor: "{colors.primary}"
-    textColor: "#ffffff"
-    rounded: "{rounded.sm}"
-    padding: "13px 28px"
+    backgroundColor: "{colors.ink}"
+    textColor: "#FFFFFF"
+    rounded: "{rounded.none}"
+    padding: "15px 28px"
+  button-primary-hover:
+    backgroundColor: "#FFFFFF"
+    textColor: "{colors.ink}"
   button-ghost:
     backgroundColor: "transparent"
-    textColor: "{colors.ink-muted}"
-    rounded: "{rounded.sm}"
-    padding: "13px 28px"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.none}"
+    padding: "15px 28px"
 ---
 
-# Design System: GMK Digital
+# Design System: GMK Software House
 
-## 1. Overview
+## Overview
 
-**Creative North Star: "O Sinal Direto"**
+**Creative North Star: "Sinal técnico, entrega humana"**
 
-GMK Digital opera em modo noturno de estúdio: fundo profundo, tipografia com presença e um único azul elétrico que guia o olhar para ação. O sistema rejeita o visual genérico de agência — sem cards repetidos, sem hero de métricas, sem gradiente decorativo em todo lugar. Cada superfície deve comunicar craft real e confiança direta, alinhada à personalidade ousada e sem rodeios da marca.
+GMK é uma software house com presença tipográfica forte em fundo claro: monócromo brutal, bordas pretas de 1px, cantos retos e um azul elétrico `#5B8EF0` usado com parcimônia (CTA pontual, ícones ativos, um destaque por viewport). O site vende confiança por clareza e especificidade regional (Resende + remoto), não por decks genéricos de SaaS.
 
-A densidade é editorial, não dashboard: seções amplas com respiro (120px de padding vertical), hierarquia tipográfica forte e CTAs sempre visíveis. Profundidade vem de overlays fotográficos, camadas de fundo (`--bg` / `--bg-2`) e bordas sutis — não de sombras pesadas.
+Densidade editorial: seções com respiro, hierarquia Archivo/Inter/JetBrains Mono, motion Framer com ease `cubic-bezier(0.25, 1, 0.5, 1)` e respeito a `prefers-reduced-motion`. Sem cards idênticos em sequência, sem índices `01/02/03` em toda seção (números só onde há sequência real, ex.: Processo), sem portfólio falso.
 
 **Key Characteristics:**
-- Tema escuro como padrão (fundo `#0A0A0A`, não cream/beige)
-- Um accent azul (`#5B8EF0`) com uso estratégico em CTAs, ícones e destaques
-- Tipografia multi-role: Syncopate no hero, PP Neue Montreal em títulos, Inter no corpo
-- Cantos quase retos (3px) — precisão, não softness genérico
-- Motion com Framer Motion: ease `cubic-bezier(0.22, 1, 0.36, 1)`, respeitando `prefers-reduced-motion`
-- Foco em conversão: botões primários e WhatsApp sempre acessíveis
+- Tema claro (`#FFFFFF` / `#F4F4F4`), não cream e não dark studio
+- Accent azul ≤10% da superfície
+- Tipografia: Archivo (display/hero), Inter (corpo), JetBrains Mono (labels)
+- `border-radius: 0` — precisão industrial
+- CTAs pretos que invertem no hover; Contact full-bleed preto no fim
 
-## 2. Colors
+## Colors
 
-Paleta escura com um único sinal azul — confiança técnica sem cair no corporativo frio.
+Paleta monócroma com um sinal azul.
 
 ### Primary
-- **Electric Signal Blue** (`#5B8EF0`): CTAs primários, ícones de seção, eyebrow do hero, links de destaque. Raro o suficiente para marcar ação, frequente o suficiente para guiar.
-- **Signal Dim** (`rgba(91, 142, 240, 0.12)`): fundos de destaque suaves, badges, estados hover sutis.
+- **Signal Blue** (`#5B8EF0`): destaque tipográfico, ícones ativos, linha do kicker do hero.
+- **Signal Dark** (`#3D6FCC`): hover de links/accent.
 
 ### Neutral
-- **Deep Black** (`#0A0A0A`): fundo principal do body e seções.
-- **Charcoal Layer** (`#111111`): footer, camadas secundárias.
-- **Soft White Ink** (`#F0F0F0`): texto principal, títulos.
-- **Muted Gray** (`#999999`): subtítulos, texto secundário, botões ghost.
-- **Dim Gray** (`#606060`): labels de seção, metadados, texto terciário.
-- **Border Subtle** (`#1E1E1E`): divisores de seção, bordas de navbar scrolled.
-- **Border Mid** (`#2A2A2A`): bordas de botões ghost, inputs.
+- **Ink** (`#000000`): texto forte, bordas, botões primários, seções dark (Contact/Hospitality).
+- **BG** (`#FFFFFF`): body.
+- **BG-2** (`#F4F4F4`): faixas secundárias, watermark suave.
+- **Text-2** (`#4B4B4B`): corpo secundário.
+- **Text-3** (`#8A8A8A`): metadata curta (não blocos longos).
+- **Line / Line-soft** (`#000` / `#E2E2E2`): grades e divisores.
 
 ### Named Rules
-**The One Signal Rule.** O azul primário aparece em CTAs, ícones ativos e no máximo um destaque tipográfico por seção. Não espalhar accent em fundos inteiros.
+**The One Signal Rule.** Azul só em ação ou ênfase — nunca como background de página.
 
-**The Dark Studio Rule.** O fundo é preto profundo, não warm-neutral. Calor vem de fotografia e copy, não de cream/sand no body.
+**The Flat Studio Rule.** Profundidade por contraste ink/bg e bordas; sombras raras.
 
-## 3. Typography
+## Typography
 
-**Display Font:** PP Neue Montreal (com Inter fallback)
-**Hero Font:** Syncopate (com PP Neue Montreal fallback)
-**Body Font:** Inter (com system-ui fallback)
-**Manifesto Font:** Space Grotesk (com Inter fallback)
-
-**Character:** Contraste de personalidades — Syncopate geométrico e impactante no hero; PP Neue Montreal editorial nos títulos; Inter legível no corpo; Space Grotesk no manifesto da marca.
+**Display / Hero:** Archivo  
+**Body:** Inter  
+**Mono:** JetBrains Mono
 
 ### Hierarchy
-- **Hero** (700, clamp até ~5.5rem, line-height 1.05): headline principal da landing, linhas animadas independentes.
-- **Display** (700, clamp 2.6–3.75rem, -0.04em tracking): títulos de seção (Serviços, Sobre, Contato).
-- **Title** (700, clamp 1.85–2.9rem): subtítulos de missão e blocos internos.
-- **Body** (400, 1rem, line-height 1.6): parágrafos descritivos, máx. ~65–75ch onde aplicável.
-- **Label** (600, 0.72rem, 0.14em tracking, uppercase): marcadores de seção com ícone opcional.
+- **Hero** (800, clamp até 6rem, tracking ≥ −0.04em)
+- **Section title** (700, clamp 1.6–2.25rem)
+- **Body** (400, 1rem, max ~65–75ch)
+- **Mono label** (0.75rem, tracking largo) — kicker pontual, não em toda seção
 
 ### Named Rules
-**The Letter-Spacing Floor Rule.** Display headings nunca abaixo de -0.04em — letras não se tocam.
+**Letter-Spacing Floor.** Display nunca abaixo de −0.04em.  
+**Hero Ceiling.** Clamp max ≤ 6rem.
 
-**The Hero Ceiling Rule.** Títulos hero com clamp máximo ≤ 6rem (~96px). Acima disso é gritar, não desenhar.
+## Elevation
 
-## 4. Elevation
+Flat por padrão. Hover de botão = invert fill. Navbar scrolled = blur leve funcional. Contact e Hospitality usam bloco ink full-bleed como contraste tonal, não shadow.
 
-Sistema predominantemente flat com profundidade por camadas tonais e overlays fotográficos. Sombras são raras; quando aparecem, são sutis (hover em botões: `translateY(-1px)` + opacity).
-
-### Shadow Vocabulary
-- **Button lift** (`transform: translateY(-1px)` + `opacity: 0.88`): feedback tátil em hover de `.btn-primary`.
-- **Navbar glass** (`backdrop-filter: blur(20px)` + `rgba(10,10,10,0.95)`): apenas na navbar scrolled — uso funcional, não decorativo.
-
-### Named Rules
-**The Flat-By-Default Rule.** Superfícies em repouso são planas. Elevação responde a estado (hover, scroll) ou a overlay de imagem no hero.
-
-## 5. Components
+## Components
 
 ### Buttons
-- **Shape:** Quase reto (3px radius)
-- **Primary:** gradiente azul (`linear-gradient(135deg, #6FA3F7 0%, #2D5FD4 100%)`), texto branco, padding 13px 28px, font-weight 700, letter-spacing 0.04em
-- **Hover / Focus:** opacity 0.88, translateY(-1px), transição 0.2s ease
-- **Ghost:** transparente, borda `var(--border-mid)`, texto `var(--text-2)`; hover eleva cor da borda e do texto
+- Primary: ink + texto branco; hover invert.
+- Ghost: borda ink; hover fill ink.
+- Radius 0. Sem gradiente em CTA.
 
-### Labels / Section markers
-- **Style:** uppercase, 0.72rem, tracking 0.14em, cor `var(--text-3)`, ícone inline com opacity 0.55
-- **Uso:** um por seção, com ícone React Icons — não repetir eyebrow em todas as seções como scaffolding automático
-
-### Cards / Containers
-- **Corner Style:** 3px ou sem radius
-- **Background:** `var(--bg)` ou `var(--bg-2)` para footer
-- **Border:** `1px solid var(--border)` entre seções
-- **Internal Padding:** container 32px (24px tablet, 16px mobile), seções 120px vertical
+### Section heads
+- Título + lead opcional. Sem índice `01 / NOME` scaffolding.
+- Processo: números 01–05 só nos steps.
 
 ### Navigation
-- **Style:** fixed top, transparente em repouso, glass ao scroll
-- **Links:** 0.8rem, weight 500, cor `var(--text-2)`, hover `var(--text)`
-- **Mobile:** menu hamburger com overlay full-screen escuro
+- Fixed; glass ao scroll; mobile overlay full-screen claro com tipografia display e CTA ink.
 
 ### Hero
-- **Background:** imagem full-bleed com overlay gradiente escuro (esquerda 98% opacidade → direita 65%)
-- **Eyebrow:** accent color, uppercase, tracking 0.18em — único kicker da página
-- **Tags:** pills com borda `rgba(255,255,255,0.1)`, sem fill
+- Coluna única central; marca GMK como sinal hero-level; watermark de apoio; um kicker; um H1; um sub; um grupo CTA.
 
-### Contact CTA
-- **Style:** botão primário ampliado (16px 32px), ícone WhatsApp inline
-- **Título:** display grande com `<em>` em accent — evitar expandir gradient-text para outros elementos
+### Contact
+- Full-bleed ink; CTA WhatsApp + e-mail; kicker sem numeração de seção.
 
-## 6. Do's and Don'ts
+## Do's and Don'ts
 
-### Do:
-- **Do** manter contraste WCAG AA: `#F0F0F0` sobre `#0A0A0A` para corpo; revisar `#999999` em textos longos.
-- **Do** usar `prefers-reduced-motion` em todas as animações Framer Motion.
-- **Do** limitar line-length do corpo a 65–75ch.
-- **Do** usar `text-wrap: balance` em h1–h3.
-- **Do** manter CTAs de contato visíveis e com caminho claro (WhatsApp, formulário).
-- **Do** usar o accent azul com intenção — CTA, ícone ativo, um destaque por seção.
+### Do
+- Manter contraste AA em corpo e CTAs.
+- Mostrar especificidade (Resende, hotelaria, processo).
+- Preferir prova concreta ou honestidade (“cases sob NDA”) a portfólio fictício.
+- Respeitar `prefers-reduced-motion`.
 
-### Don't:
-- **Don't** usar templates genéricos de SaaS: cards idênticos, hero com métricas, gradientes decorativos sem função.
-- **Don't** criar agência "barulhenta": neon excessivo, animação poluída, visual que grita.
-- **Don't** cair no corporativo frio: azul genérico sem personalidade, stock photos sem tratamento, linguagem burocrática.
-- **Don't** parecer "site de agência gerado por IA" — evitar eyebrow uppercase em toda seção, grids de cards iguais, números 01/02/03 como scaffolding.
-- **Don't** usar `border-left` colorido > 1px em cards ou callouts.
-- **Don't** expandir `background-clip: text` com gradiente além do destaque pontual já existente no contato.
-- **Don't** usar glassmorphism como padrão — apenas navbar scrolled com propósito funcional.
-- **Don't** usar fundo cream/sand/beige — o body é preto profundo.
+### Don't
+- Índices numerados em todas as seções.
+- Grids idênticos icon+label repetidos como única linguagem visual.
+- Cards que parecem clicáveis sem destino.
+- Gradiente em botões sticky/CTA.
+- Cream/sand body ou purple SaaS default.
+- Side-stripe colorida >1px; gradient-text; glass decorativo.
+- Documentar um tema dark se o código shippa light (manter DESIGN.md alinhado ao live).

@@ -9,8 +9,8 @@ export default function Hospitality() {
     <section className="hospitality" id="hotelaria" aria-labelledby="hospitality-heading">
       <div className="container">
         <div className="section-head hospitality-head">
-          <span className="section-index">03 / ESPECIALIDADE</span>
           <div className="section-head-main">
+            <p className="kicker hospitality-kicker">Especialidade</p>
             <motion.h2
               className="section-title"
               id="hospitality-heading"

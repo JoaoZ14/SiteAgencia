@@ -7,7 +7,7 @@ import Hospitality from '../components/Hospitality'
 import Process from '../components/Process'
 import Differentiators from '../components/Differentiators'
 import Technologies from '../components/Technologies'
-import Work from '../components/Work'
+import Proof from '../components/Proof'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import MobileStickyCta from '../components/MobileStickyCta'
@@ -26,7 +26,7 @@ export default function HomePage() {
         <Process />
         <Differentiators />
         <Technologies />
-        <Work />
+        <Proof />
         <Contact />
       </main>
       <Footer />

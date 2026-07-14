@@ -52,8 +52,9 @@
 }
 
 .about-pillar:hover .about-pillar-icon {
-  background: var(--ink);
+  background: var(--accent);
   color: #fff;
+  border-color: var(--accent);
 }
 
 .about-pillar-title {

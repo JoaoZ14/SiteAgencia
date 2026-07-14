@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion'
-import { RiArrowRightUpLine } from 'react-icons/ri'
 import { SERVICES } from '../data/site'
 import { SERVICE_ICONS } from '../utils/icons'
 import { fadeUp } from '../utils/motion'
@@ -10,7 +9,6 @@ export default function Services() {
     <section className="services" id="servicos" aria-labelledby="services-heading">
       <div className="container">
         <div className="section-head">
-          <span className="section-index">02 / SOLUÇÕES</span>
           <div className="section-head-main">
             <motion.h2
               className="section-title"
@@ -29,8 +27,8 @@ export default function Services() {
               viewport={{ once: true, margin: '-60px' }}
               variants={fadeUp}
             >
-              Do MVP ao sistema enterprise. Cada projeto com arquitetura
-              pensada para escalar e evoluir com a empresa.
+              Do MVP ao sistema corporativo. Cada projeto com arquitetura
+              pensada para evoluir junto com a empresa.
             </motion.p>
           </div>
         </div>
@@ -48,17 +46,11 @@ export default function Services() {
                 variants={fadeUp}
                 custom={(i % 4) * 0.05}
               >
-                <div className="service-top">
-                  <span className="icon-chip service-icon" aria-hidden="true">
-                    {Icon && <Icon />}
-                  </span>
-                  <span className="service-num">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                </div>
+                <span className="icon-chip service-icon" aria-hidden="true">
+                  {Icon && <Icon />}
+                </span>
                 <h3 className="service-title">{service.title}</h3>
                 <p className="service-desc">{service.desc}</p>
-                <RiArrowRightUpLine className="service-arrow" aria-hidden="true" />
               </motion.li>
             )
           })}

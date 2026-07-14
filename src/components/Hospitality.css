@@ -5,11 +5,10 @@
   border-bottom: 1px solid var(--line);
 }
 
-.hospitality .section-index { color: rgba(255, 255, 255, 0.4); }
 .hospitality .section-title { color: #fff; }
 .hospitality .section-lead { color: rgba(255, 255, 255, 0.62); }
-.hospitality .kicker { color: rgba(255, 255, 255, 0.5); }
-.hospitality .kicker::before { background: #fff; }
+.hospitality .kicker { color: rgba(255, 255, 255, 0.55); }
+.hospitality .kicker::before { background: var(--accent); }
 
 .hospitality-features {
   list-style: none;

@@ -2,7 +2,6 @@ export const NAV_LINKS = [
   { label: 'Soluções', to: '/#servicos' },
   { label: 'Hotelaria', to: '/#hotelaria' },
   { label: 'Processo', to: '/#processo' },
-  { label: 'Portfólio', to: '/#portfolio' },
   { label: 'Sobre', to: '/#sobre' },
 ]
 
@@ -11,7 +10,6 @@ export const FOOTER_NAV_LINKS = [
   { label: 'Soluções', to: '/#servicos' },
   { label: 'Hotelaria', to: '/#hotelaria' },
   { label: 'Processo', to: '/#processo' },
-  { label: 'Portfólio', to: '/#portfolio' },
   { label: 'Sobre', to: '/#sobre' },
   { label: 'Contato', to: '/#contato' },
 ]

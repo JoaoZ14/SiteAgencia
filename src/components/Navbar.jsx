@@ -7,6 +7,8 @@ import { NAV_LINKS } from '../constants/navLinks'
 import { EASE_OUT } from '../utils/motion'
 import './Navbar.css'
 
+const WHATSAPP_URL = 'https://wa.me/5524981634937'
+
 const navEnter = {
   hidden: { y: -16, opacity: 0 },
   visible: {
@@ -18,17 +20,17 @@ const navEnter = {
 
 const overlayVariants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.3, ease: EASE_OUT } },
+  visible: { opacity: 1, transition: { duration: 0.28, ease: EASE_OUT } },
   exit: { opacity: 0, transition: { duration: 0.2, ease: EASE_OUT } },
 }
 
 const linkStagger = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.05, delayChildren: 0.06 } },
+  visible: { transition: { staggerChildren: 0.05, delayChildren: 0.08 } },
 }
 
 const linkItem = {
-  hidden: { opacity: 0, y: 12 },
+  hidden: { opacity: 0, y: 16 },
   visible: {
     opacity: 1,
     y: 0,
@@ -52,18 +54,21 @@ export default function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
-  const closeMenu = () => setMenuOpen(false)
+  useEffect(() => {
+    if (!menuOpen) return undefined
+    const onKey = (e) => {
+      if (e.key === 'Escape') setMenuOpen(false)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [menuOpen])
 
-  const renderNavLink = (link) => (
-    <Link to={link.to} onClick={closeMenu}>
-      {link.label}
-    </Link>
-  )
+  const closeMenu = () => setMenuOpen(false)
 
   return (
     <>
       <motion.nav
-        className={`navbar${scrolled ? ' scrolled' : ''}`}
+        className={`navbar${scrolled ? ' scrolled' : ''}${menuOpen ? ' is-open' : ''}`}
         variants={navEnter}
         initial="hidden"
         animate="visible"
@@ -77,7 +82,9 @@ export default function Navbar() {
 
           <ul className="navbar-links">
             {NAV_LINKS.map((link) => (
-              <li key={link.label}>{renderNavLink(link)}</li>
+              <li key={link.label}>
+                <Link to={link.to}>{link.label}</Link>
+              </li>
             ))}
             <li>
               <Link to="/#contato" className="navbar-cta">
@@ -92,6 +99,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen((o) => !o)}
             aria-label={menuOpen ? 'Fechar menu' : 'Abrir menu'}
             aria-expanded={menuOpen}
+            aria-controls="navbar-mobile-menu"
           >
             <span className="navbar-toggle-bar" />
             <span className="navbar-toggle-bar" />
@@ -105,6 +113,7 @@ export default function Navbar() {
           {menuOpen && (
             <motion.div
               className="navbar-mobile"
+              id="navbar-mobile-menu"
               variants={overlayVariants}
               initial="hidden"
               animate="visible"
@@ -118,18 +127,34 @@ export default function Navbar() {
                 animate="visible"
                 aria-label="Menu mobile"
               >
+                <motion.div className="navbar-mobile-meta" variants={linkItem}>
+                  <span>MENU</span>
+                  <span aria-hidden="true" />
+                </motion.div>
+
                 <ul>
                   {NAV_LINKS.map((link) => (
                     <motion.li key={link.label} variants={linkItem}>
-                      {renderNavLink(link)}
+                      <Link to={link.to} onClick={closeMenu}>
+                        <span className="navbar-mobile-label">{link.label}</span>
+                      </Link>
                     </motion.li>
                   ))}
-                  <motion.li variants={linkItem}>
-                    <Link to="/#contato" className="navbar-cta-mobile" onClick={closeMenu}>
-                      Solicitar orçamento <RiArrowRightLine aria-hidden="true" />
-                    </Link>
-                  </motion.li>
                 </ul>
+
+                <motion.div className="navbar-mobile-actions" variants={linkItem}>
+                  <Link to="/#contato" className="navbar-cta-mobile" onClick={closeMenu}>
+                    Solicitar orçamento
+                    <RiArrowRightLine aria-hidden="true" />
+                  </Link>
+                </motion.div>
+
+                <motion.div className="navbar-mobile-foot" variants={linkItem}>
+                  <span>RESENDE, BR</span>
+                  <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                    (24) 98163-4937
+                  </a>
+                </motion.div>
               </motion.nav>
             </motion.div>
           )}

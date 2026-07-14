@@ -12,17 +12,17 @@ const PILLARS = [
   {
     icon: <RiLayoutGridLine />,
     title: 'Arquitetura',
-    desc: 'Sistemas pensados para crescer. Microserviços, APIs bem definidas e código que outro time consegue manter.',
+    desc: 'Sistemas pensados para crescer: APIs bem definidas e código que outro time consegue manter.',
   },
   {
     icon: <RiBarChartBoxLine />,
     title: 'Escalabilidade',
-    desc: 'Infraestrutura cloud, bancos otimizados e deploy automatizado para suportar milhares de usuários.',
+    desc: 'Infraestrutura cloud, banco bem modelado e deploy previsível conforme o uso aumenta.',
   },
   {
     icon: <RiShieldCheckLine />,
     title: 'Qualidade',
-    desc: 'Testes, revisões de código e monitoramento contínuo. Software que funciona em produção, não só em demo.',
+    desc: 'Testes, revisões e monitoramento. Software que aguenta produção, não só a demo.',
   },
 ]
 
@@ -31,7 +31,6 @@ export default function About() {
     <section className="about" id="sobre" aria-labelledby="about-heading">
       <div className="container">
         <div className="section-head">
-          <span className="section-index">01 / QUEM SOMOS</span>
           <div className="section-head-main">
             <motion.h2
               className="section-title"
@@ -57,12 +56,12 @@ export default function About() {
             <p className="about-lead">
               A GMK desenvolve tecnologia sob medida para empresas que precisam
               de mais do que um site. Construímos plataformas, sistemas e
-              aplicações que transformam processos em software escalável.
+              aplicações que transformam processos em software.
             </p>
             <p className="about-text">
-              Não vendemos código. Construímos negócios através de engenharia
-              de software com arquitetura moderna, performance e segurança.
-              Estamos em Resende, RJ, e atendemos empresas em todo o Brasil.
+              Não vendemos código solto. Entregamos sistemas com arquitetura
+              sólida, performance e segurança. Base em Resende, RJ — atendimento
+              em todo o Brasil.
             </p>
             <a href="#contato" className="btn-primary about-cta">
               Falar com especialista

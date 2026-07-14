@@ -15,6 +15,10 @@
   --line-soft: #E2E2E2;
   --hover: #EFEFEF;
 
+  --accent: #5B8EF0;
+  --accent-dark: #3D6FCC;
+  --accent-dim: rgba(91, 142, 240, 0.12);
+
   --radius: 0px;
 
   --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -89,30 +93,18 @@ button {
   padding: 0 var(--gutter);
 }
 
-/* Section framing — the brutal grid signature */
+/* Section framing */
 .section-head {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 20px;
-  align-items: start;
+  display: block;
   margin-bottom: clamp(40px, 6vw, 72px);
-}
-
-.section-index {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--text-3);
-  letter-spacing: 0.05em;
-  padding-top: 10px;
-  white-space: nowrap;
+  max-width: 52rem;
 }
 
 .section-head-main {
   min-width: 0;
 }
 
-/* Kicker — mono technical label */
+/* Kicker — mono technical label (use sparingly, not every section) */
 .kicker {
   display: inline-flex;
   align-items: center;
@@ -130,7 +122,7 @@ button {
   content: "";
   width: 24px;
   height: 1px;
-  background: var(--ink);
+  background: var(--accent);
 }
 
 .section-title {
@@ -173,6 +165,12 @@ button {
 }
 
 .icon-chip svg { display: block; }
+
+.icon-chip:hover {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+  color: var(--accent-dark);
+}
 
 /* =============================================
    Buttons — invert on hover
@@ -245,7 +243,7 @@ button {
 }
 
 :focus-visible {
-  outline: 2px solid var(--ink);
+  outline: 2px solid var(--accent);
   outline-offset: 2px;
 }
 
@@ -262,10 +260,8 @@ button {
 
 @media (max-width: 640px) {
   .section-head {
-    grid-template-columns: 1fr;
-    gap: 8px;
+    margin-bottom: clamp(32px, 8vw, 48px);
   }
-  .section-index { padding-top: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
